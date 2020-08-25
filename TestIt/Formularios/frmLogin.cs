@@ -7,59 +7,121 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestIt.Entidades;
+using TestIt.Formularios;
+using TestIt.Logica;
 
-namespace TestIt
+namespace TestIt.Formularios
 {
     public partial class frmLogin : Form
     {
+        public string UsuarioLogueado { get; internal set; }
+
         public frmLogin()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frmLogin_Load(object sender, EventArgs e)
         {
-            Application.Exit();
+            // Quita la opción de ocultar contraseña
+            txtPassword.PasswordChar = '\0';
         }
 
-        private void txtuser_Enter(object sender, EventArgs e)
+        // Campo usuario
+        private void txtUser_Click(object sender, EventArgs e)
         {
             if (txtUser.Text == "Usuario")
             {
                 txtUser.Text = "";
-                txtUser.ForeColor = Color.LightGray;
             }
+            lblErrorU.Text = "";
         }
 
-        private void txtuser_Leave(object sender, EventArgs e)
+        private void txtUser_Leave(object sender, EventArgs e)
         {
             if (txtUser.Text == "")
             {
                 txtUser.Text = "Usuario";
-                txtUser.ForeColor = Color.Silver;
             }
         }
 
-        private void txtpass_Enter(object sender, EventArgs e)
+        // Campo contraseña
+        private void txtPassword_Click(object sender, EventArgs e)
         {
             if (txtPassword.Text == "Contraseña")
             {
                 txtPassword.Text = "";
-                txtPassword.ForeColor = Color.LightGray;
-                txtPassword.UseSystemPasswordChar = true;
+                txtPassword.PasswordChar = '*';
             }
+            lblErrorP.Text = "";
         }
 
-        private void txtpass_Leave(object sender, EventArgs e)
+        private void txtPassword_Leave(object sender, EventArgs e)
         {
             if (txtPassword.Text == "")
             {
                 txtPassword.Text = "Contraseña";
-                txtPassword.ForeColor = Color.Silver;
-                txtPassword.UseSystemPasswordChar = false;
+                txtPassword.PasswordChar = '\0';
             }
         }
 
+        // Ingresar
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            if (validarCamposVacios()) return;
 
+            GestorUsuario gestorUsuario = new GestorUsuario();
+            Usuario user = gestorUsuario.BuscarUsuario(txtUser.Text);
+
+            if (validarUsuario(user)) 
+            { 
+                UsuarioLogueado = user.NombreUsuario;
+                Close();
+            }
+        }
+
+        private bool validarCamposVacios()
+        {
+            bool error = false;
+
+            if (txtUser.Text == "Usuario")
+            {
+                lblErrorU.Text = "Debe ingresar un usuario";
+                error = true;
+            }
+
+            if (txtPassword.Text == "Contraseña")
+            {
+                lblErrorP.Text = "Debe ingresar una contraseña";
+                error = true;
+            }
+
+            return error;
+        }
+
+        private bool validarUsuario(Usuario user)
+        {
+            if (user == null)
+            {
+                lblErrorU.Text = "Usuario incorrecto";
+                return false;
+            }
+
+            if (!user.ValidarContraseña(txtPassword.Text))
+            {
+                lblErrorP.Text = "Contraseña incorrecta";
+                return false;
+            }
+            return true;
+        }
+
+        // Cerrar
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        
     }
 }
