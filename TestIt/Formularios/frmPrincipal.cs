@@ -21,7 +21,7 @@ namespace TestIt.Formularios
         {
             frmLogin login = new frmLogin();
             login.ShowDialog();
-            var nomUser = login.UsuarioLogueado;
+            this.Text = "Bienvenido " + login.UsuarioLogueado;
         }
     }
 }

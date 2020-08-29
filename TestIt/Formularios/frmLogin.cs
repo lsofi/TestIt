@@ -121,7 +121,5 @@ namespace TestIt.Formularios
         {
             Application.Exit();
         }
-
-        
     }
 }
