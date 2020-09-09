@@ -30,7 +30,7 @@
         {
             this.panelTitulo = new System.Windows.Forms.Panel();
             this.lblBienvenido = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.btnMinimizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
             this.imgLogo = new System.Windows.Forms.PictureBox();
@@ -45,12 +45,12 @@
             // 
             this.panelTitulo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             this.panelTitulo.Controls.Add(this.lblBienvenido);
-            this.panelTitulo.Controls.Add(this.label1);
+            this.panelTitulo.Controls.Add(this.btnMinimizar);
             this.panelTitulo.Controls.Add(this.btnCerrar);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1300, 38);
+            this.panelTitulo.Size = new System.Drawing.Size(1280, 43);
             this.panelTitulo.TabIndex = 0;
             // 
             // lblBienvenido
@@ -58,37 +58,37 @@
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.ForeColor = System.Drawing.Color.LightGray;
-            this.lblBienvenido.Location = new System.Drawing.Point(22, 7);
+            this.lblBienvenido.Location = new System.Drawing.Point(11, 9);
             this.lblBienvenido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblBienvenido.Name = "lblBienvenido";
             this.lblBienvenido.Size = new System.Drawing.Size(100, 21);
             this.lblBienvenido.TabIndex = 9;
             this.lblBienvenido.Text = "Bienvenido ";
             // 
-            // label1
+            // btnMinimizar
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(1218, -2);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(17, 19);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "_";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.btnMinimizar.AutoSize = true;
+            this.btnMinimizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMinimizar.ForeColor = System.Drawing.Color.LightGray;
+            this.btnMinimizar.Location = new System.Drawing.Point(1230, 5);
+            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(17, 19);
+            this.btnMinimizar.TabIndex = 8;
+            this.btnMinimizar.Text = "_";
+            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
             // 
             // btnCerrar
             // 
             this.btnCerrar.AutoSize = true;
             this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCerrar.Location = new System.Drawing.Point(1249, 7);
+            this.btnCerrar.Location = new System.Drawing.Point(1251, 9);
             this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(20, 19);
+            this.btnCerrar.Size = new System.Drawing.Size(18, 19);
             this.btnCerrar.TabIndex = 7;
-            this.btnCerrar.Text = "X";
+            this.btnCerrar.Text = "x";
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // panelMenuVertical
@@ -97,18 +97,18 @@
             this.panelMenuVertical.Controls.Add(this.imgLogo);
             this.panelMenuVertical.Controls.Add(this.btnDeportistas);
             this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuVertical.Location = new System.Drawing.Point(0, 38);
+            this.panelMenuVertical.Location = new System.Drawing.Point(0, 43);
             this.panelMenuVertical.Name = "panelMenuVertical";
-            this.panelMenuVertical.Size = new System.Drawing.Size(220, 612);
+            this.panelMenuVertical.Size = new System.Drawing.Size(233, 677);
             this.panelMenuVertical.TabIndex = 1;
             // 
             // imgLogo
             // 
             this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
-            this.imgLogo.Location = new System.Drawing.Point(64, 17);
+            this.imgLogo.Location = new System.Drawing.Point(68, 40);
             this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(98, 81);
+            this.imgLogo.Size = new System.Drawing.Size(101, 89);
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
@@ -119,9 +119,9 @@
             this.btnDeportistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeportistas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeportistas.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDeportistas.Location = new System.Drawing.Point(0, 130);
+            this.btnDeportistas.Location = new System.Drawing.Point(3, 164);
             this.btnDeportistas.Name = "btnDeportistas";
-            this.btnDeportistas.Size = new System.Drawing.Size(217, 32);
+            this.btnDeportistas.Size = new System.Drawing.Size(224, 32);
             this.btnDeportistas.TabIndex = 0;
             this.btnDeportistas.Text = "Deportistas";
             this.btnDeportistas.UseVisualStyleBackColor = true;
@@ -131,17 +131,18 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(220, 38);
+            this.panelContenedor.Location = new System.Drawing.Point(233, 43);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1080, 612);
+            this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
             this.panelContenedor.TabIndex = 2;
             // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1280, 720);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenuVertical);
             this.Controls.Add(this.panelTitulo);
@@ -149,7 +150,6 @@
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
-            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmPrincipal_Load);
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
@@ -164,7 +164,7 @@
         private System.Windows.Forms.Panel panelTitulo;
         private System.Windows.Forms.Panel panelMenuVertical;
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label btnMinimizar;
         private System.Windows.Forms.Label btnCerrar;
         private System.Windows.Forms.Button btnDeportistas;
         private System.Windows.Forms.PictureBox imgLogo;
