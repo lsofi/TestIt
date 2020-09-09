@@ -47,6 +47,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Formularios\ctrlDeportistas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlDeportistas.Designer.cs">
+      <DependentUpon>ctrlDeportistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\GestorUsuario.cs" />
     <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Formularios\frmLogin.cs">
@@ -63,6 +69,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\ctrlDeportistas.resx">
+      <DependentUpon>ctrlDeportistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -95,6 +104,7 @@
   <ItemGroup>
     <Content Include="Imágenes\imgLogo %28Personalizado%29.png" />
     <Content Include="Imágenes\logo.png" />
+    <Content Include="Imágenes\logoIco.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

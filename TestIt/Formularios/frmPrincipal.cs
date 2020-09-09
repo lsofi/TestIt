@@ -15,13 +15,33 @@ namespace TestIt.Formularios
         public frmPrincipal()
         {
             InitializeComponent();
+
+            frmLogin login = new frmLogin();
+            //login.ShowDialog();
+            this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
+
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.Text = "Bienvenido " + login.UsuarioLogueado;
+        
         }
+
+        private void btnCerrar_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnDeportistas_Click(object sender, EventArgs e)
+        {
+            ctrlDeportistas ctrlDeportistas = new ctrlDeportistas();
+            panelContenedor.Controls.Add(ctrlDeportistas);
+        }
+    
     }
 }

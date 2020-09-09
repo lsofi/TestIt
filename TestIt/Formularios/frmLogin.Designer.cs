@@ -30,7 +30,6 @@
         {
             this.panelLogin = new System.Windows.Forms.Panel();
             this.lblBienvenido = new System.Windows.Forms.Label();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.txtUser = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.lblUser = new System.Windows.Forms.Label();
@@ -39,6 +38,7 @@
             this.btnCerrar = new System.Windows.Forms.Label();
             this.lblErrorU = new System.Windows.Forms.Label();
             this.lblErrorP = new System.Windows.Forms.Label();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panelLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -66,16 +66,6 @@
             this.lblBienvenido.Size = new System.Drawing.Size(74, 26);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Test-It";
-            // 
-            // imgLogo
-            // 
-            this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
-            this.imgLogo.Location = new System.Drawing.Point(19, 83);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(112, 88);
-            this.imgLogo.TabIndex = 0;
-            this.imgLogo.TabStop = false;
             // 
             // txtUser
             // 
@@ -183,6 +173,16 @@
             this.lblErrorP.Name = "lblErrorP";
             this.lblErrorP.Size = new System.Drawing.Size(0, 14);
             this.lblErrorP.TabIndex = 8;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
+            this.imgLogo.Location = new System.Drawing.Point(19, 83);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(112, 88);
+            this.imgLogo.TabIndex = 0;
+            this.imgLogo.TabStop = false;
             // 
             // frmLogin
             // 
