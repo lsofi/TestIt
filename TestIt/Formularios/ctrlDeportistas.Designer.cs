@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdDeportistas = new System.Windows.Forms.DataGridView();
             this.deportista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.txtEquipo = new System.Windows.Forms.ComboBox();
             this.lblEquipo = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtCategoria = new System.Windows.Forms.ComboBox();
             this.lblCategoria = new System.Windows.Forms.Label();
             this.cboDeporte = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,25 +43,25 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.grpEdicion = new System.Windows.Forms.GroupBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpDetNacimiento = new System.Windows.Forms.DateTimePicker();
             this.lblNacimientoDet = new System.Windows.Forms.Label();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboDetCategoria = new System.Windows.Forms.ComboBox();
+            this.cboDetEquipo = new System.Windows.Forms.ComboBox();
+            this.cboDetDeporte = new System.Windows.Forms.ComboBox();
+            this.cboDetSexo = new System.Windows.Forms.ComboBox();
             this.lblSexoDet = new System.Windows.Forms.Label();
             this.lblPesoDet = new System.Windows.Forms.Label();
             this.lblAlturaDet = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDetApellido = new System.Windows.Forms.TextBox();
             this.lblApellidoDet = new System.Windows.Forms.Label();
             this.lblDNIDet = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
+            this.txtDetPeso = new System.Windows.Forms.TextBox();
+            this.txtDetAltura = new System.Windows.Forms.TextBox();
+            this.txtDetDNI = new System.Windows.Forms.TextBox();
+            this.txtDetNombre = new System.Windows.Forms.TextBox();
+            this.lblEquipoDet = new System.Windows.Forms.Label();
+            this.lblCategoriaDet = new System.Windows.Forms.Label();
+            this.lblDeporteDet = new System.Windows.Forms.Label();
             this.lblNombreDet = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -81,14 +81,14 @@
             this.grdDeportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdDeportistas.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdDeportistas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDeportistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdDeportistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.grdDeportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDeportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deportista});
@@ -112,9 +112,9 @@
             // 
             // grpFiltros
             // 
-            this.grpFiltros.Controls.Add(this.comboBox2);
+            this.grpFiltros.Controls.Add(this.txtEquipo);
             this.grpFiltros.Controls.Add(this.lblEquipo);
-            this.grpFiltros.Controls.Add(this.comboBox1);
+            this.grpFiltros.Controls.Add(this.txtCategoria);
             this.grpFiltros.Controls.Add(this.lblCategoria);
             this.grpFiltros.Controls.Add(this.cboDeporte);
             this.grpFiltros.Controls.Add(this.label1);
@@ -131,16 +131,16 @@
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros de Búsqueda";
             // 
-            // comboBox2
+            // txtEquipo
             // 
-            this.comboBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(455, 56);
-            this.comboBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(197, 24);
-            this.comboBox2.TabIndex = 15;
+            this.txtEquipo.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtEquipo.FormattingEnabled = true;
+            this.txtEquipo.Location = new System.Drawing.Point(455, 56);
+            this.txtEquipo.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEquipo.Name = "txtEquipo";
+            this.txtEquipo.Size = new System.Drawing.Size(197, 24);
+            this.txtEquipo.TabIndex = 15;
             // 
             // lblEquipo
             // 
@@ -153,16 +153,16 @@
             this.lblEquipo.TabIndex = 14;
             this.lblEquipo.Text = "Equipo:";
             // 
-            // comboBox1
+            // txtCategoria
             // 
-            this.comboBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(455, 101);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(197, 24);
-            this.comboBox1.TabIndex = 13;
+            this.txtCategoria.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.txtCategoria.FormattingEnabled = true;
+            this.txtCategoria.Location = new System.Drawing.Point(455, 101);
+            this.txtCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.txtCategoria.Name = "txtCategoria";
+            this.txtCategoria.Size = new System.Drawing.Size(197, 24);
+            this.txtCategoria.TabIndex = 13;
             // 
             // lblCategoria
             // 
@@ -225,25 +225,25 @@
             // 
             // grpEdicion
             // 
-            this.grpEdicion.Controls.Add(this.dateTimePicker1);
+            this.grpEdicion.Controls.Add(this.dtpDetNacimiento);
             this.grpEdicion.Controls.Add(this.lblNacimientoDet);
-            this.grpEdicion.Controls.Add(this.comboBox6);
-            this.grpEdicion.Controls.Add(this.comboBox5);
-            this.grpEdicion.Controls.Add(this.comboBox4);
-            this.grpEdicion.Controls.Add(this.comboBox3);
+            this.grpEdicion.Controls.Add(this.cboDetCategoria);
+            this.grpEdicion.Controls.Add(this.cboDetEquipo);
+            this.grpEdicion.Controls.Add(this.cboDetDeporte);
+            this.grpEdicion.Controls.Add(this.cboDetSexo);
             this.grpEdicion.Controls.Add(this.lblSexoDet);
             this.grpEdicion.Controls.Add(this.lblPesoDet);
             this.grpEdicion.Controls.Add(this.lblAlturaDet);
-            this.grpEdicion.Controls.Add(this.textBox5);
+            this.grpEdicion.Controls.Add(this.txtDetApellido);
             this.grpEdicion.Controls.Add(this.lblApellidoDet);
             this.grpEdicion.Controls.Add(this.lblDNIDet);
-            this.grpEdicion.Controls.Add(this.textBox4);
-            this.grpEdicion.Controls.Add(this.textBox3);
-            this.grpEdicion.Controls.Add(this.textBox2);
-            this.grpEdicion.Controls.Add(this.textBox1);
-            this.grpEdicion.Controls.Add(this.label2);
-            this.grpEdicion.Controls.Add(this.label3);
-            this.grpEdicion.Controls.Add(this.label4);
+            this.grpEdicion.Controls.Add(this.txtDetPeso);
+            this.grpEdicion.Controls.Add(this.txtDetAltura);
+            this.grpEdicion.Controls.Add(this.txtDetDNI);
+            this.grpEdicion.Controls.Add(this.txtDetNombre);
+            this.grpEdicion.Controls.Add(this.lblEquipoDet);
+            this.grpEdicion.Controls.Add(this.lblCategoriaDet);
+            this.grpEdicion.Controls.Add(this.lblDeporteDet);
             this.grpEdicion.Controls.Add(this.lblNombreDet);
             this.grpEdicion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEdicion.ForeColor = System.Drawing.Color.LightGray;
@@ -256,17 +256,17 @@
             this.grpEdicion.TabStop = false;
             this.grpEdicion.Text = "Deportista";
             // 
-            // dateTimePicker1
+            // dtpDetNacimiento
             // 
-            this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(455, 91);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(4);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(197, 22);
-            this.dateTimePicker1.TabIndex = 32;
+            this.dtpDetNacimiento.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDetNacimiento.Enabled = false;
+            this.dtpDetNacimiento.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDetNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDetNacimiento.Location = new System.Drawing.Point(455, 91);
+            this.dtpDetNacimiento.Margin = new System.Windows.Forms.Padding(4);
+            this.dtpDetNacimiento.Name = "dtpDetNacimiento";
+            this.dtpDetNacimiento.Size = new System.Drawing.Size(197, 22);
+            this.dtpDetNacimiento.TabIndex = 32;
             // 
             // lblNacimientoDet
             // 
@@ -279,53 +279,53 @@
             this.lblNacimientoDet.TabIndex = 31;
             this.lblNacimientoDet.Text = "Nacimiento:";
             // 
-            // comboBox6
+            // cboDetCategoria
             // 
-            this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox6.Enabled = false;
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Location = new System.Drawing.Point(455, 237);
-            this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(197, 24);
-            this.comboBox6.TabIndex = 30;
+            this.cboDetCategoria.BackColor = System.Drawing.SystemColors.Menu;
+            this.cboDetCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDetCategoria.Enabled = false;
+            this.cboDetCategoria.FormattingEnabled = true;
+            this.cboDetCategoria.Location = new System.Drawing.Point(455, 237);
+            this.cboDetCategoria.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDetCategoria.Name = "cboDetCategoria";
+            this.cboDetCategoria.Size = new System.Drawing.Size(197, 24);
+            this.cboDetCategoria.TabIndex = 30;
             // 
-            // comboBox5
+            // cboDetEquipo
             // 
-            this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox5.Enabled = false;
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(455, 187);
-            this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(197, 24);
-            this.comboBox5.TabIndex = 29;
+            this.cboDetEquipo.BackColor = System.Drawing.SystemColors.Menu;
+            this.cboDetEquipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDetEquipo.Enabled = false;
+            this.cboDetEquipo.FormattingEnabled = true;
+            this.cboDetEquipo.Location = new System.Drawing.Point(455, 187);
+            this.cboDetEquipo.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDetEquipo.Name = "cboDetEquipo";
+            this.cboDetEquipo.Size = new System.Drawing.Size(197, 24);
+            this.cboDetEquipo.TabIndex = 29;
             // 
-            // comboBox4
+            // cboDetDeporte
             // 
-            this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Enabled = false;
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(455, 138);
-            this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(197, 24);
-            this.comboBox4.TabIndex = 28;
+            this.cboDetDeporte.BackColor = System.Drawing.SystemColors.Menu;
+            this.cboDetDeporte.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDetDeporte.Enabled = false;
+            this.cboDetDeporte.FormattingEnabled = true;
+            this.cboDetDeporte.Location = new System.Drawing.Point(455, 138);
+            this.cboDetDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDetDeporte.Name = "cboDetDeporte";
+            this.cboDetDeporte.Size = new System.Drawing.Size(197, 24);
+            this.cboDetDeporte.TabIndex = 28;
             // 
-            // comboBox3
+            // cboDetSexo
             // 
-            this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Enabled = false;
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(116, 91);
-            this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(197, 24);
-            this.comboBox3.TabIndex = 27;
+            this.cboDetSexo.BackColor = System.Drawing.SystemColors.Menu;
+            this.cboDetSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDetSexo.Enabled = false;
+            this.cboDetSexo.FormattingEnabled = true;
+            this.cboDetSexo.Location = new System.Drawing.Point(116, 91);
+            this.cboDetSexo.Margin = new System.Windows.Forms.Padding(4);
+            this.cboDetSexo.Name = "cboDetSexo";
+            this.cboDetSexo.Size = new System.Drawing.Size(197, 24);
+            this.cboDetSexo.TabIndex = 27;
             // 
             // lblSexoDet
             // 
@@ -360,15 +360,15 @@
             this.lblAlturaDet.TabIndex = 23;
             this.lblAlturaDet.Text = "Altura:";
             // 
-            // textBox5
+            // txtDetApellido
             // 
-            this.textBox5.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox5.Enabled = false;
-            this.textBox5.Location = new System.Drawing.Point(455, 47);
-            this.textBox5.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(197, 23);
-            this.textBox5.TabIndex = 22;
+            this.txtDetApellido.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetApellido.Enabled = false;
+            this.txtDetApellido.Location = new System.Drawing.Point(455, 47);
+            this.txtDetApellido.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetApellido.Name = "txtDetApellido";
+            this.txtDetApellido.Size = new System.Drawing.Size(197, 23);
+            this.txtDetApellido.TabIndex = 22;
             // 
             // lblApellidoDet
             // 
@@ -392,78 +392,78 @@
             this.lblDNIDet.TabIndex = 20;
             this.lblDNIDet.Text = "DNI:";
             // 
-            // textBox4
+            // txtDetPeso
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox4.Enabled = false;
-            this.textBox4.Location = new System.Drawing.Point(116, 237);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 23);
-            this.textBox4.TabIndex = 19;
+            this.txtDetPeso.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetPeso.Enabled = false;
+            this.txtDetPeso.Location = new System.Drawing.Point(116, 237);
+            this.txtDetPeso.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetPeso.Name = "txtDetPeso";
+            this.txtDetPeso.Size = new System.Drawing.Size(197, 23);
+            this.txtDetPeso.TabIndex = 19;
             // 
-            // textBox3
+            // txtDetAltura
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox3.Enabled = false;
-            this.textBox3.Location = new System.Drawing.Point(116, 187);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 23);
-            this.textBox3.TabIndex = 18;
+            this.txtDetAltura.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetAltura.Enabled = false;
+            this.txtDetAltura.Location = new System.Drawing.Point(116, 187);
+            this.txtDetAltura.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetAltura.Name = "txtDetAltura";
+            this.txtDetAltura.Size = new System.Drawing.Size(197, 23);
+            this.txtDetAltura.TabIndex = 18;
             // 
-            // textBox2
+            // txtDetDNI
             // 
-            this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(116, 138);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(197, 23);
-            this.textBox2.TabIndex = 17;
+            this.txtDetDNI.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetDNI.Enabled = false;
+            this.txtDetDNI.Location = new System.Drawing.Point(116, 138);
+            this.txtDetDNI.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetDNI.Name = "txtDetDNI";
+            this.txtDetDNI.Size = new System.Drawing.Size(197, 23);
+            this.txtDetDNI.TabIndex = 17;
             // 
-            // textBox1
+            // txtDetNombre
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(116, 47);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 23);
-            this.textBox1.TabIndex = 16;
+            this.txtDetNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetNombre.Enabled = false;
+            this.txtDetNombre.Location = new System.Drawing.Point(116, 47);
+            this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetNombre.Name = "txtDetNombre";
+            this.txtDetNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtDetNombre.TabIndex = 16;
             // 
-            // label2
+            // lblEquipoDet
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(373, 190);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(57, 17);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Equipo:";
+            this.lblEquipoDet.AutoSize = true;
+            this.lblEquipoDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipoDet.Location = new System.Drawing.Point(373, 190);
+            this.lblEquipoDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEquipoDet.Name = "lblEquipoDet";
+            this.lblEquipoDet.Size = new System.Drawing.Size(57, 17);
+            this.lblEquipoDet.TabIndex = 14;
+            this.lblEquipoDet.Text = "Equipo:";
             // 
-            // label3
+            // lblCategoriaDet
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(351, 240);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 17);
-            this.label3.TabIndex = 12;
-            this.label3.Text = "Categoría:";
+            this.lblCategoriaDet.AutoSize = true;
+            this.lblCategoriaDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoriaDet.Location = new System.Drawing.Point(351, 240);
+            this.lblCategoriaDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCategoriaDet.Name = "lblCategoriaDet";
+            this.lblCategoriaDet.Size = new System.Drawing.Size(79, 17);
+            this.lblCategoriaDet.TabIndex = 12;
+            this.lblCategoriaDet.Text = "Categoría:";
             // 
-            // label4
+            // lblDeporteDet
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(365, 141);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(65, 17);
-            this.label4.TabIndex = 10;
-            this.label4.Text = "Deporte:";
+            this.lblDeporteDet.AutoSize = true;
+            this.lblDeporteDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeporteDet.Location = new System.Drawing.Point(365, 141);
+            this.lblDeporteDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeporteDet.Name = "lblDeporteDet";
+            this.lblDeporteDet.Size = new System.Drawing.Size(65, 17);
+            this.lblDeporteDet.TabIndex = 10;
+            this.lblDeporteDet.Text = "Deporte:";
             // 
             // lblNombreDet
             // 
@@ -559,9 +559,9 @@
         private System.Windows.Forms.DataGridView grdDeportistas;
         private System.Windows.Forms.DataGridViewTextBoxColumn deportista;
         private System.Windows.Forms.GroupBox grpFiltros;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox txtEquipo;
         private System.Windows.Forms.Label lblEquipo;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox txtCategoria;
         private System.Windows.Forms.Label lblCategoria;
         private System.Windows.Forms.ComboBox cboDeporte;
         private System.Windows.Forms.Label label1;
@@ -569,26 +569,26 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.GroupBox grpEdicion;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboDetSexo;
         private System.Windows.Forms.Label lblSexoDet;
         private System.Windows.Forms.Label lblPesoDet;
         private System.Windows.Forms.Label lblAlturaDet;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDetApellido;
         private System.Windows.Forms.Label lblApellidoDet;
         private System.Windows.Forms.Label lblDNIDet;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TextBox txtDetPeso;
+        private System.Windows.Forms.TextBox txtDetAltura;
+        private System.Windows.Forms.TextBox txtDetDNI;
+        private System.Windows.Forms.TextBox txtDetNombre;
+        private System.Windows.Forms.Label lblEquipoDet;
+        private System.Windows.Forms.Label lblCategoriaDet;
+        private System.Windows.Forms.Label lblDeporteDet;
         private System.Windows.Forms.Label lblNombreDet;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDetNacimiento;
         private System.Windows.Forms.Label lblNacimientoDet;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboDetCategoria;
+        private System.Windows.Forms.ComboBox cboDetEquipo;
+        private System.Windows.Forms.ComboBox cboDetDeporte;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnEliminar;
