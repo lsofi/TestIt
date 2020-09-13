@@ -24,11 +24,7 @@ namespace TestIt.Formularios
 
         private void toggleState()
         {
-            btnAceptar.Enabled = !btnAceptar.Enabled;
-            btnCancelar.Enabled = !btnAceptar.Enabled;
-            btnAgregar.Enabled = !btnAgregar.Enabled;
-            btnEditar.Enabled = !btnEditar.Enabled;
-            btnEliminar.Enabled = !btnEliminar.Enabled;
+ 
         }
     }
 }
