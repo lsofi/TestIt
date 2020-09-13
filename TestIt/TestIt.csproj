@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DBHelper.cs" />
+    <Compile Include="Datos\DeportistaDao.cs" />
     <Compile Include="Formularios\ctrlDeportistas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -55,6 +56,7 @@
       <DependentUpon>ctrlDeportistas.cs</DependentUpon>
     </Compile>
     <Compile Include="Datos\UsuarioDao.cs" />
+    <Compile Include="Logica\Deportista.cs" />
     <Compile Include="Logica\Usuario.cs" />
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
@@ -70,6 +72,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Soporte\Combo.cs" />
     <EmbeddedResource Include="Formularios\ctrlDeportistas.resx">
       <DependentUpon>ctrlDeportistas.cs</DependentUpon>
     </EmbeddedResource>
@@ -106,8 +109,8 @@
     <Content Include="Imágenes\imgLogo %28Personalizado%29.png" />
     <Content Include="Imágenes\logo.png" />
     <Content Include="Imágenes\logoIco.ico" />
+    <Content Include="Resources\032-cancel.png" />
     <None Include="Resources\032-cancel %28Personalizado%29.png" />
-    <None Include="Resources\032-cancel.png" />
     <None Include="Resources\008-tick %28Personalizado%29.png" />
     <None Include="Resources\202-delete-user %28Personalizado%29.png" />
     <None Include="Resources\203-user-3 %28Personalizado%29.png" />
