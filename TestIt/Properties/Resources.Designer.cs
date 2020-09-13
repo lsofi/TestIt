@@ -63,6 +63,76 @@ namespace TestIt.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _008_tick__Personalizado_ {
+            get {
+                object obj = ResourceManager.GetObject("008-tick (Personalizado)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _032_cancel {
+            get {
+                object obj = ResourceManager.GetObject("032-cancel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _032_cancel__Personalizado_ {
+            get {
+                object obj = ResourceManager.GetObject("032-cancel (Personalizado)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _198_add_user__Personalizado_ {
+            get {
+                object obj = ResourceManager.GetObject("198-add-user (Personalizado)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _198_add_user__Personalizado_1 {
+            get {
+                object obj = ResourceManager.GetObject("198-add-user (Personalizado)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _202_delete_user__Personalizado_ {
+            get {
+                object obj = ResourceManager.GetObject("202-delete-user (Personalizado)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _203_user_3__Personalizado_ {
+            get {
+                object obj = ResourceManager.GetObject("203-user-3 (Personalizado)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap imgLogo__Personalizado_ {
             get {
                 object obj = ResourceManager.GetObject("imgLogo (Personalizado)", resourceCulture);

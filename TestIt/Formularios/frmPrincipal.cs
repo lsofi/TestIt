@@ -17,7 +17,7 @@ namespace TestIt.Formularios
             InitializeComponent();
 
             frmLogin login = new frmLogin();
-            //login.ShowDialog();
+            login.ShowDialog();
             this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
 
         }

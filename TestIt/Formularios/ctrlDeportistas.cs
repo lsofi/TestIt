@@ -17,5 +17,15 @@ namespace TestIt.Formularios
             InitializeComponent();
         }
 
+        private void ctrlDeportistas_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toggleState()
+        {
+            btnAceptar.Enabled = !btnAceptar.Enabled;
+            btnCancelar.Enabled = !btnAceptar.Enabled;
+        }
     }
 }

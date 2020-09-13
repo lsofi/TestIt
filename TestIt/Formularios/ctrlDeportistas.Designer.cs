@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grdDeportistas = new System.Windows.Forms.DataGridView();
             this.deportista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
@@ -63,6 +63,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNombreDet = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnEditar = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.grdDeportistas)).BeginInit();
             this.grpFiltros.SuspendLayout();
             this.grpEdicion.SuspendLayout();
@@ -73,15 +79,16 @@
             this.grdDeportistas.AllowUserToAddRows = false;
             this.grdDeportistas.AllowUserToDeleteRows = false;
             this.grdDeportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdDeportistas.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdDeportistas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDeportistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdDeportistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdDeportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdDeportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.deportista});
@@ -240,7 +247,7 @@
             this.grpEdicion.Controls.Add(this.lblNombreDet);
             this.grpEdicion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEdicion.ForeColor = System.Drawing.Color.LightGray;
-            this.grpEdicion.Location = new System.Drawing.Point(316, 330);
+            this.grpEdicion.Location = new System.Drawing.Point(316, 253);
             this.grpEdicion.Margin = new System.Windows.Forms.Padding(4);
             this.grpEdicion.Name = "grpEdicion";
             this.grpEdicion.Padding = new System.Windows.Forms.Padding(4);
@@ -252,6 +259,7 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker1.Location = new System.Drawing.Point(455, 91);
@@ -275,6 +283,7 @@
             // 
             this.comboBox6.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox6.Enabled = false;
             this.comboBox6.FormattingEnabled = true;
             this.comboBox6.Location = new System.Drawing.Point(455, 237);
             this.comboBox6.Margin = new System.Windows.Forms.Padding(4);
@@ -286,6 +295,7 @@
             // 
             this.comboBox5.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox5.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox5.Enabled = false;
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Location = new System.Drawing.Point(455, 187);
             this.comboBox5.Margin = new System.Windows.Forms.Padding(4);
@@ -297,6 +307,7 @@
             // 
             this.comboBox4.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.Enabled = false;
             this.comboBox4.FormattingEnabled = true;
             this.comboBox4.Location = new System.Drawing.Point(455, 138);
             this.comboBox4.Margin = new System.Windows.Forms.Padding(4);
@@ -308,6 +319,7 @@
             // 
             this.comboBox3.BackColor = System.Drawing.SystemColors.Menu;
             this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.Enabled = false;
             this.comboBox3.FormattingEnabled = true;
             this.comboBox3.Location = new System.Drawing.Point(116, 91);
             this.comboBox3.Margin = new System.Windows.Forms.Padding(4);
@@ -351,6 +363,7 @@
             // textBox5
             // 
             this.textBox5.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox5.Enabled = false;
             this.textBox5.Location = new System.Drawing.Point(455, 47);
             this.textBox5.Margin = new System.Windows.Forms.Padding(4);
             this.textBox5.Name = "textBox5";
@@ -382,6 +395,7 @@
             // textBox4
             // 
             this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox4.Enabled = false;
             this.textBox4.Location = new System.Drawing.Point(116, 237);
             this.textBox4.Margin = new System.Windows.Forms.Padding(4);
             this.textBox4.Name = "textBox4";
@@ -391,6 +405,7 @@
             // textBox3
             // 
             this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox3.Enabled = false;
             this.textBox3.Location = new System.Drawing.Point(116, 187);
             this.textBox3.Margin = new System.Windows.Forms.Padding(4);
             this.textBox3.Name = "textBox3";
@@ -400,6 +415,7 @@
             // textBox2
             // 
             this.textBox2.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox2.Enabled = false;
             this.textBox2.Location = new System.Drawing.Point(116, 138);
             this.textBox2.Margin = new System.Windows.Forms.Padding(4);
             this.textBox2.Name = "textBox2";
@@ -409,6 +425,7 @@
             // textBox1
             // 
             this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
+            this.textBox1.Enabled = false;
             this.textBox1.Location = new System.Drawing.Point(116, 47);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
             this.textBox1.Name = "textBox1";
@@ -459,11 +476,68 @@
             this.lblNombreDet.TabIndex = 7;
             this.lblNombreDet.Text = "Nombre:";
             // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Enabled = false;
+            this.btnCancelar.Image = global::TestIt.Properties.Resources._032_cancel__Personalizado_;
+            this.btnCancelar.Location = new System.Drawing.Point(875, 589);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(45, 40);
+            this.btnCancelar.TabIndex = 13;
+            this.toolTip.SetToolTip(this.btnCancelar, "Cancelar");
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // btnAceptar
+            // 
+            this.btnAceptar.Enabled = false;
+            this.btnAceptar.Image = global::TestIt.Properties.Resources._008_tick__Personalizado_;
+            this.btnAceptar.Location = new System.Drawing.Point(809, 589);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(45, 40);
+            this.btnAceptar.TabIndex = 12;
+            this.toolTip.SetToolTip(this.btnAceptar, "Aceptar");
+            this.btnAceptar.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Image = global::TestIt.Properties.Resources._202_delete_user__Personalizado_;
+            this.btnEliminar.Location = new System.Drawing.Point(568, 589);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(45, 40);
+            this.btnEliminar.TabIndex = 11;
+            this.toolTip.SetToolTip(this.btnEliminar, "Eliminar");
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnEditar
+            // 
+            this.btnEditar.Image = global::TestIt.Properties.Resources._203_user_3__Personalizado_;
+            this.btnEditar.Location = new System.Drawing.Point(503, 589);
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Size = new System.Drawing.Size(45, 40);
+            this.btnEditar.TabIndex = 10;
+            this.toolTip.SetToolTip(this.btnEditar, "Editar");
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Image = global::TestIt.Properties.Resources._198_add_user__Personalizado_1;
+            this.btnAgregar.Location = new System.Drawing.Point(437, 589);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(45, 40);
+            this.btnAgregar.TabIndex = 9;
+            this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            // 
             // ctrlDeportistas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.btnAceptar);
+            this.Controls.Add(this.btnEliminar);
+            this.Controls.Add(this.btnEditar);
+            this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.grpEdicion);
             this.Controls.Add(this.grdDeportistas);
             this.Controls.Add(this.grpFiltros);
@@ -471,6 +545,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlDeportistas";
             this.Size = new System.Drawing.Size(1047, 677);
+            this.Load += new System.EventHandler(this.ctrlDeportistas_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdDeportistas)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
@@ -514,5 +589,11 @@
         private System.Windows.Forms.ComboBox comboBox6;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.Button btnAgregar;
+        private System.Windows.Forms.Button btnEditar;
+        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.Button btnAceptar;
+        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.ToolTip toolTip;
     }
 }

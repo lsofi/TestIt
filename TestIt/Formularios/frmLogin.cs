@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestIt.Entidades;
 using TestIt.Formularios;
 using TestIt.Logica;
 
@@ -71,8 +70,7 @@ namespace TestIt.Formularios
         {
             if (validarCamposVacios()) return;
 
-            GestorUsuario gestorUsuario = new GestorUsuario();
-            Usuario user = gestorUsuario.BuscarUsuario(txtUser.Text);
+            Usuario user = Usuario.buscarUsuario(txtUser.Text);
 
             if (validarUsuario(user)) 
             { 
