@@ -186,6 +186,7 @@
             this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
             this.textBox1.Location = new System.Drawing.Point(148, 41);
             this.textBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.textBox1.MaxLength = 20;
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(197, 23);
             this.textBox1.TabIndex = 9;
@@ -225,9 +226,10 @@
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Menu;
             this.txtDescripcion.Location = new System.Drawing.Point(148, 152);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(197, 73);
+            this.txtDescripcion.Size = new System.Drawing.Size(244, 73);
             this.txtDescripcion.TabIndex = 13;
             // 
             // lblDescripcionDet
@@ -246,6 +248,7 @@
             this.txtUnidad.BackColor = System.Drawing.SystemColors.Menu;
             this.txtUnidad.Location = new System.Drawing.Point(148, 96);
             this.txtUnidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUnidad.MaxLength = 20;
             this.txtUnidad.Name = "txtUnidad";
             this.txtUnidad.Size = new System.Drawing.Size(197, 23);
             this.txtUnidad.TabIndex = 11;
