@@ -55,6 +55,12 @@
     <Compile Include="Formularios\ctrlCategoria.designer.cs">
       <DependentUpon>ctrlCategoria.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ctrlDeporte.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlDeporte.designer.cs">
+      <DependentUpon>ctrlDeporte.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ctrlDeportistas.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -87,6 +93,9 @@
     <Compile Include="Soporte\Combo.cs" />
     <EmbeddedResource Include="Formularios\ctrlCategoria.resx">
       <DependentUpon>ctrlCategoria.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctrlDeporte.resx">
+      <DependentUpon>ctrlDeporte.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ctrlDeportistas.resx">
       <DependentUpon>ctrlDeportistas.cs</DependentUpon>
