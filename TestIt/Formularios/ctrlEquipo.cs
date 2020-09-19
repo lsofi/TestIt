@@ -56,6 +56,8 @@ namespace TestIt.Formularios
 
             grdEquipos.Enabled = !edit;
         }
+
+
         private void grdEquipos_SelectionChanged(object sender, EventArgs e)
         {
             if (grdEquipos.SelectedRows.Count == 0)

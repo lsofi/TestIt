@@ -32,6 +32,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlCategoria));
             this.grdCategoría = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -42,12 +44,10 @@
             this.txtNombreDet = new System.Windows.Forms.TextBox();
             this.lblNombreDet = new System.Windows.Forms.Label();
             this.grpCategoria = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtEdadMinDet = new System.Windows.Forms.TextBox();
             this.lbEdadMinDet = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtEdadMaxDet = new System.Windows.Forms.TextBox();
             this.lblEdadMaxDet = new System.Windows.Forms.Label();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).BeginInit();
             this.grpCategoria.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,21 @@
             this.grdCategoría.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdCategoría.Size = new System.Drawing.Size(242, 582);
             this.grdCategoría.TabIndex = 3;
+            this.grdCategoría.SelectionChanged += new System.EventHandler(this.grdCategoría_SelectionChanged_1);
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colCategoria
+            // 
+            this.colCategoria.HeaderText = "Categoría";
+            this.colCategoria.MinimumWidth = 6;
+            this.colCategoria.Name = "colCategoria";
+            this.colCategoria.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -100,6 +115,7 @@
             this.btnCancelar.TabIndex = 13;
             this.toolTip.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -111,6 +127,7 @@
             this.btnAceptar.TabIndex = 12;
             this.toolTip.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnEliminar
             // 
@@ -121,6 +138,7 @@
             this.btnEliminar.TabIndex = 11;
             this.toolTip.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -131,6 +149,7 @@
             this.btnEditar.TabIndex = 10;
             this.toolTip.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -141,6 +160,7 @@
             this.btnAgregar.TabIndex = 9;
             this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombreDet
             // 
@@ -164,9 +184,9 @@
             // 
             // grpCategoria
             // 
-            this.grpCategoria.Controls.Add(this.textBox4);
+            this.grpCategoria.Controls.Add(this.txtEdadMinDet);
             this.grpCategoria.Controls.Add(this.lbEdadMinDet);
-            this.grpCategoria.Controls.Add(this.textBox3);
+            this.grpCategoria.Controls.Add(this.txtEdadMaxDet);
             this.grpCategoria.Controls.Add(this.lblEdadMaxDet);
             this.grpCategoria.Controls.Add(this.txtNombreDet);
             this.grpCategoria.Controls.Add(this.lblNombreDet);
@@ -181,14 +201,14 @@
             this.grpCategoria.TabStop = false;
             this.grpCategoria.Text = "Categoría";
             // 
-            // textBox4
+            // txtEdadMinDet
             // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox4.Location = new System.Drawing.Point(148, 152);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 23);
-            this.textBox4.TabIndex = 13;
+            this.txtEdadMinDet.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEdadMinDet.Location = new System.Drawing.Point(148, 152);
+            this.txtEdadMinDet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEdadMinDet.Name = "txtEdadMinDet";
+            this.txtEdadMinDet.Size = new System.Drawing.Size(197, 23);
+            this.txtEdadMinDet.TabIndex = 13;
             // 
             // lbEdadMinDet
             // 
@@ -201,14 +221,14 @@
             this.lbEdadMinDet.TabIndex = 12;
             this.lbEdadMinDet.Text = "Edad mínima:";
             // 
-            // textBox3
+            // txtEdadMaxDet
             // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox3.Location = new System.Drawing.Point(148, 96);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 23);
-            this.textBox3.TabIndex = 11;
+            this.txtEdadMaxDet.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEdadMaxDet.Location = new System.Drawing.Point(148, 96);
+            this.txtEdadMaxDet.Margin = new System.Windows.Forms.Padding(4);
+            this.txtEdadMaxDet.Name = "txtEdadMaxDet";
+            this.txtEdadMaxDet.Size = new System.Drawing.Size(197, 23);
+            this.txtEdadMaxDet.TabIndex = 11;
             // 
             // lblEdadMaxDet
             // 
@@ -220,20 +240,6 @@
             this.lblEdadMaxDet.Size = new System.Drawing.Size(103, 17);
             this.lblEdadMaxDet.TabIndex = 10;
             this.lblEdadMaxDet.Text = "Edad máxima:";
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colCategoria
-            // 
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.MinimumWidth = 6;
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
             // 
             // ctrlCategoria
             // 
@@ -251,6 +257,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlCategoria";
             this.Size = new System.Drawing.Size(1047, 677);
+            this.Load += new System.EventHandler(this.ctrlCategoria_Load);
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).EndInit();
             this.grpCategoria.ResumeLayout(false);
             this.grpCategoria.PerformLayout();
@@ -270,9 +277,9 @@
         private System.Windows.Forms.TextBox txtNombreDet;
         private System.Windows.Forms.Label lblNombreDet;
         private System.Windows.Forms.GroupBox grpCategoria;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtEdadMinDet;
         private System.Windows.Forms.Label lbEdadMinDet;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtEdadMaxDet;
         private System.Windows.Forms.Label lblEdadMaxDet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
