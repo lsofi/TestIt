@@ -14,266 +14,190 @@ namespace TestIt.Formularios
 {
     public partial class ctrlEquipo : UserControl
     {
-        private List<Deportista> lDeportistas;
-        private bool comboOk = false;
+        private List<Equipo> lEquipos;
         private bool nuevo = false;
 
         public ctrlEquipo()
         {
             InitializeComponent();
         }
+        private void ctrlEquipo_Load(object sender, EventArgs e)
+        {
+            lEquipos = Equipo.buscarEquipos();
+            cargarGrilla();
+        }
 
-        //private void ctrlDeportistas_Load(object sender, EventArgs e)
-        //{
-        //    lDeportistas = Deportista.buscarDeportistas();
-        //    cargarGrilla();
-        //    cargarCombos();
-        //}
+        private void cargarGrilla()
+        {
+            grdEquipos.Rows.Clear();
+            if (lEquipos != null)
+                foreach (Equipo equipo in lEquipos)
+                {
+                    grdEquipos.Rows.Add(equipo.Id, equipo.Nombre, equipo.Localidad);
+                }
+            grdEquipos.ClearSelection();
+        }
 
-        //private void cargarGrilla()
-        //{
-        //    grdDeportistas.Rows.Clear();
-        //    if (lDeportistas != null)
-        //        foreach (Deportista dep in lDeportistas)
-        //        {
-        //            grdDeportistas.Rows.Add(dep.Id, dep.Nombre + " " + dep.Apellido);
-        //        }
-        //    grdDeportistas.ClearSelection();
-        //}
+        private void toggleEdit(bool edit)
+        {
+            btnAceptar.Enabled = edit;
+            btnCancelar.Enabled = edit;
+            btnAgregar.Enabled = !edit;
+            btnEditar.Enabled = !edit;
+            btnEliminar.Enabled = !edit;
+            btnLimpiar.Enabled = !edit;
 
-        //private void cargarCombos()
-        //{
-        //    comboOk = false;
-        //    Combo.cargarCombo(cboCategoria, "categorias");
-        //    Combo.cargarCombo(cboDeporte, "deportes");
-        //    Combo.cargarCombo(cboEquipo, "equipos");
+            txtNombre.Enabled = !edit;
+            txtLocalidad.Enabled = !edit;
 
-        //    Combo.cargarCombo(cboDetCategoria, "categorias");
-        //    Combo.cargarCombo(cboDetDeporte, "deportes");
-        //    Combo.cargarCombo(cboDetEquipo, "equipos");
-        //    cboDetSexo.DataSource = new List<string>() { "Masculino", "Femenino" };
-        //    cboDetSexo.SelectedIndex = -1;
-        //    comboOk = true;
-        //}
+            txtDetNombre.Enabled = edit;
+            txtDetLocalidad.Enabled = edit;
+            txtDetEntrenador.Enabled = edit;
 
-        //private void toggleState()
-        //{
-        //    btnAceptar.Enabled = !btnAceptar.Enabled;
-        //    btnCancelar.Enabled = !btnCancelar.Enabled;
-        //    btnAgregar.Enabled = !btnAgregar.Enabled;
-        //    btnEditar.Enabled = !btnEditar.Enabled;
-        //    btnEliminar.Enabled = !btnEliminar.Enabled;
-        //    btnLimpiar.Enabled = !btnLimpiar.Enabled;
+            grdEquipos.Enabled = !edit;
+        }
+        private void grdEquipos_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdEquipos.SelectedRows.Count == 0)
+                limpiarCampos();
+            else
+                cargarCampos();
+        }
 
-        //    txtNombre.Enabled = !txtNombre.Enabled;
-        //    cboCategoria.Enabled = !cboCategoria.Enabled;
-        //    cboDeporte.Enabled = !cboDeporte.Enabled;
-        //    cboEquipo.Enabled = !cboEquipo.Enabled;
+        private void cargarCampos()
+        {
+            Equipo equipo = equipoActual();
 
-        //    txtDetNombre.Enabled = !txtDetNombre.Enabled;
-        //    txtDetApellido.Enabled = !txtDetApellido.Enabled;
-        //    cboDetSexo.Enabled = !cboDetSexo.Enabled;
-        //    dtpDetNacimiento.Enabled = !dtpDetNacimiento.Enabled;
-        //    txtDetDNI.Enabled = !txtDetDNI.Enabled;
-        //    cboDetDeporte.Enabled = !cboDetDeporte.Enabled;
-        //    txtDetAltura.Enabled = !txtDetAltura.Enabled;
-        //    cboDetEquipo.Enabled = !cboDetEquipo.Enabled;
-        //    txtDetPeso.Enabled = !txtDetPeso.Enabled;
-        //    cboDetCategoria.Enabled = !cboDetCategoria.Enabled;
+            txtDetNombre.Text = equipo.Nombre;
+            txtDetLocalidad.Text = equipo.Localidad;
+            txtDetEntrenador.Text = equipo.Entrenador;
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
 
-        //    grdDeportistas.Enabled = !grdDeportistas.Enabled;
-        //}
+        private void limpiarCampos()
+        {
+            txtDetNombre.Text = "";
+            txtDetLocalidad.Text = "";
+            txtDetEntrenador.Text = "";
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
 
-        //private void grdDeportistas_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (grdDeportistas.SelectedRows.Count == 0)
-        //        limpiarCampos();
-        //    else
-        //        cargarCampos();
-        //}
+        private Equipo equipoActual()
+        {
+            foreach (Equipo equipo in lEquipos)
+                if (equipo.Id == (int)grdEquipos.SelectedRows[0].Cells[0].Value)
+                    return equipo;
+            return null;
+        }
 
-        //private void cargarCampos()
-        //{
-        //    Deportista dep = deportistaActual();
-            
-        //    txtDetApellido.Text = dep.Apellido;
-        //    txtDetNombre.Text = dep.Nombre;
-        //    txtDetDNI.Text = dep.Dni.ToString();
-        //    txtDetPeso.Text = dep.Peso.ToString();
-        //    txtDetAltura.Text = dep.Altura.ToString();
-        //    cboDetCategoria.SelectedValue = dep.IdCategoria;
-        //    cboDetDeporte.SelectedValue = dep.IdDeporte;
-        //    cboDetEquipo.SelectedValue = dep.IdEquipo;
-        //    dtpDetNacimiento.Value = dep.Nacimiento;
-        //    if (comboOk)
-        //        cboDetSexo.SelectedIndex = dep.Sexo;  
-        //}
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
 
-        //private void limpiarCampos()
-        //{
-        //    txtDetApellido.Text = "";
-        //    txtDetNombre.Text = "";
-        //    txtDetDNI.Text = "";
-        //    txtDetPeso.Text = "";
-        //    txtDetAltura.Text = "";
-        //    cboDetCategoria.SelectedIndex = -1;
-        //    cboDetDeporte.SelectedIndex = -1;
-        //    cboDetEquipo.SelectedIndex = -1;
-        //    cboDetSexo.SelectedIndex = -1;
-        //    dtpDetNacimiento.Value = DateTime.Today;
-            
-        //}
+        private void txtLocalidad_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
 
-        //private void txtNombre_TextChanged(object sender, EventArgs e)
-        //{
-        //    filtrar();
-        //}
+        private void filtrar()
+        {
+            lEquipos = Equipo.filtrarEquipos(txtNombre.Text, txtLocalidad.Text);
+            cargarGrilla();    
+        }
 
-        //private void cboEquipo_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    filtrar();
-        //}
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNombre.Text = "";
+            txtLocalidad.Text = "";
 
-        //private void cboDeporte_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    filtrar();
-        //}
+            lEquipos = Equipo.buscarEquipos();
+            cargarGrilla();
+        }
 
-        //private void cboCategoria_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    filtrar();
-        //}
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            nuevo = true;
+            grdEquipos.ClearSelection();
+            toggleEdit(true);
+        }
 
-        //private void filtrar()
-        //{
-        //    if (comboOk)
-        //    {
-        //        lDeportistas = Deportista.filtrarDeportistas(
-        //            txtNombre.Text, 
-        //            cboEquipo.SelectedIndex == -1 ? -1 :(int)cboEquipo.SelectedValue,
-        //            cboDeporte.SelectedIndex == -1 ? -1 : (int)cboDeporte.SelectedValue,
-        //            cboCategoria.SelectedIndex == -1 ? -1 : (int)cboCategoria.SelectedIndex);
-        //        cargarGrilla();
-        //    }
-        //}
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            toggleEdit(true);
+        }
 
-        //private void btnLimpiar_Click(object sender, EventArgs e)
-        //{
-        //    comboOk = false;
-        //    txtNombre.Text = "";
-        //    cboCategoria.SelectedIndex = -1;
-        //    cboDeporte.SelectedIndex = -1;
-        //    cboEquipo.SelectedIndex = -1;
-        //    comboOk = true;
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Equipo actual = equipoActual();
+            DialogResult answer = MessageBox.Show(
+                "¿Desea eliminar el equipo " + actual.Nombre + "?",
+                "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (answer == DialogResult.Yes)
+            {
+                if (actual.eliminar())
+                {
+                    filtrar();
+                    MessageBox.Show("Equipo eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("Error al eliminar equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-        //    lDeportistas = Deportista.buscarDeportistas();
-        //    cargarGrilla();
-        //}
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos())
+            {
+                Equipo equipo = nuevo ? new Equipo() : equipoActual();
+                equipo.Nombre = txtDetNombre.Text;
+                equipo.Localidad = txtDetLocalidad.Text;
+                equipo.Entrenador = txtDetEntrenador.Text;
 
-        //private Deportista deportistaActual()
-        //{
-        //    foreach (Deportista dep in lDeportistas)
-        //        if (dep.Id == (int)grdDeportistas.SelectedRows[0].Cells[0].Value)
-        //            return dep;
-        //    return null;
-        //}
+                if (nuevo)
+                {
+                    equipo.Borrado = 0;
 
-        //private void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    nuevo = true;
-        //    grdDeportistas.ClearSelection();
-        //    toggleState(); 
-        //}
+                    if (equipo.grabar())
+                    {
+                        filtrar();
+                        MessageBox.Show("Equipo grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error al grabar Equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    nuevo = false;
+                }
+                else
+                {
+                    if (equipo.actualizar())
+                    {
+                        filtrar();
+                        MessageBox.Show("Equipo actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error al actualizar equipo", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                toggleEdit(false);
+            }
+            else
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
-        //private void btnEditar_Click(object sender, EventArgs e)
-        //{
-        //    toggleState();
-        //}
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            toggleEdit(false);
+            grdEquipos.ClearSelection();
+        }
 
-        //private void btnEliminar_Click(object sender, EventArgs e)
-        //{
-        //    DialogResult answer = MessageBox.Show(
-        //        "¿Desea eliminar al deportista " + grdDeportistas.SelectedRows[0].Cells[1].Value + "?",
-        //        "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-        //    if (answer == DialogResult.Yes)
-        //    {
-        //        Deportista dep = deportistaActual();
-        //        if (dep.eliminar())
-        //        {
-        //            filtrar();
-        //            MessageBox.Show("Deportista eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        }
-        //        else
-        //            MessageBox.Show("Error al eliminar deportista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
-        //private void btnAceptar_Click(object sender, EventArgs e)
-        //{
-        //    if (validarCampos())
-        //    {
-        //        Deportista dep = nuevo ? new Deportista() : deportistaActual();
-        //        dep.Apellido = txtDetApellido.Text;
-        //        dep.Nombre = txtDetNombre.Text;
-        //        dep.Peso = double.Parse(txtDetPeso.Text);
-        //        dep.Altura = double.Parse(txtDetAltura.Text);
-        //        dep.Dni = int.Parse(txtDetDNI.Text);
-        //        dep.Nacimiento = dtpDetNacimiento.Value;
-        //        dep.IdCategoria = (int)cboDetCategoria.SelectedValue;
-        //        dep.IdDeporte = (int)cboDetDeporte.SelectedValue;
-        //        dep.IdEquipo = (int)cboDetEquipo.SelectedValue;
-        //        dep.Sexo = cboDetSexo.SelectedIndex;
-
-        //        if (nuevo)
-        //        {
-        //            dep.Borrado = 0;
-
-        //            if (dep.grabar())
-        //            {
-        //                lDeportistas = Deportista.buscarDeportistas();
-        //                filtrar();
-        //                MessageBox.Show("Deportista grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //            else
-        //                MessageBox.Show("Error al grabar deportista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            nuevo = false;
-        //        }
-        //        else
-        //        {
-        //            if (dep.actualizar())
-        //            {
-        //                lDeportistas = Deportista.buscarDeportistas();
-        //                filtrar();
-        //                MessageBox.Show("Deportista actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //            else
-        //                MessageBox.Show("Error al actualizar deportista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //        toggleState();
-        //    }
-        //    else
-        //        MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //}
-
-        //private void btnCancelar_Click(object sender, EventArgs e)
-        //{
-        //    toggleState();
-        //    grdDeportistas.ClearSelection();
-        //}
-
-        //private bool validarCampos()
-        //{
-        //    if (txtDetNombre.Text == "") return false;
-        //    if (txtDetApellido.Text == "") return false;
-        //    if (txtDetPeso.Text == "") return false;
-        //    if (txtDetAltura.Text == "") return false;
-        //    if (txtDetDNI.Text == "") return false;
-        //    if (cboDetDeporte.SelectedIndex == -1) return false;
-        //    if (cboDetEquipo.SelectedIndex == -1) return false;
-        //    if (cboDetSexo.SelectedIndex == -1) return false;
-        //    if (cboDetCategoria.SelectedIndex == -1) return false;
-        //    return true;
-        //}
+        private bool validarCampos()
+        {
+            if (txtDetNombre.Text == "") return false;
+            if (txtDetLocalidad.Text == "") return false;
+            if (txtDetEntrenador.Text == "") return false;
+            return true;
+        }
 
     }
 }

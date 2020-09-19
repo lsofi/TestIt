@@ -12,10 +12,13 @@ public class DataManager
     public DataManager()
     {
         dbConnection = new SqlConnection();
-       // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
-       // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
-        dbConnection.ConnectionString = @"Data Source=DESKTOP-M3UHIIV\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
-            }
+        // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
+        // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
+
+        string guada = @"Data Source=DESKTOP-M3UHIIV\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
+        string joaco = @"Data Source=ASUSVBS15\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
+        dbConnection.ConnectionString = joaco;
+    }
 
     public void BeginTransaction()
     {

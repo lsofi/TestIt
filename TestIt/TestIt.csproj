@@ -49,6 +49,7 @@
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\DeportistaDao.cs" />
+    <Compile Include="Datos\EquipoDao.cs" />
     <Compile Include="Formularios\ctrlCampo.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -81,6 +82,7 @@
       <DependentUpon>ctrlEquipo.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Deportista.cs" />
+    <Compile Include="Logica\Equipo.cs" />
     <Compile Include="Logica\Usuario.cs" />
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
