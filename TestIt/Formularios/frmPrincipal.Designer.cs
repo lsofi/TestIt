@@ -33,9 +33,12 @@
             this.btnMinimizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
-            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnCategoria = new System.Windows.Forms.Button();
+            this.btnEquipos = new System.Windows.Forms.Button();
             this.btnDeportistas = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnDeportes = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -94,6 +97,9 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.Controls.Add(this.btnDeportes);
+            this.panelMenuVertical.Controls.Add(this.btnCategoria);
+            this.panelMenuVertical.Controls.Add(this.btnEquipos);
             this.panelMenuVertical.Controls.Add(this.imgLogo);
             this.panelMenuVertical.Controls.Add(this.btnDeportistas);
             this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
@@ -102,15 +108,35 @@
             this.panelMenuVertical.Size = new System.Drawing.Size(233, 677);
             this.panelMenuVertical.TabIndex = 1;
             // 
-            // imgLogo
+            // btnCategoria
             // 
-            this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
-            this.imgLogo.Location = new System.Drawing.Point(68, 40);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
-            this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(101, 89);
-            this.imgLogo.TabIndex = 1;
-            this.imgLogo.TabStop = false;
+            this.btnCategoria.FlatAppearance.BorderSize = 0;
+            this.btnCategoria.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCategoria.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCategoria.ForeColor = System.Drawing.Color.LightGray;
+            this.btnCategoria.Location = new System.Drawing.Point(3, 240);
+            this.btnCategoria.Name = "btnCategoria";
+            this.btnCategoria.Size = new System.Drawing.Size(224, 32);
+            this.btnCategoria.TabIndex = 2;
+            this.btnCategoria.Text = "Categorías";
+            this.btnCategoria.UseVisualStyleBackColor = true;
+            this.btnCategoria.Click += new System.EventHandler(this.btnCategoria_Click);
+            // 
+            // btnEquipos
+            // 
+            this.btnEquipos.FlatAppearance.BorderSize = 0;
+            this.btnEquipos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEquipos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEquipos.ForeColor = System.Drawing.Color.LightGray;
+            this.btnEquipos.Location = new System.Drawing.Point(3, 202);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(224, 32);
+            this.btnEquipos.TabIndex = 1;
+            this.btnEquipos.Text = "Equipos";
+            this.btnEquipos.UseVisualStyleBackColor = true;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
             // 
             // btnDeportistas
             // 
@@ -135,6 +161,30 @@
             this.panelContenedor.Name = "panelContenedor";
             this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // imgLogo
+            // 
+            this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
+            this.imgLogo.Location = new System.Drawing.Point(68, 40);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(101, 89);
+            this.imgLogo.TabIndex = 1;
+            this.imgLogo.TabStop = false;
+            // 
+            // btnDeportes
+            // 
+            this.btnDeportes.FlatAppearance.BorderSize = 0;
+            this.btnDeportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnDeportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeportes.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeportes.ForeColor = System.Drawing.Color.LightGray;
+            this.btnDeportes.Location = new System.Drawing.Point(3, 278);
+            this.btnDeportes.Name = "btnDeportes";
+            this.btnDeportes.Size = new System.Drawing.Size(224, 32);
+            this.btnDeportes.TabIndex = 3;
+            this.btnDeportes.Text = "Deportes";
+            this.btnDeportes.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 
@@ -169,5 +219,8 @@
         private System.Windows.Forms.Button btnDeportistas;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Label lblBienvenido;
+        private System.Windows.Forms.Button btnEquipos;
+        private System.Windows.Forms.Button btnCategoria;
+        private System.Windows.Forms.Button btnDeportes;
     }
 }

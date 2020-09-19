@@ -14,7 +14,7 @@ public class DataManager
         dbConnection = new SqlConnection();
        // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
        // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
-        dbConnection.ConnectionString = @"Data Source=ASUSVBS15\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
+        dbConnection.ConnectionString = @"Data Source=DESKTOP-M3UHIIV\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
             }
 
     public void BeginTransaction()

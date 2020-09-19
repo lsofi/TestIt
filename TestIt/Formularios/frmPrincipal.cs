@@ -12,6 +12,12 @@ namespace TestIt.Formularios
 {
     public partial class frmPrincipal : Form
     {
+
+        ctrlDeportistas ctrlDeportistas;
+        ctrlEquipo ctrlEquipo;
+        ctrlCategoria ctrlCategoria;
+        ctrlDeporte ctrlDeporte;
+
         public frmPrincipal()
         {
             InitializeComponent();
@@ -24,7 +30,10 @@ namespace TestIt.Formularios
 
         private void frmPrincipal_Load(object sender, EventArgs e)
         {
-        
+            ctrlDeportistas = new ctrlDeportistas();
+            ctrlEquipo = new ctrlEquipo();
+            ctrlCategoria = new ctrlCategoria();
+            ctrlDeporte = new ctrlDeporte();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -35,13 +44,25 @@ namespace TestIt.Formularios
 
         private void btnDeportistas_Click(object sender, EventArgs e)
         {
-            ctrlDeportistas ctrlDeportistas = new ctrlDeportistas();
+            panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlDeportistas);
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void btnCategoria_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlCategoria);
+        }
+
+        private void btnEquipos_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlEquipo);
         }
     }
 }
