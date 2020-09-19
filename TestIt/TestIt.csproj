@@ -49,6 +49,12 @@
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\DeportistaDao.cs" />
+    <Compile Include="Formularios\ctrlCampo.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlCampo.designer.cs">
+      <DependentUpon>ctrlCampo.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ctrlCategoria.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -91,6 +97,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soporte\Combo.cs" />
+    <EmbeddedResource Include="Formularios\ctrlCampo.resx">
+      <DependentUpon>ctrlCampo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ctrlCategoria.resx">
       <DependentUpon>ctrlCategoria.cs</DependentUpon>
     </EmbeddedResource>

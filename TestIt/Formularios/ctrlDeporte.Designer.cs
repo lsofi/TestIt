@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlCategoria));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDeporte));
             this.grdCategoría = new System.Windows.Forms.DataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -41,15 +41,11 @@
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.txtNombreDet = new System.Windows.Forms.TextBox();
             this.lblNombreDet = new System.Windows.Forms.Label();
-            this.grpCategoria = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.lbEdadMinDet = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.lblEdadMaxDet = new System.Windows.Forms.Label();
+            this.grpDeporte = new System.Windows.Forms.GroupBox();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCategoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).BeginInit();
-            this.grpCategoria.SuspendLayout();
+            this.grpDeporte.SuspendLayout();
             this.SuspendLayout();
             // 
             // grdCategoría
@@ -72,7 +68,7 @@
             this.grdCategoría.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCategoría.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
-            this.colCategoria});
+            this.colDeporte});
             this.grdCategoría.Location = new System.Drawing.Point(37, 47);
             this.grdCategoría.Margin = new System.Windows.Forms.Padding(4);
             this.grdCategoría.MultiSelect = false;
@@ -94,7 +90,7 @@
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Image = global::TestIt.Properties.Resources._032_cancel__Personalizado_;
-            this.btnCancelar.Location = new System.Drawing.Point(795, 409);
+            this.btnCancelar.Location = new System.Drawing.Point(792, 287);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(45, 40);
             this.btnCancelar.TabIndex = 13;
@@ -105,7 +101,7 @@
             // 
             this.btnAceptar.Enabled = false;
             this.btnAceptar.Image = global::TestIt.Properties.Resources._008_tick__Personalizado_;
-            this.btnAceptar.Location = new System.Drawing.Point(729, 409);
+            this.btnAceptar.Location = new System.Drawing.Point(726, 287);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(45, 40);
             this.btnAceptar.TabIndex = 12;
@@ -115,7 +111,7 @@
             // btnEliminar
             // 
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(541, 409);
+            this.btnEliminar.Location = new System.Drawing.Point(538, 287);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(45, 40);
             this.btnEliminar.TabIndex = 11;
@@ -125,7 +121,7 @@
             // btnEditar
             // 
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(476, 409);
+            this.btnEditar.Location = new System.Drawing.Point(473, 287);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(45, 40);
             this.btnEditar.TabIndex = 10;
@@ -135,7 +131,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(410, 409);
+            this.btnAgregar.Location = new System.Drawing.Point(407, 287);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(45, 40);
             this.btnAgregar.TabIndex = 9;
@@ -162,64 +158,20 @@
             this.lblNombreDet.TabIndex = 7;
             this.lblNombreDet.Text = "Nombre:";
             // 
-            // grpCategoria
+            // grpDeporte
             // 
-            this.grpCategoria.Controls.Add(this.textBox4);
-            this.grpCategoria.Controls.Add(this.lbEdadMinDet);
-            this.grpCategoria.Controls.Add(this.textBox3);
-            this.grpCategoria.Controls.Add(this.lblEdadMaxDet);
-            this.grpCategoria.Controls.Add(this.txtNombreDet);
-            this.grpCategoria.Controls.Add(this.lblNombreDet);
-            this.grpCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCategoria.ForeColor = System.Drawing.Color.LightGray;
-            this.grpCategoria.Location = new System.Drawing.Point(407, 139);
-            this.grpCategoria.Margin = new System.Windows.Forms.Padding(4);
-            this.grpCategoria.Name = "grpCategoria";
-            this.grpCategoria.Padding = new System.Windows.Forms.Padding(4);
-            this.grpCategoria.Size = new System.Drawing.Size(433, 219);
-            this.grpCategoria.TabIndex = 14;
-            this.grpCategoria.TabStop = false;
-            this.grpCategoria.Text = "Categoría";
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox4.Location = new System.Drawing.Point(148, 152);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(197, 23);
-            this.textBox4.TabIndex = 13;
-            // 
-            // lbEdadMinDet
-            // 
-            this.lbEdadMinDet.AutoSize = true;
-            this.lbEdadMinDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbEdadMinDet.Location = new System.Drawing.Point(31, 156);
-            this.lbEdadMinDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lbEdadMinDet.Name = "lbEdadMinDet";
-            this.lbEdadMinDet.Size = new System.Drawing.Size(99, 17);
-            this.lbEdadMinDet.TabIndex = 12;
-            this.lbEdadMinDet.Text = "Edad mínima:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox3.Location = new System.Drawing.Point(148, 96);
-            this.textBox3.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(197, 23);
-            this.textBox3.TabIndex = 11;
-            // 
-            // lblEdadMaxDet
-            // 
-            this.lblEdadMaxDet.AutoSize = true;
-            this.lblEdadMaxDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdadMaxDet.Location = new System.Drawing.Point(27, 100);
-            this.lblEdadMaxDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEdadMaxDet.Name = "lblEdadMaxDet";
-            this.lblEdadMaxDet.Size = new System.Drawing.Size(103, 17);
-            this.lblEdadMaxDet.TabIndex = 10;
-            this.lblEdadMaxDet.Text = "Edad máxima:";
+            this.grpDeporte.Controls.Add(this.txtNombreDet);
+            this.grpDeporte.Controls.Add(this.lblNombreDet);
+            this.grpDeporte.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpDeporte.ForeColor = System.Drawing.Color.LightGray;
+            this.grpDeporte.Location = new System.Drawing.Point(407, 139);
+            this.grpDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.grpDeporte.Name = "grpDeporte";
+            this.grpDeporte.Padding = new System.Windows.Forms.Padding(4);
+            this.grpDeporte.Size = new System.Drawing.Size(433, 104);
+            this.grpDeporte.TabIndex = 14;
+            this.grpDeporte.TabStop = false;
+            this.grpDeporte.Text = "Deporte";
             // 
             // colId
             // 
@@ -228,19 +180,19 @@
             this.colId.ReadOnly = true;
             this.colId.Visible = false;
             // 
-            // colCategoria
+            // colDeporte
             // 
-            this.colCategoria.HeaderText = "Categoría";
-            this.colCategoria.MinimumWidth = 6;
-            this.colCategoria.Name = "colCategoria";
-            this.colCategoria.ReadOnly = true;
+            this.colDeporte.HeaderText = "Deporte";
+            this.colDeporte.MinimumWidth = 6;
+            this.colDeporte.Name = "colDeporte";
+            this.colDeporte.ReadOnly = true;
             // 
-            // ctrlCategoria
+            // ctrlDeporte
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.grpCategoria);
+            this.Controls.Add(this.grpDeporte);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnEliminar);
@@ -249,11 +201,11 @@
             this.Controls.Add(this.grdCategoría);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ctrlCategoria";
+            this.Name = "ctrlDeporte";
             this.Size = new System.Drawing.Size(1047, 677);
             ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).EndInit();
-            this.grpCategoria.ResumeLayout(false);
-            this.grpCategoria.PerformLayout();
+            this.grpDeporte.ResumeLayout(false);
+            this.grpDeporte.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -269,12 +221,8 @@
         private System.Windows.Forms.ToolTip toolTip;
         private System.Windows.Forms.TextBox txtNombreDet;
         private System.Windows.Forms.Label lblNombreDet;
-        private System.Windows.Forms.GroupBox grpCategoria;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label lbEdadMinDet;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label lblEdadMaxDet;
+        private System.Windows.Forms.GroupBox grpDeporte;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCategoria;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeporte;
     }
 }

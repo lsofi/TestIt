@@ -17,6 +17,7 @@ namespace TestIt.Formularios
         ctrlEquipo ctrlEquipo;
         ctrlCategoria ctrlCategoria;
         ctrlDeporte ctrlDeporte;
+        ctrlCampo ctrlCampo;
 
         public frmPrincipal()
         {
@@ -34,6 +35,7 @@ namespace TestIt.Formularios
             ctrlEquipo = new ctrlEquipo();
             ctrlCategoria = new ctrlCategoria();
             ctrlDeporte = new ctrlDeporte();
+            ctrlCampo = new ctrlCampo();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -63,6 +65,18 @@ namespace TestIt.Formularios
         {
             panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlEquipo);
+        }
+
+        private void btnCampos_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlCampo);
+        }
+
+        private void btnDeportes_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlDeporte);
         }
     }
 }
