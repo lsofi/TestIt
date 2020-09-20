@@ -13,7 +13,7 @@ namespace TestIt.Datos
 
         private DBHelper()
         {
-            string_conexion = @"Data Source=DESKTOP-M3UHIIV\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
+            string_conexion = @"Data Source=DESKTOP-F1HR73L\SQLEXPRESS;Initial Catalog=Testit;Integrated Security=True";
         }
 
         public static DBHelper GetDBHelper()
