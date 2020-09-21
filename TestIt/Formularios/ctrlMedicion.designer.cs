@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMedicion));
             this.grdMediciones = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,18 +66,26 @@
             this.grdMediciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdMediciones.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdMediciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdMediciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMediciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colMedicion});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdMediciones.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdMediciones.Location = new System.Drawing.Point(37, 47);
             this.grdMediciones.Margin = new System.Windows.Forms.Padding(4);
             this.grdMediciones.MultiSelect = false;
@@ -109,7 +118,7 @@
             this.grpFiltros.Controls.Add(this.lblNombre);
             this.grpFiltros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltros.ForeColor = System.Drawing.Color.LightGray;
-            this.grpFiltros.Location = new System.Drawing.Point(402, 47);
+            this.grpFiltros.Location = new System.Drawing.Point(425, 55);
             this.grpFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.grpFiltros.Name = "grpFiltros";
             this.grpFiltros.Padding = new System.Windows.Forms.Padding(4);
@@ -149,7 +158,7 @@
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Image = global::TestIt.Properties.Resources._032_cancel__Personalizado_;
-            this.btnCancelar.Location = new System.Drawing.Point(787, 544);
+            this.btnCancelar.Location = new System.Drawing.Point(810, 552);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(45, 40);
             this.btnCancelar.TabIndex = 13;
@@ -161,7 +170,7 @@
             // 
             this.btnAceptar.Enabled = false;
             this.btnAceptar.Image = global::TestIt.Properties.Resources._008_tick__Personalizado_;
-            this.btnAceptar.Location = new System.Drawing.Point(721, 544);
+            this.btnAceptar.Location = new System.Drawing.Point(744, 552);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(45, 40);
             this.btnAceptar.TabIndex = 12;
@@ -171,8 +180,9 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(533, 544);
+            this.btnEliminar.Location = new System.Drawing.Point(556, 552);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(45, 40);
             this.btnEliminar.TabIndex = 11;
@@ -182,8 +192,9 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Enabled = false;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(468, 544);
+            this.btnEditar.Location = new System.Drawing.Point(491, 552);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(45, 40);
             this.btnEditar.TabIndex = 10;
@@ -194,7 +205,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(402, 544);
+            this.btnAgregar.Location = new System.Drawing.Point(425, 552);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(45, 40);
             this.btnAgregar.TabIndex = 9;
@@ -205,6 +216,7 @@
             // txtDetNombre
             // 
             this.txtDetNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetNombre.Enabled = false;
             this.txtDetNombre.Location = new System.Drawing.Point(148, 41);
             this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetNombre.MaxLength = 20;
@@ -233,7 +245,7 @@
             this.grpMedicion.Controls.Add(this.lblNombreDet);
             this.grpMedicion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpMedicion.ForeColor = System.Drawing.Color.LightGray;
-            this.grpMedicion.Location = new System.Drawing.Point(402, 211);
+            this.grpMedicion.Location = new System.Drawing.Point(425, 219);
             this.grpMedicion.Margin = new System.Windows.Forms.Padding(4);
             this.grpMedicion.Name = "grpMedicion";
             this.grpMedicion.Padding = new System.Windows.Forms.Padding(4);
@@ -245,6 +257,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDescripcion.Enabled = false;
             this.txtDescripcion.Location = new System.Drawing.Point(148, 152);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.MaxLength = 100;
@@ -267,6 +280,7 @@
             // txtUnidad
             // 
             this.txtUnidad.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtUnidad.Enabled = false;
             this.txtUnidad.Location = new System.Drawing.Point(148, 96);
             this.txtUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnidad.MaxLength = 20;

@@ -20,7 +20,7 @@ public class DataManager
         string angie = @"Data Source=(LocalDB)\v11.0;Initial Catalog=TestIt;Integrated Security=True";
         string sofi = @"Data Source=DESKTOP-F1HR73L\SQLEXPRESS;Initial Catalog=Testit;Integrated Security=True";
 
-        dbConnection.ConnectionString = sofi;
+        dbConnection.ConnectionString = joaco;
     }
 
     public void BeginTransaction()

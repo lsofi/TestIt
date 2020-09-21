@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlCategoria));
             this.grdCategoría = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -61,18 +62,26 @@
             this.grdCategoría.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdCategoría.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdCategoría.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCategoría.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdCategoría.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.grdCategoría.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdCategoría.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colCategoria});
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.grdCategoría.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdCategoría.Location = new System.Drawing.Point(37, 47);
             this.grdCategoría.Margin = new System.Windows.Forms.Padding(4);
             this.grdCategoría.MultiSelect = false;
@@ -109,7 +118,7 @@
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Image = global::TestIt.Properties.Resources._032_cancel__Personalizado_;
-            this.btnCancelar.Location = new System.Drawing.Point(795, 409);
+            this.btnCancelar.Location = new System.Drawing.Point(821, 443);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(45, 40);
             this.btnCancelar.TabIndex = 13;
@@ -121,7 +130,7 @@
             // 
             this.btnAceptar.Enabled = false;
             this.btnAceptar.Image = global::TestIt.Properties.Resources._008_tick__Personalizado_;
-            this.btnAceptar.Location = new System.Drawing.Point(729, 409);
+            this.btnAceptar.Location = new System.Drawing.Point(755, 443);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(45, 40);
             this.btnAceptar.TabIndex = 12;
@@ -131,8 +140,9 @@
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Enabled = false;
             this.btnEliminar.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminar.Image")));
-            this.btnEliminar.Location = new System.Drawing.Point(541, 409);
+            this.btnEliminar.Location = new System.Drawing.Point(567, 443);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(45, 40);
             this.btnEliminar.TabIndex = 11;
@@ -142,8 +152,9 @@
             // 
             // btnEditar
             // 
+            this.btnEditar.Enabled = false;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(476, 409);
+            this.btnEditar.Location = new System.Drawing.Point(502, 443);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(45, 40);
             this.btnEditar.TabIndex = 10;
@@ -154,7 +165,7 @@
             // btnAgregar
             // 
             this.btnAgregar.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregar.Image")));
-            this.btnAgregar.Location = new System.Drawing.Point(410, 409);
+            this.btnAgregar.Location = new System.Drawing.Point(436, 443);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(45, 40);
             this.btnAgregar.TabIndex = 9;
@@ -165,6 +176,7 @@
             // txtNombreDet
             // 
             this.txtNombreDet.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNombreDet.Enabled = false;
             this.txtNombreDet.Location = new System.Drawing.Point(148, 41);
             this.txtNombreDet.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreDet.Name = "txtNombreDet";
@@ -192,7 +204,7 @@
             this.grpCategoria.Controls.Add(this.lblNombreDet);
             this.grpCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpCategoria.ForeColor = System.Drawing.Color.LightGray;
-            this.grpCategoria.Location = new System.Drawing.Point(407, 139);
+            this.grpCategoria.Location = new System.Drawing.Point(433, 173);
             this.grpCategoria.Margin = new System.Windows.Forms.Padding(4);
             this.grpCategoria.Name = "grpCategoria";
             this.grpCategoria.Padding = new System.Windows.Forms.Padding(4);
@@ -204,6 +216,7 @@
             // txtEdadMinDet
             // 
             this.txtEdadMinDet.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEdadMinDet.Enabled = false;
             this.txtEdadMinDet.Location = new System.Drawing.Point(148, 152);
             this.txtEdadMinDet.Margin = new System.Windows.Forms.Padding(4);
             this.txtEdadMinDet.Name = "txtEdadMinDet";
@@ -224,6 +237,7 @@
             // txtEdadMaxDet
             // 
             this.txtEdadMaxDet.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtEdadMaxDet.Enabled = false;
             this.txtEdadMaxDet.Location = new System.Drawing.Point(148, 96);
             this.txtEdadMaxDet.Margin = new System.Windows.Forms.Padding(4);
             this.txtEdadMaxDet.Name = "txtEdadMaxDet";

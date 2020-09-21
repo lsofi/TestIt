@@ -56,32 +56,32 @@ namespace TestIt.Formularios
             comboOk = true;
         }
 
-        private void toggleState()
+        private void toggleState(bool state)
         {
-            btnAceptar.Enabled = !btnAceptar.Enabled;
-            btnCancelar.Enabled = !btnCancelar.Enabled;
-            btnAgregar.Enabled = !btnAgregar.Enabled;
-            btnEditar.Enabled = !btnEditar.Enabled;
-            btnEliminar.Enabled = !btnEliminar.Enabled;
-            btnLimpiar.Enabled = !btnLimpiar.Enabled;
+            btnAceptar.Enabled = state;
+            btnCancelar.Enabled = state;
+            btnAgregar.Enabled = state;
+            btnEditar.Enabled = !state;
+            btnEliminar.Enabled = !state;
+            btnLimpiar.Enabled = !state;
 
-            txtApellido.Enabled = !txtApellido.Enabled;
-            cboCategoria.Enabled = !cboCategoria.Enabled;
-            cboDeporte.Enabled = !cboDeporte.Enabled;
-            cboEquipo.Enabled = !cboEquipo.Enabled;
+            txtApellido.Enabled = !state;
+            cboCategoria.Enabled = !state;
+            cboDeporte.Enabled = !state;
+            cboEquipo.Enabled = !state;
 
-            txtDetNombre.Enabled = !txtDetNombre.Enabled;
-            txtDetApellido.Enabled = !txtDetApellido.Enabled;
-            cboDetSexo.Enabled = !cboDetSexo.Enabled;
-            dtpDetNacimiento.Enabled = !dtpDetNacimiento.Enabled;
-            txtDetDNI.Enabled = !txtDetDNI.Enabled;
-            cboDetDeporte.Enabled = !cboDetDeporte.Enabled;
-            txtDetAltura.Enabled = !txtDetAltura.Enabled;
-            cboDetEquipo.Enabled = !cboDetEquipo.Enabled;
-            txtDetPeso.Enabled = !txtDetPeso.Enabled;
-            cboDetCategoria.Enabled = !cboDetCategoria.Enabled;
+            txtDetNombre.Enabled = state;
+            txtDetApellido.Enabled = state;
+            cboDetSexo.Enabled = state;
+            dtpDetNacimiento.Enabled = state;
+            txtDetDNI.Enabled = state;
+            cboDetDeporte.Enabled = state;
+            txtDetAltura.Enabled = state;
+            cboDetEquipo.Enabled = state;
+            txtDetPeso.Enabled = state;
+            cboDetCategoria.Enabled = state;
 
-            grdDeportistas.Enabled = !grdDeportistas.Enabled;
+            grdDeportistas.Enabled = !state;
         }
 
         private void grdDeportistas_SelectionChanged(object sender, EventArgs e)
@@ -106,7 +106,10 @@ namespace TestIt.Formularios
             cboDetEquipo.SelectedValue = dep.IdEquipo;
             dtpDetNacimiento.Value = dep.Nacimiento;
             if (comboOk)
-                cboDetSexo.SelectedIndex = dep.Sexo;  
+                cboDetSexo.SelectedIndex = dep.Sexo;
+
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
         }
 
         private void limpiarCampos()
@@ -121,6 +124,9 @@ namespace TestIt.Formularios
             cboDetEquipo.SelectedIndex = -1;
             cboDetSexo.SelectedIndex = -1;
             dtpDetNacimiento.Value = DateTime.Today;
+
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
             
         }
 
@@ -182,12 +188,12 @@ namespace TestIt.Formularios
         {
             nuevo = true;
             grdDeportistas.ClearSelection();
-            toggleState(); 
+            toggleState(true); 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            toggleState();
+            toggleState(true);
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
@@ -249,7 +255,7 @@ namespace TestIt.Formularios
                     else
                         MessageBox.Show("Error al actualizar deportista", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                toggleState();
+                toggleState(false);
             }
             else
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -257,7 +263,7 @@ namespace TestIt.Formularios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            toggleState();
+            toggleState(false);
             grdDeportistas.ClearSelection();
         }
 
