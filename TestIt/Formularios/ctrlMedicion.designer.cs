@@ -1,6 +1,6 @@
 ﻿namespace TestIt.Formularios
 {
-    partial class ctrlCampo
+    partial class ctrlMedicion
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -30,8 +30,10 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlCampo));
-            this.grdDeportistas = new System.Windows.Forms.DataGridView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMedicion));
+            this.grdMediciones = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMedicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -42,29 +44,27 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtDetNombre = new System.Windows.Forms.TextBox();
             this.lblNombreDet = new System.Windows.Forms.Label();
-            this.grpCampo = new System.Windows.Forms.GroupBox();
+            this.grpMedicion = new System.Windows.Forms.GroupBox();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.lblDescripcionDet = new System.Windows.Forms.Label();
             this.txtUnidad = new System.Windows.Forms.TextBox();
             this.lblUnidadDet = new System.Windows.Forms.Label();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colCampo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdDeportistas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdMediciones)).BeginInit();
             this.grpFiltros.SuspendLayout();
-            this.grpCampo.SuspendLayout();
+            this.grpMedicion.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grdDeportistas
+            // grdMediciones
             // 
-            this.grdDeportistas.AllowUserToAddRows = false;
-            this.grdDeportistas.AllowUserToDeleteRows = false;
-            this.grdDeportistas.AllowUserToResizeColumns = false;
-            this.grdDeportistas.AllowUserToResizeRows = false;
-            this.grdDeportistas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdDeportistas.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.grdDeportistas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grdMediciones.AllowUserToAddRows = false;
+            this.grdMediciones.AllowUserToDeleteRows = false;
+            this.grdMediciones.AllowUserToResizeColumns = false;
+            this.grdMediciones.AllowUserToResizeRows = false;
+            this.grdMediciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdMediciones.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.grdMediciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -72,21 +72,36 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdDeportistas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdDeportistas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdDeportistas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdMediciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdMediciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
-            this.colCampo});
-            this.grdDeportistas.Location = new System.Drawing.Point(37, 47);
-            this.grdDeportistas.Margin = new System.Windows.Forms.Padding(4);
-            this.grdDeportistas.MultiSelect = false;
-            this.grdDeportistas.Name = "grdDeportistas";
-            this.grdDeportistas.ReadOnly = true;
-            this.grdDeportistas.RowHeadersVisible = false;
-            this.grdDeportistas.RowHeadersWidth = 51;
-            this.grdDeportistas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdDeportistas.Size = new System.Drawing.Size(242, 582);
-            this.grdDeportistas.TabIndex = 3;
+            this.colMedicion});
+            this.grdMediciones.Location = new System.Drawing.Point(37, 47);
+            this.grdMediciones.Margin = new System.Windows.Forms.Padding(4);
+            this.grdMediciones.MultiSelect = false;
+            this.grdMediciones.Name = "grdMediciones";
+            this.grdMediciones.ReadOnly = true;
+            this.grdMediciones.RowHeadersVisible = false;
+            this.grdMediciones.RowHeadersWidth = 51;
+            this.grdMediciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdMediciones.Size = new System.Drawing.Size(242, 582);
+            this.grdMediciones.TabIndex = 3;
+            this.grdMediciones.SelectionChanged += new System.EventHandler(this.grdMediciones_SelectionChanged);
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colMedicion
+            // 
+            this.colMedicion.HeaderText = "Medicion";
+            this.colMedicion.MinimumWidth = 6;
+            this.colMedicion.Name = "colMedicion";
+            this.colMedicion.ReadOnly = true;
             // 
             // grpFiltros
             // 
@@ -111,6 +126,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(197, 23);
             this.txtNombre.TabIndex = 9;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // lblNombre
             // 
@@ -139,6 +155,7 @@
             this.btnCancelar.TabIndex = 13;
             this.toolTip.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -150,6 +167,7 @@
             this.btnAceptar.TabIndex = 12;
             this.toolTip.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnEliminar
             // 
@@ -160,6 +178,7 @@
             this.btnEliminar.TabIndex = 11;
             this.toolTip.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -170,6 +189,7 @@
             this.btnEditar.TabIndex = 10;
             this.toolTip.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -180,15 +200,17 @@
             this.btnAgregar.TabIndex = 9;
             this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // textBox1
+            // txtDetNombre
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Location = new System.Drawing.Point(148, 41);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 23);
-            this.textBox1.TabIndex = 9;
+            this.txtDetNombre.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtDetNombre.Location = new System.Drawing.Point(148, 41);
+            this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDetNombre.MaxLength = 20;
+            this.txtDetNombre.Name = "txtDetNombre";
+            this.txtDetNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtDetNombre.TabIndex = 9;
             // 
             // lblNombreDet
             // 
@@ -201,30 +223,31 @@
             this.lblNombreDet.TabIndex = 7;
             this.lblNombreDet.Text = "Nombre:";
             // 
-            // grpCampo
+            // grpMedicion
             // 
-            this.grpCampo.Controls.Add(this.txtDescripcion);
-            this.grpCampo.Controls.Add(this.lblDescripcionDet);
-            this.grpCampo.Controls.Add(this.txtUnidad);
-            this.grpCampo.Controls.Add(this.lblUnidadDet);
-            this.grpCampo.Controls.Add(this.textBox1);
-            this.grpCampo.Controls.Add(this.lblNombreDet);
-            this.grpCampo.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpCampo.ForeColor = System.Drawing.Color.LightGray;
-            this.grpCampo.Location = new System.Drawing.Point(402, 211);
-            this.grpCampo.Margin = new System.Windows.Forms.Padding(4);
-            this.grpCampo.Name = "grpCampo";
-            this.grpCampo.Padding = new System.Windows.Forms.Padding(4);
-            this.grpCampo.Size = new System.Drawing.Size(433, 263);
-            this.grpCampo.TabIndex = 14;
-            this.grpCampo.TabStop = false;
-            this.grpCampo.Text = "Campo";
+            this.grpMedicion.Controls.Add(this.txtDescripcion);
+            this.grpMedicion.Controls.Add(this.lblDescripcionDet);
+            this.grpMedicion.Controls.Add(this.txtUnidad);
+            this.grpMedicion.Controls.Add(this.lblUnidadDet);
+            this.grpMedicion.Controls.Add(this.txtDetNombre);
+            this.grpMedicion.Controls.Add(this.lblNombreDet);
+            this.grpMedicion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpMedicion.ForeColor = System.Drawing.Color.LightGray;
+            this.grpMedicion.Location = new System.Drawing.Point(402, 211);
+            this.grpMedicion.Margin = new System.Windows.Forms.Padding(4);
+            this.grpMedicion.Name = "grpMedicion";
+            this.grpMedicion.Padding = new System.Windows.Forms.Padding(4);
+            this.grpMedicion.Size = new System.Drawing.Size(433, 263);
+            this.grpMedicion.TabIndex = 14;
+            this.grpMedicion.TabStop = false;
+            this.grpMedicion.Text = "Medicion";
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.BackColor = System.Drawing.SystemColors.Menu;
             this.txtDescripcion.Location = new System.Drawing.Point(148, 152);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
+            this.txtDescripcion.MaxLength = 100;
             this.txtDescripcion.Multiline = true;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(197, 73);
@@ -246,6 +269,7 @@
             this.txtUnidad.BackColor = System.Drawing.SystemColors.Menu;
             this.txtUnidad.Location = new System.Drawing.Point(148, 96);
             this.txtUnidad.Margin = new System.Windows.Forms.Padding(4);
+            this.txtUnidad.MaxLength = 20;
             this.txtUnidad.Name = "txtUnidad";
             this.txtUnidad.Size = new System.Drawing.Size(197, 23);
             this.txtUnidad.TabIndex = 11;
@@ -261,48 +285,35 @@
             this.lblUnidadDet.TabIndex = 10;
             this.lblUnidadDet.Text = "Unidad:";
             // 
-            // colId
-            // 
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colCampo
-            // 
-            this.colCampo.HeaderText = "Campo";
-            this.colCampo.MinimumWidth = 6;
-            this.colCampo.Name = "colCampo";
-            this.colCampo.ReadOnly = true;
-            // 
-            // ctrlCampo
+            // ctrlMedicion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.grpCampo);
+            this.Controls.Add(this.grpMedicion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.grdDeportistas);
+            this.Controls.Add(this.grdMediciones);
             this.Controls.Add(this.grpFiltros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "ctrlCampo";
+            this.Name = "ctrlMedicion";
             this.Size = new System.Drawing.Size(1047, 677);
-            ((System.ComponentModel.ISupportInitialize)(this.grdDeportistas)).EndInit();
+            this.Load += new System.EventHandler(this.ctrlMedicion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdMediciones)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
-            this.grpCampo.ResumeLayout(false);
-            this.grpCampo.PerformLayout();
+            this.grpMedicion.ResumeLayout(false);
+            this.grpMedicion.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdDeportistas;
+        private System.Windows.Forms.DataGridView grdMediciones;
         private System.Windows.Forms.GroupBox grpFiltros;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblNombre;
@@ -313,14 +324,14 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDetNombre;
         private System.Windows.Forms.Label lblNombreDet;
-        private System.Windows.Forms.GroupBox grpCampo;
+        private System.Windows.Forms.GroupBox grpMedicion;
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label lblDescripcionDet;
         private System.Windows.Forms.TextBox txtUnidad;
         private System.Windows.Forms.Label lblUnidadDet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colCampo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMedicion;
     }
 }

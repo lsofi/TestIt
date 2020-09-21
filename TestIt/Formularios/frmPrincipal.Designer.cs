@@ -33,13 +33,13 @@
             this.btnMinimizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
+            this.btnMediciones = new System.Windows.Forms.Button();
             this.btnDeportes = new System.Windows.Forms.Button();
             this.btnCategoria = new System.Windows.Forms.Button();
             this.btnEquipos = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnDeportistas = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.btnCampos = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -98,7 +98,7 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelMenuVertical.Controls.Add(this.btnCampos);
+            this.panelMenuVertical.Controls.Add(this.btnMediciones);
             this.panelMenuVertical.Controls.Add(this.btnDeportes);
             this.panelMenuVertical.Controls.Add(this.btnCategoria);
             this.panelMenuVertical.Controls.Add(this.btnEquipos);
@@ -109,6 +109,21 @@
             this.panelMenuVertical.Name = "panelMenuVertical";
             this.panelMenuVertical.Size = new System.Drawing.Size(233, 677);
             this.panelMenuVertical.TabIndex = 1;
+            // 
+            // btnMediciones
+            // 
+            this.btnMediciones.FlatAppearance.BorderSize = 0;
+            this.btnMediciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnMediciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMediciones.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMediciones.ForeColor = System.Drawing.Color.LightGray;
+            this.btnMediciones.Location = new System.Drawing.Point(3, 316);
+            this.btnMediciones.Name = "btnMediciones";
+            this.btnMediciones.Size = new System.Drawing.Size(224, 32);
+            this.btnMediciones.TabIndex = 4;
+            this.btnMediciones.Text = "Mediciones";
+            this.btnMediciones.UseVisualStyleBackColor = true;
+            this.btnMediciones.Click += new System.EventHandler(this.btnMediciones_Click);
             // 
             // btnDeportes
             // 
@@ -189,21 +204,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
             this.panelContenedor.TabIndex = 2;
             // 
-            // btnCampos
-            // 
-            this.btnCampos.FlatAppearance.BorderSize = 0;
-            this.btnCampos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnCampos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCampos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCampos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCampos.Location = new System.Drawing.Point(3, 316);
-            this.btnCampos.Name = "btnCampos";
-            this.btnCampos.Size = new System.Drawing.Size(224, 32);
-            this.btnCampos.TabIndex = 4;
-            this.btnCampos.Text = "Campos";
-            this.btnCampos.UseVisualStyleBackColor = true;
-            this.btnCampos.Click += new System.EventHandler(this.btnCampos_Click);
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -240,6 +240,6 @@
         private System.Windows.Forms.Button btnEquipos;
         private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.Button btnDeportes;
-        private System.Windows.Forms.Button btnCampos;
+        private System.Windows.Forms.Button btnMediciones;
     }
 }

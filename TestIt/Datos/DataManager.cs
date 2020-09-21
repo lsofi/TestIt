@@ -19,7 +19,7 @@ public class DataManager
         string joaco = @"Data Source=ASUSVBS15\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
         string angie = @"Data Source=(LocalDB)\v11.0;Initial Catalog=TestIt;Integrated Security=True";
 
-        dbConnection.ConnectionString = angie;
+        dbConnection.ConnectionString = guada;
     }
 
     public void BeginTransaction()
