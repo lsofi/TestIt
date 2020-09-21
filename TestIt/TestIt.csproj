@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Datos\DeporteDao.cs" />
     <Compile Include="Datos\CategoriaDao.cs" />
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DBHelper.cs" />
@@ -83,6 +84,7 @@
     <Compile Include="Formularios\ctrlEquipo.designer.cs">
       <DependentUpon>ctrlEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logica\Deporte.cs" />
     <Compile Include="Logica\Categoria.cs" />
     <Compile Include="Logica\Deportista.cs" />
     <Compile Include="Logica\Equipo.cs" />

@@ -31,7 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDeporte));
-            this.grdCategoría = new System.Windows.Forms.DataGridView();
+            this.grdDeporte = new System.Windows.Forms.DataGridView();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
@@ -42,21 +44,19 @@
             this.txtNombreDet = new System.Windows.Forms.TextBox();
             this.lblNombreDet = new System.Windows.Forms.Label();
             this.grpDeporte = new System.Windows.Forms.GroupBox();
-            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colDeporte = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.grdDeporte)).BeginInit();
             this.grpDeporte.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grdCategoría
+            // grdDeporte
             // 
-            this.grdCategoría.AllowUserToAddRows = false;
-            this.grdCategoría.AllowUserToDeleteRows = false;
-            this.grdCategoría.AllowUserToResizeColumns = false;
-            this.grdCategoría.AllowUserToResizeRows = false;
-            this.grdCategoría.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdCategoría.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.grdCategoría.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            this.grdDeporte.AllowUserToAddRows = false;
+            this.grdDeporte.AllowUserToDeleteRows = false;
+            this.grdDeporte.AllowUserToResizeColumns = false;
+            this.grdDeporte.AllowUserToResizeRows = false;
+            this.grdDeporte.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdDeporte.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.grdDeporte.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -64,21 +64,35 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdCategoría.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdCategoría.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdCategoría.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdDeporte.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.grdDeporte.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdDeporte.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colDeporte});
-            this.grdCategoría.Location = new System.Drawing.Point(37, 47);
-            this.grdCategoría.Margin = new System.Windows.Forms.Padding(4);
-            this.grdCategoría.MultiSelect = false;
-            this.grdCategoría.Name = "grdCategoría";
-            this.grdCategoría.ReadOnly = true;
-            this.grdCategoría.RowHeadersVisible = false;
-            this.grdCategoría.RowHeadersWidth = 51;
-            this.grdCategoría.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdCategoría.Size = new System.Drawing.Size(242, 582);
-            this.grdCategoría.TabIndex = 3;
+            this.grdDeporte.Location = new System.Drawing.Point(37, 47);
+            this.grdDeporte.Margin = new System.Windows.Forms.Padding(4);
+            this.grdDeporte.MultiSelect = false;
+            this.grdDeporte.Name = "grdDeporte";
+            this.grdDeporte.ReadOnly = true;
+            this.grdDeporte.RowHeadersVisible = false;
+            this.grdDeporte.RowHeadersWidth = 51;
+            this.grdDeporte.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdDeporte.Size = new System.Drawing.Size(242, 582);
+            this.grdDeporte.TabIndex = 3;
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "Id";
+            this.colId.Name = "colId";
+            this.colId.ReadOnly = true;
+            this.colId.Visible = false;
+            // 
+            // colDeporte
+            // 
+            this.colDeporte.HeaderText = "Deporte";
+            this.colDeporte.MinimumWidth = 6;
+            this.colDeporte.Name = "colDeporte";
+            this.colDeporte.ReadOnly = true;
             // 
             // contextMenuStrip1
             // 
@@ -96,6 +110,7 @@
             this.btnCancelar.TabIndex = 13;
             this.toolTip.SetToolTip(this.btnCancelar, "Cancelar");
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnAceptar
             // 
@@ -107,6 +122,7 @@
             this.btnAceptar.TabIndex = 12;
             this.toolTip.SetToolTip(this.btnAceptar, "Aceptar");
             this.btnAceptar.UseVisualStyleBackColor = true;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnEliminar
             // 
@@ -117,6 +133,7 @@
             this.btnEliminar.TabIndex = 11;
             this.toolTip.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
@@ -127,6 +144,7 @@
             this.btnEditar.TabIndex = 10;
             this.toolTip.SetToolTip(this.btnEditar, "Editar");
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnAgregar
             // 
@@ -137,6 +155,7 @@
             this.btnAgregar.TabIndex = 9;
             this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtNombreDet
             // 
@@ -172,20 +191,7 @@
             this.grpDeporte.TabIndex = 14;
             this.grpDeporte.TabStop = false;
             this.grpDeporte.Text = "Deporte";
-            // 
-            // colId
-            // 
-            this.colId.HeaderText = "Id";
-            this.colId.Name = "colId";
-            this.colId.ReadOnly = true;
-            this.colId.Visible = false;
-            // 
-            // colDeporte
-            // 
-            this.colDeporte.HeaderText = "Deporte";
-            this.colDeporte.MinimumWidth = 6;
-            this.colDeporte.Name = "colDeporte";
-            this.colDeporte.ReadOnly = true;
+            this.grdDeporte.SelectionChanged += new System.EventHandler(this.grdDeporte_SelectionChanged);
             // 
             // ctrlDeporte
             // 
@@ -198,12 +204,13 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.grdCategoría);
+            this.Controls.Add(this.grdDeporte);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlDeporte";
             this.Size = new System.Drawing.Size(1047, 677);
-            ((System.ComponentModel.ISupportInitialize)(this.grdCategoría)).EndInit();
+            this.Load += new System.EventHandler(this.ctrlDeporte_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdDeporte)).EndInit();
             this.grpDeporte.ResumeLayout(false);
             this.grpDeporte.PerformLayout();
             this.ResumeLayout(false);
@@ -211,7 +218,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdCategoría;
+        private System.Windows.Forms.DataGridView grdDeporte;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnEditar;

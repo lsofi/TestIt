@@ -18,8 +18,9 @@ public class DataManager
         string guada = @"Data Source=DESKTOP-M3UHIIV\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
         string joaco = @"Data Source=ASUSVBS15\SQLEXPRESS;Initial Catalog=TestIt;Integrated Security=True";
         string angie = @"Data Source=(LocalDB)\v11.0;Initial Catalog=TestIt;Integrated Security=True";
+        string sofi = @"Data Source=DESKTOP-F1HR73L\SQLEXPRESS;Initial Catalog=Testit;Integrated Security=True";
 
-        dbConnection.ConnectionString = guada;
+        dbConnection.ConnectionString = sofi;
     }
 
     public void BeginTransaction()
