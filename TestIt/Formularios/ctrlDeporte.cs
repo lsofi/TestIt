@@ -23,19 +23,17 @@ namespace TestIt.Formularios
 
         private void ctrlDeporte_Load(object sender, EventArgs e)
         {
-            lDeportes = Deporte.buscarDeporte();
             cargarGrilla();
-            toggleEdit(false);
         }
 
         private void cargarGrilla()
         {
             grdDeporte.Rows.Clear();
-            if (lDeportes != null)
-                foreach (Deporte deporte in lDeportes)
-                {
-                    grdDeporte.Rows.Add(deporte.Id, deporte.Nombre);
-                }
+            lDeportes = Deporte.buscarDeporte();
+            foreach (Deporte deporte in lDeportes)
+            {
+                grdDeporte.Rows.Add(deporte.Id, deporte.Nombre);
+            }
             grdDeporte.ClearSelection();
         }
 
@@ -112,6 +110,7 @@ namespace TestIt.Formularios
                 if (actual.eliminar())
                 {
                     MessageBox.Show("Deporte eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cargarGrilla();
                 }
                 else
                     MessageBox.Show("Error al eliminar deporte", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -48,7 +48,7 @@ namespace TestIt.Datos
                 //SIN PARAMETROS
 
                 string str_sql = "INSERT INTO Deportes VALUES ('" +
-                            oDeporte.Nombre + "')";
+                            oDeporte.Nombre + "', 0)";
                 dm.EjecutarSQL(str_sql);
                 dm.Commit();
             }
@@ -74,7 +74,7 @@ namespace TestIt.Datos
                 dm.Open();
                 dm.BeginTransaction();
                 string str_sql = "UPDATE Deportes SET " +
-                              "nombre='" + oDeporte.Nombre + "'," + 
+                              "nombre='" + oDeporte.Nombre + "'" + 
                               "WHERE id= " + oDeporte.Id + " AND  borrado=0";
 
                 dm.EjecutarSQL(str_sql);

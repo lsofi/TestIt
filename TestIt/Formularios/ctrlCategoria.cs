@@ -26,7 +26,6 @@ namespace TestIt.Formularios
         {
             lCategoria = Categoria.buscarCategorias();
             cargarGrilla();
-            toggleEdit(false);
 
         }
 
