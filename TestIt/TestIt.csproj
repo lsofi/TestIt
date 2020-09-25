@@ -53,6 +53,7 @@
     <Compile Include="Datos\DeportistaDao.cs" />
     <Compile Include="Datos\EquipoDao.cs" />
     <Compile Include="Datos\MedicionDao.cs" />
+    <Compile Include="Datos\TestDao.cs" />
     <Compile Include="Formularios\ctrlMedicion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -95,6 +96,7 @@
     <Compile Include="Logica\Deportista.cs" />
     <Compile Include="Logica\Equipo.cs" />
     <Compile Include="Logica\Medicion.cs" />
+    <Compile Include="Logica\Test.cs" />
     <Compile Include="Logica\Usuario.cs" />
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>

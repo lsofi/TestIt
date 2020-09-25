@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TestIt.Logica;
+using System.Data;
 
 namespace TestIt.Datos
 {
@@ -17,10 +18,10 @@ namespace TestIt.Datos
 
             if (resultado.Rows.Count > 0)
             {
-                List<Medicion> mediciones = new List<Medicion>();
+                List<Test> tests = new List<Test>();
                 foreach (DataRow row in resultado.Rows)
-                    mediciones.Add(mappingMedicion(row));
-                return mediciones;
+                    tests.Add(mappingTest(row));
+                return tests;
             }
 
             return null;
@@ -36,28 +37,27 @@ namespace TestIt.Datos
 
             if (resultado.Rows.Count > 0)
             {
-                List<Medicion> mediciones = new List<Medicion>();
+                List<Test> tests = new List<Test>();
                 foreach (DataRow row in resultado.Rows)
-                    mediciones.Add(mappingMedicion(row));
-                return mediciones;
+                    tests.Add(mappingTest(row));
+                return tests;
             }
 
             return null;
         }
 
-        private Medicion mappingMedicion(DataRow row)
+        private Medicion mappingTest(DataRow row)
         {
-            Medicion oMedicion = new Medicion(Convert.ToInt32(row["id"]));
+            Test oTest = new Test(Convert.ToInt32(row["id"]));
 
-            oMedicion.Nombre = row["nombre"].ToString();
-            oMedicion.Unidad = row["unidad"].ToString();
-            oMedicion.Descripcion = row["descripcion"].ToString();
-            oMedicion.Borrado = Convert.ToInt32(row["borrado"]);
+            oTest.Nombre = row["nombre"].ToString();
+            oTest.Descripcion = row["descripcion"].ToString();
+            oTest.Borrado = Convert.ToInt32(row["borrado"]);
 
-            return oMedicion;
+            return oTest;
         }
 
-        public bool Create(Medicion oMedicion)
+        public bool Create(Test oTest)
         {
             DataManager dm = new DataManager();
             try
@@ -66,10 +66,9 @@ namespace TestIt.Datos
                 dm.BeginTransaction();
                 //SIN PARAMETROS
 
-                string str_sql = "INSERT INTO Mediciones VALUES ('" +
-                            oMedicion.Nombre + "', '" +
-                            oMedicion.Unidad + "', '" +
-                            oMedicion.Descripcion + "', 0)";
+                string str_sql = "INSERT INTO Tests VALUES ('" +
+                            oTest.Nombre + "', '" +
+                            oTest.Descripcion + "', 0)";
 
                 dm.EjecutarSQL(str_sql);
                 dm.Commit();
@@ -87,7 +86,7 @@ namespace TestIt.Datos
             return true;
         }
 
-        internal bool Update(Medicion oMedicion)
+        internal bool Update(Test oTest)
         {
 
             DataManager dm = new DataManager();
@@ -95,16 +94,14 @@ namespace TestIt.Datos
             {
                 dm.Open();
                 dm.BeginTransaction();
-                string str_sql = "UPDATE Mediciones SET " +
-                              "nombre='" + oMedicion.Nombre + "' ," +
-                              "unidad= " + "'" + oMedicion.Unidad + "' ," +
-                              "descripcion= " + "'" + oMedicion.Descripcion +
-                              "' WHERE id=" + oMedicion.Id + " AND  borrado=0";
+                string str_sql = "UPDATE Tests SET " +
+                              "nombre='" + oTest.Nombre + "' ," +
+                              "descripcion= " + "'" + oTest.Descripcion +
+                              "' WHERE id=" + oTest.Id + " AND  borrado=0";
 
                 dm.EjecutarSQL(str_sql);
                 dm.Commit();
             }
-
             catch (Exception ex)
             {
                 dm.Rollback();
@@ -117,16 +114,16 @@ namespace TestIt.Datos
             return true;
         }
 
-        public bool Delete(Medicion oMedicion)
+        public bool Delete(Test oTest)
         {
             DataManager dm = new DataManager();
             try
             {
                 dm.Open();
                 dm.BeginTransaction();
-                string str_sql = "UPDATE Mediciones" +
+                string str_sql = "UPDATE Tests" +
                                 " SET borrado = " + 1 +
-                                " WHERE id = " + oMedicion.Id;
+                                " WHERE id = " + oTest.Id;
 
                 dm.EjecutarSQL(str_sql);
                 dm.Commit();
