@@ -84,6 +84,12 @@
     <Compile Include="Formularios\ctrlEquipo.designer.cs">
       <DependentUpon>ctrlEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ctrlTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlTest.designer.cs">
+      <DependentUpon>ctrlTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Logica\Deporte.cs" />
     <Compile Include="Logica\Categoria.cs" />
     <Compile Include="Logica\Deportista.cs" />
@@ -119,6 +125,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ctrlEquipo.resx">
       <DependentUpon>ctrlEquipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctrlTest.resx">
+      <DependentUpon>ctrlTest.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>

@@ -17,15 +17,17 @@ namespace TestIt.Formularios
         ctrlEquipo ctrlEquipo;
         ctrlCategoria ctrlCategoria;
         ctrlDeporte ctrlDeporte;
-        ctrlMedicion ctrlCampo;
+        ctrlTest ctrlTest;
+
 
         public frmPrincipal()
         {
             InitializeComponent();
+           
 
-            frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
+            //frmLogin login = new frmLogin();
+            //login.ShowDialog();
+            //this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
 
         }
 
@@ -35,7 +37,7 @@ namespace TestIt.Formularios
             ctrlEquipo = new ctrlEquipo();
             ctrlCategoria = new ctrlCategoria();
             ctrlDeporte = new ctrlDeporte();
-            ctrlCampo = new ctrlMedicion();
+            ctrlTest = new ctrlTest();
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -70,7 +72,7 @@ namespace TestIt.Formularios
         private void btnMediciones_Click(object sender, EventArgs e)
         {
             panelContenedor.Controls.Clear();
-            panelContenedor.Controls.Add(ctrlCampo);
+            panelContenedor.Controls.Add(ctrlTest);
         }
 
         private void btnDeportes_Click(object sender, EventArgs e)
