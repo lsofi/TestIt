@@ -10,7 +10,7 @@ namespace TestIt.Datos
 {
     class TestDao
     {
-        public List<Test> buscarTest()
+        public List<Test> buscarTests()
         {
             String consultaSql = string.Concat("SELECT * FROM Tests WHERE borrado=0");
 
@@ -27,9 +27,9 @@ namespace TestIt.Datos
             return null;
         }
 
-        public List<Medicion> filtrarMediciones(string nombre)
+        public List<Test> filtrarTests(string nombre)
         {
-            String consultaSql = string.Concat("SELECT * FROM Mediciones WHERE borrado=0");
+            String consultaSql = string.Concat("SELECT * FROM Tests WHERE borrado=0");
 
             if (nombre != "") consultaSql += " AND nombre LIKE '" + nombre + "%'";
 
@@ -46,15 +46,40 @@ namespace TestIt.Datos
             return null;
         }
 
-        private Medicion mappingTest(DataRow row)
+        private List<int> buscarIdMediciones(int testId)
+        {
+            String consultaSql = string.Concat("SELECT id_campo FROM medicionesxTests WHERE id_test = " + testId);
+
+            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
+
+            List<int> idMediciones = new List<int>();
+
+            if (resultado.Rows.Count > 0)
+            {
+                foreach (DataRow row in resultado.Rows)
+                {
+                    idMediciones.Add((int)row["id_test"]);
+                }            
+            }
+            return idMediciones;
+        }
+
+        private Test mappingTest(DataRow row)
         {
             Test oTest = new Test(Convert.ToInt32(row["id"]));
 
             oTest.Nombre = row["nombre"].ToString();
             oTest.Descripcion = row["descripcion"].ToString();
             oTest.Borrado = Convert.ToInt32(row["borrado"]);
+            oTest.IdMediciones = buscarIdMediciones((int)row["id"]);
 
             return oTest;
+        }
+
+        private void deleteMedicion(Test oTest, DataManager dm)
+        {
+            string str_sql;
+            
         }
 
         public bool Create(Test oTest)
@@ -71,6 +96,14 @@ namespace TestIt.Datos
                             oTest.Descripcion + "', 0)";
 
                 dm.EjecutarSQL(str_sql);
+                int newId = Convert.ToInt32(dm.ConsultaSQLScalar(" SELECT @@IDENTITY"));
+
+                foreach (int idMedicion in oTest.IdNuevas)
+                {
+                    str_sql = "INSERT INTO MedicionesXTests VALUES (" + idMedicion + "," + newId + ",0)";
+                    dm.EjecutarSQL(str_sql);
+                }
+
                 dm.Commit();
             }
 
@@ -100,6 +133,19 @@ namespace TestIt.Datos
                               "' WHERE id=" + oTest.Id + " AND  borrado=0";
 
                 dm.EjecutarSQL(str_sql);
+                
+                foreach (int idMedicion in oTest.IdNuevas)
+                {
+                    str_sql = "INSERT INTO MedicionesXTests VALUES (" + idMedicion + "," + oTest.Id + ",0)";
+                    dm.EjecutarSQL(str_sql);
+                }
+
+                foreach (int idMedicion in oTest.IdEliminadas)
+                {
+                    str_sql = "DELETE FROM MedicionesXTests WHERE id_campo =" + idMedicion + " AND id_test = " + oTest.Id;
+                    dm.EjecutarSQL(str_sql);
+                }
+
                 dm.Commit();
             }
             catch (Exception ex)
@@ -126,6 +172,13 @@ namespace TestIt.Datos
                                 " WHERE id = " + oTest.Id;
 
                 dm.EjecutarSQL(str_sql);
+
+                foreach (int idMedicion in oTest.IdMediciones)
+                {
+                    str_sql = "UPDATE MedicionesXTests SET borrado = 1 WHERE id_campo =" + idMedicion + " AND id_test = " + oTest.Id;
+                    dm.EjecutarSQL(str_sql);
+                }
+
                 dm.Commit();
             }
 

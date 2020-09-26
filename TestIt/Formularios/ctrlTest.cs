@@ -14,196 +14,237 @@ namespace TestIt.Formularios
 {
     public partial class ctrlTest : UserControl
     {
-        private List<Medicion> lMedicion;
+        private List<Test> lTests;
+        private List<Medicion> lMediciones;
         private bool nuevo = false;
-
-        private void lblDescripcionDet_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lblNombre_Click(object sender, EventArgs e)
-        {
-
-        }
-
-
-
-
 
         public ctrlTest()
         {
             InitializeComponent();
         }
 
-        //private void ctrlMedicion_Load(object sender, EventArgs e)
-        //{
-        //    lMedicion = Medicion.buscarMediciones();
-        //    cargarGrilla();
-        //}
+        private void ctrlTest_Load(object sender, EventArgs e)
+        {
+            lTests = Test.buscarTests();
+            cargarGrilla();
+            lMediciones = Medicion.buscarMediciones();
+            cargarMediciones();
+        }
 
-        //private void cargarGrilla()
-        //{
-        //    grdMediciones.Rows.Clear();
-        //    if (lMedicion != null)
-        //        foreach (Medicion medicion in lMedicion)
-        //        {
-        //            grdMediciones.Rows.Add(medicion.Id, medicion.Nombre);
-        //        }
-        //    grdMediciones.ClearSelection();
-        //}
+        private void cargarGrilla()
+        {
+            grdTest.Rows.Clear();
+            if (lTests != null)
+                foreach (Test test in lTests)
+                {
+                    grdTest.Rows.Add(test.Id, test.Nombre);
+                }
+            grdTest.ClearSelection();
+        }
 
-        //private void grdMediciones_SelectionChanged(object sender, EventArgs e)
-        //{
-        //    if (grdMediciones.SelectedRows.Count == 0)
-        //        limpiarCampos();
-        //    else
-        //        cargarCampos();
-        //}
+        private void cargarMediciones()
+        {
+            grdMediciones.Rows.Clear();
+            if (lMediciones != null)
+                foreach (Medicion medicion in lMediciones)
+                {
+                    grdMediciones.Rows.Add(medicion.Id, false, medicion.Nombre);
+                }
+            grdMediciones.ClearSelection();
+        }
+
+        private void grdTest_SelectionChanged(object sender, EventArgs e)
+        {
+            if (grdTest.SelectedRows.Count == 0)
+                limpiarCampos();
+            else
+                cargarCampos();
+        }
+
+        private void toggleEdit(bool edit)
+        {
+            btnAceptar.Enabled = edit;
+            btnCancelar.Enabled = edit;
+            btnAgregar.Enabled = !edit;
+            btnEditar.Enabled = !edit;
+            btnEliminar.Enabled = !edit;
+
+            txtNombre.Enabled = !edit;
+
+            txtDetNombre.Enabled = edit;
+            txtDescripcion.Enabled = edit;
+            grdMediciones.Enabled = edit;
+            grdMediciones.ClearSelection();
+            txtBuscarMediciones.Enabled = edit;
+
+            grdTest.Enabled = !edit;
+        }
+
+        private void cargarCampos()
+        {
+            Test test = testActual();
+            if (test == null) return;
+            txtDetNombre.Text = test.Nombre;
+            txtDescripcion.Text = test.Descripcion;
+            foreach (DataGridViewRow row in grdMediciones.Rows)
+            {
+                if (test.IdMediciones.Contains((int)row.Cells[0].Value))
+                    row.Cells[1].Value = true;
+            }
+
+            btnEditar.Enabled = true;
+            btnEliminar.Enabled = true;
+        }
+
+        private void limpiarCampos()
+        {
+            txtDetNombre.Text = "";
+            txtDescripcion.Text = "";
+            btnEditar.Enabled = false;
+            btnEliminar.Enabled = false;
+        }
+
+        private Test testActual()
+        {
+            foreach (Test test in lTests)
+                if (test.Id == (int)grdTest.SelectedRows[0].Cells[0].Value)
+                    return test;
+            return null;
+        }
+
+        private void txtNombre_TextChanged(object sender, EventArgs e)
+        {
+            filtrar();
+        }
+
+        private void filtrar()
+        {
+            lTests = Test.filtrarTests(txtNombre.Text);
+            cargarGrilla();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            nuevo = true;
+            grdTest.ClearSelection();
+            toggleEdit(true);
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            toggleEdit(true);
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            Test actual = testActual();
+            DialogResult answer = MessageBox.Show(
+                "¿Desea eliminar el test " + actual.Nombre + "?",
+                "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            if (answer == DialogResult.Yes)
+            {
+                if (actual.eliminar())
+                {
+                    filtrar();
+                    MessageBox.Show("Test eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                    MessageBox.Show("Error al eliminar test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            if (validarCampos())
+            {
+                Test test = nuevo ? new Test() : testActual();
+                test.Nombre = txtDetNombre.Text;
+                test.Descripcion = txtDescripcion.Text == null ? " " : txtDescripcion.Text;
+
+                foreach (DataGridViewRow row in grdMediciones.Rows)
+                {
+                    if ((bool)row.Cells[1].Value)
+                        test.addMedicion((int)row.Cells[0].Value);
+                    else
+                        test.removeMedicion((int)row.Cells[0].Value);
+                }
 
 
-        //private void toggleEdit(bool edit)
-        //{
-        //    btnAceptar.Enabled = edit;
-        //    btnCancelar.Enabled = edit;
-        //    btnAgregar.Enabled = !edit;
-        //    btnEditar.Enabled = !edit;
-        //    btnEliminar.Enabled = !edit;
+                if (nuevo)
+                {
+                    test.Borrado = 0;
 
-        //    txtNombre.Enabled = !edit;
+                    if (test.grabar())
+                    {
+                        filtrar();
+                        MessageBox.Show("Test grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error al grabar test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    nuevo = false;
+                }
+                else
+                {
+                    if (test.actualizar())
+                    {
+                        filtrar();
+                        MessageBox.Show("Test actualizada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                        MessageBox.Show("Error al actualizar test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                toggleEdit(false);
+            }
+            else
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-        //    txtDetNombre.Enabled = edit;
-        //    txtUnidad.Enabled = edit;
-        //    txtDescripcion.Enabled = edit;
+            limpiarCampos();
+        }
 
-        //    grdMediciones.Enabled = !edit;
-        //}
+        private bool validarCampos()
+        {
+            if (txtDetNombre.Text == "") return false;
+            return true;
+        }
 
-        //private void cargarCampos()
-        //{
-        //    Medicion medicion = medicionActual();
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            toggleEdit(false);
+            limpiarCampos();
+            grdTest.ClearSelection();
+        }
 
-        //    txtDetNombre.Text = medicion.Nombre;
-        //    txtUnidad.Text = medicion.Unidad;
-        //    txtDescripcion.Text = medicion.Descripcion;
-        //    btnEditar.Enabled = true;
-        //    btnEliminar.Enabled = true;
-        //}
+        private void txtBuscarMediciones_TextChanged(object sender, EventArgs e)
+        {
+            if (txtBuscarMediciones.Text != "Buscar mediciones..." && txtBuscarMediciones.Text != "")
+            {
+                lMediciones = Medicion.filtrarMediciones(txtBuscarMediciones.Text);
+                cargarMediciones();
+            }
+            else
+            {
+                lMediciones = Medicion.buscarMediciones();
+                cargarMediciones();
+            }
+        }
 
-        //private void limpiarCampos()
-        //{
-        //    txtDetNombre.Text = "";
-        //    txtUnidad.Text = "";
-        //    txtDescripcion.Text = "";
-        //    btnEditar.Enabled = false;
-        //    btnEliminar.Enabled = false;
-        //}
+        private void txtBuscarMediciones_Click(object sender, EventArgs e)
+        {
+            if (txtBuscarMediciones.Text == "Buscar mediciones...")
+                txtBuscarMediciones.Text = "";
+        }
 
-        //private Medicion medicionActual()
-        //{
-        //    foreach (Medicion medicion in lMedicion)
-        //        if (medicion.Id == (int)grdMediciones.SelectedRows[0].Cells[0].Value)
-        //            return medicion;
-        //    return null;
-        //}
+        private void txtBuscarMediciones_Leave(object sender, EventArgs e)
+        {
+            if (txtBuscarMediciones.Text == "")
+                txtBuscarMediciones.Text = "Buscar mediciones...";
+        }
 
-        //private void txtNombre_TextChanged(object sender, EventArgs e)
-        //{
-        //    filtrar();
-        //}
-
-        //private void filtrar()
-        //{
-        //    lMedicion = Medicion.filtrarMediciones(txtNombre.Text);
-        //    cargarGrilla();
-        //}
-
-        //private void btnAgregar_Click(object sender, EventArgs e)
-        //{
-        //    nuevo = true;
-        //    grdMediciones.ClearSelection();
-        //    toggleEdit(true);
-        //}
-
-        //private void btnEditar_Click(object sender, EventArgs e)
-        //{
-        //    toggleEdit(true);
-        //}
-
-        //private void btnEliminar_Click(object sender, EventArgs e)
-        //{
-        //    Medicion actual = medicionActual();
-        //    DialogResult answer = MessageBox.Show(
-        //        "¿Desea eliminar la medicion " + actual.Nombre + "?",
-        //        "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-        //    if (answer == DialogResult.Yes)
-        //    {
-        //        if (actual.eliminar())
-        //        {
-        //            filtrar();
-        //            MessageBox.Show("Medicion eliminada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        }
-        //        else
-        //            MessageBox.Show("Error al eliminar medicion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //}
-
-        //private void btnAceptar_Click(object sender, EventArgs e)
-        //{
-
-        //    if (validarCampos())
-        //    {
-
-        //        Medicion medicion = nuevo ? new Medicion() : medicionActual();
-        //        medicion.Nombre = txtDetNombre.Text;
-        //        medicion.Unidad = txtUnidad.Text;
-        //        medicion.Descripcion = txtDescripcion.Text == null ? " " : txtDescripcion.Text; 
-
-        //        if (nuevo)
-        //        {
-        //            medicion.Borrado = 0;
-
-        //            if (medicion.grabar())
-        //            {
-        //                filtrar();
-        //                MessageBox.Show("Medicion grabada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //            else
-        //                MessageBox.Show("Error al grabar Medicion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //            nuevo = false;
-        //        }
-        //        else
-        //        {
-        //            if (medicion.actualizar())
-        //            {
-        //                filtrar();
-        //                MessageBox.Show("Medicion actualizada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //            }
-        //            else
-        //                MessageBox.Show("Error al actualizar medicion", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        }
-        //        toggleEdit(false);
-        //    }
-        //    else
-        //        MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
-        //    limpiarCampos();
-
-        //}
-
-        //private void btnCancelar_Click(object sender, EventArgs e)
-        //{
-        //    toggleEdit(false);
-        //    limpiarCampos();
-        //    grdMediciones.ClearSelection();
-        //}
-
-        //private bool validarCampos()
-        //{
-        //    if (txtDetNombre.Text == "") return false;
-        //    if (txtUnidad.Text == "") return false;
-        //    return true;
-        //}
-
+        private void btnModificarMediciones_Click(object sender, EventArgs e)
+        {
+            frmAux aux = new frmAux();
+            aux.ShowDialog();
+        }
+        
     }
 }
