@@ -14,13 +14,16 @@ namespace TestIt.Formularios
 {
     public partial class ctrlTest : UserControl
     {
+        private frmPrincipal fPrincipal;
+
         private List<Test> lTests;
         private List<Medicion> lMediciones;
         private bool nuevo = false;
 
-        public ctrlTest()
+        public ctrlTest(frmPrincipal fp)
         {
             InitializeComponent();
+            fPrincipal = fp;
         }
 
         private void ctrlTest_Load(object sender, EventArgs e)
@@ -90,6 +93,8 @@ namespace TestIt.Formularios
             {
                 if (test.IdMediciones.Contains((int)row.Cells[0].Value))
                     row.Cells[1].Value = true;
+                else
+                    row.Cells[1].Value = false;
             }
 
             btnEditar.Enabled = true;
@@ -102,6 +107,9 @@ namespace TestIt.Formularios
             txtDescripcion.Text = "";
             btnEditar.Enabled = false;
             btnEliminar.Enabled = false;
+
+            foreach (DataGridViewRow row in grdMediciones.Rows) 
+                row.Cells[1].Value = false;
         }
 
         private Test testActual()
@@ -188,7 +196,7 @@ namespace TestIt.Formularios
                     if (test.actualizar())
                     {
                         filtrar();
-                        MessageBox.Show("Test actualizada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("Test actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
                     else
                         MessageBox.Show("Error al actualizar test", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -242,9 +250,20 @@ namespace TestIt.Formularios
 
         private void btnModificarMediciones_Click(object sender, EventArgs e)
         {
-            frmAux aux = new frmAux();
-            aux.ShowDialog();
+            fPrincipal.toggleMediciones();
         }
-        
+
+        private void grdMediciones_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            //Check to ensure that the row CheckBox is clicked.
+            if (e.RowIndex >= 0)
+            {
+                //Reference the GridView Row.
+                DataGridViewRow row = grdMediciones.Rows[e.RowIndex];
+
+                //Set the CheckBox selection.
+                row.Cells[1].Value = !Convert.ToBoolean(row.Cells[1].EditedFormattedValue);
+            }
+        }
     }
 }

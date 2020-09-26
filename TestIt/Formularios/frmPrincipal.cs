@@ -18,6 +18,8 @@ namespace TestIt.Formularios
         ctrlCategoria ctrlCategoria;
         ctrlDeporte ctrlDeporte;
         ctrlTest ctrlTest;
+        ctrlMedicion ctrlMedicion;
+        private bool mediciones = false;
 
 
         public frmPrincipal()
@@ -37,7 +39,8 @@ namespace TestIt.Formularios
             ctrlEquipo = new ctrlEquipo();
             ctrlCategoria = new ctrlCategoria();
             ctrlDeporte = new ctrlDeporte();
-            ctrlTest = new ctrlTest();
+            ctrlTest = new ctrlTest(this);
+            ctrlMedicion = new ctrlMedicion(this);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -69,8 +72,9 @@ namespace TestIt.Formularios
             panelContenedor.Controls.Add(ctrlEquipo);
         }
 
-        private void btnMediciones_Click(object sender, EventArgs e)
+        private void btnTests_Click(object sender, EventArgs e)
         {
+            mediciones = false;
             panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlTest);
         }
@@ -79,6 +83,21 @@ namespace TestIt.Formularios
         {
             panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlDeporte);
+        }
+
+        public void toggleMediciones()
+        {
+            panelContenedor.Controls.Clear();
+            if (mediciones)
+            {
+                panelContenedor.Controls.Add(ctrlTest);
+                mediciones = false;
+            }
+            else
+            {
+                panelContenedor.Controls.Add(ctrlMedicion);
+                mediciones = true;
+            }
         }
     }
 }

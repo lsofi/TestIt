@@ -123,7 +123,7 @@
             this.btnTests.TabIndex = 4;
             this.btnTests.Text = "Tests";
             this.btnTests.UseVisualStyleBackColor = true;
-            this.btnTests.Click += new System.EventHandler(this.btnMediciones_Click);
+            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
             // 
             // btnDeportes
             // 

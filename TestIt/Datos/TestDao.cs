@@ -58,7 +58,7 @@ namespace TestIt.Datos
             {
                 foreach (DataRow row in resultado.Rows)
                 {
-                    idMediciones.Add((int)row["id_test"]);
+                    idMediciones.Add((int)row["id_campo"]);
                 }            
             }
             return idMediciones;
@@ -74,12 +74,6 @@ namespace TestIt.Datos
             oTest.IdMediciones = buscarIdMediciones((int)row["id"]);
 
             return oTest;
-        }
-
-        private void deleteMedicion(Test oTest, DataManager dm)
-        {
-            string str_sql;
-            
         }
 
         public bool Create(Test oTest)

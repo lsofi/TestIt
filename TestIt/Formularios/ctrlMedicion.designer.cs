@@ -29,8 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlMedicion));
             this.grdMediciones = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +51,7 @@
             this.lblDescripcionDet = new System.Windows.Forms.Label();
             this.txtUnidad = new System.Windows.Forms.TextBox();
             this.lblUnidadDet = new System.Windows.Forms.Label();
+            this.btnVolver = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.grdMediciones)).BeginInit();
             this.grpFiltros.SuspendLayout();
             this.grpMedicion.SuspendLayout();
@@ -66,26 +66,18 @@
             this.grdMediciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdMediciones.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdMediciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdMediciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMediciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colMedicion});
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.grdMediciones.DefaultCellStyle = dataGridViewCellStyle4;
             this.grdMediciones.Location = new System.Drawing.Point(37, 47);
             this.grdMediciones.Margin = new System.Windows.Forms.Padding(4);
             this.grdMediciones.MultiSelect = false;
@@ -101,6 +93,7 @@
             // colId
             // 
             this.colId.HeaderText = "Id";
+            this.colId.MinimumWidth = 6;
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.Visible = false;
@@ -133,7 +126,7 @@
             this.txtNombre.Location = new System.Drawing.Point(148, 43);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtNombre.Size = new System.Drawing.Size(197, 27);
             this.txtNombre.TabIndex = 9;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -144,7 +137,7 @@
             this.lblNombre.Location = new System.Drawing.Point(65, 47);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(65, 17);
+            this.lblNombre.Size = new System.Drawing.Size(82, 21);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -221,7 +214,7 @@
             this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetNombre.MaxLength = 20;
             this.txtDetNombre.Name = "txtDetNombre";
-            this.txtDetNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtDetNombre.Size = new System.Drawing.Size(197, 27);
             this.txtDetNombre.TabIndex = 9;
             // 
             // lblNombreDet
@@ -231,7 +224,7 @@
             this.lblNombreDet.Location = new System.Drawing.Point(65, 45);
             this.lblNombreDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreDet.Name = "lblNombreDet";
-            this.lblNombreDet.Size = new System.Drawing.Size(65, 17);
+            this.lblNombreDet.Size = new System.Drawing.Size(82, 21);
             this.lblNombreDet.TabIndex = 7;
             this.lblNombreDet.Text = "Nombre:";
             // 
@@ -273,7 +266,7 @@
             this.lblDescripcionDet.Location = new System.Drawing.Point(43, 156);
             this.lblDescripcionDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcionDet.Name = "lblDescripcionDet";
-            this.lblDescripcionDet.Size = new System.Drawing.Size(87, 17);
+            this.lblDescripcionDet.Size = new System.Drawing.Size(112, 21);
             this.lblDescripcionDet.TabIndex = 12;
             this.lblDescripcionDet.Text = "Descripción:";
             // 
@@ -285,7 +278,7 @@
             this.txtUnidad.Margin = new System.Windows.Forms.Padding(4);
             this.txtUnidad.MaxLength = 20;
             this.txtUnidad.Name = "txtUnidad";
-            this.txtUnidad.Size = new System.Drawing.Size(197, 23);
+            this.txtUnidad.Size = new System.Drawing.Size(197, 27);
             this.txtUnidad.TabIndex = 11;
             // 
             // lblUnidadDet
@@ -295,15 +288,26 @@
             this.lblUnidadDet.Location = new System.Drawing.Point(72, 100);
             this.lblUnidadDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUnidadDet.Name = "lblUnidadDet";
-            this.lblUnidadDet.Size = new System.Drawing.Size(58, 17);
+            this.lblUnidadDet.Size = new System.Drawing.Size(76, 21);
             this.lblUnidadDet.TabIndex = 10;
             this.lblUnidadDet.Text = "Unidad:";
             // 
+            // btnVolver
+            // 
+            this.btnVolver.Location = new System.Drawing.Point(915, 552);
+            this.btnVolver.Name = "btnVolver";
+            this.btnVolver.Size = new System.Drawing.Size(75, 39);
+            this.btnVolver.TabIndex = 15;
+            this.btnVolver.Text = "Volver";
+            this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
             // ctrlMedicion
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.grpMedicion);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
@@ -347,5 +351,6 @@
         private System.Windows.Forms.Label lblUnidadDet;
         private System.Windows.Forms.DataGridViewTextBoxColumn colId;
         private System.Windows.Forms.DataGridViewTextBoxColumn colMedicion;
+        private System.Windows.Forms.Button btnVolver;
     }
 }

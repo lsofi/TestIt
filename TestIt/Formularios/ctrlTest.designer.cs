@@ -98,6 +98,7 @@
             // colId
             // 
             this.colId.HeaderText = "Id";
+            this.colId.MinimumWidth = 6;
             this.colId.Name = "colId";
             this.colId.ReadOnly = true;
             this.colId.Visible = false;
@@ -130,7 +131,7 @@
             this.txtNombre.Location = new System.Drawing.Point(148, 43);
             this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtNombre.Size = new System.Drawing.Size(197, 27);
             this.txtNombre.TabIndex = 9;
             this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
@@ -141,7 +142,7 @@
             this.lblNombre.Location = new System.Drawing.Point(65, 47);
             this.lblNombre.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(65, 17);
+            this.lblNombre.Size = new System.Drawing.Size(82, 21);
             this.lblNombre.TabIndex = 7;
             this.lblNombre.Text = "Nombre:";
             // 
@@ -218,7 +219,7 @@
             this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
             this.txtDetNombre.MaxLength = 20;
             this.txtDetNombre.Name = "txtDetNombre";
-            this.txtDetNombre.Size = new System.Drawing.Size(197, 23);
+            this.txtDetNombre.Size = new System.Drawing.Size(197, 27);
             this.txtDetNombre.TabIndex = 9;
             // 
             // lblNombreDet
@@ -228,7 +229,7 @@
             this.lblNombreDet.Location = new System.Drawing.Point(65, 45);
             this.lblNombreDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNombreDet.Name = "lblNombreDet";
-            this.lblNombreDet.Size = new System.Drawing.Size(65, 17);
+            this.lblNombreDet.Size = new System.Drawing.Size(82, 21);
             this.lblNombreDet.TabIndex = 7;
             this.lblNombreDet.Text = "Nombre:";
             // 
@@ -268,7 +269,7 @@
             this.lblDescripcionDet.Location = new System.Drawing.Point(43, 93);
             this.lblDescripcionDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblDescripcionDet.Name = "lblDescripcionDet";
-            this.lblDescripcionDet.Size = new System.Drawing.Size(87, 17);
+            this.lblDescripcionDet.Size = new System.Drawing.Size(112, 21);
             this.lblDescripcionDet.TabIndex = 12;
             this.lblDescripcionDet.Text = "Descripción:";
             // 
@@ -305,10 +306,12 @@
             this.grdMediciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMediciones.Size = new System.Drawing.Size(246, 450);
             this.grdMediciones.TabIndex = 15;
+            this.grdMediciones.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.grdMediciones_CellClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
             this.dataGridViewTextBoxColumn1.Visible = false;
@@ -317,9 +320,10 @@
             // 
             this.colSeleccion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
             this.colSeleccion.HeaderText = "";
+            this.colSeleccion.MinimumWidth = 6;
             this.colSeleccion.Name = "colSeleccion";
             this.colSeleccion.ReadOnly = true;
-            this.colSeleccion.Width = 5;
+            this.colSeleccion.Width = 6;
             // 
             // colMediciones
             // 
@@ -335,7 +339,7 @@
             this.txtBuscarMediciones.Location = new System.Drawing.Point(757, 81);
             this.txtBuscarMediciones.Margin = new System.Windows.Forms.Padding(4);
             this.txtBuscarMediciones.Name = "txtBuscarMediciones";
-            this.txtBuscarMediciones.Size = new System.Drawing.Size(246, 22);
+            this.txtBuscarMediciones.Size = new System.Drawing.Size(246, 26);
             this.txtBuscarMediciones.TabIndex = 16;
             this.txtBuscarMediciones.Text = "Buscar mediciones...";
             this.txtBuscarMediciones.Click += new System.EventHandler(this.txtBuscarMediciones_Click);
@@ -354,7 +358,7 @@
             // 
             // ctrlTest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.Controls.Add(this.btnModificarMediciones);

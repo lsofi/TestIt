@@ -14,12 +14,15 @@ namespace TestIt.Formularios
 {
     public partial class ctrlMedicion : UserControl
     {
+        private frmPrincipal fPrincipal;
+
         private List<Medicion> lMedicion;
         private bool nuevo = false;
 
-        public ctrlMedicion()
+        public ctrlMedicion(frmPrincipal fp)
         {
             InitializeComponent();
+            fPrincipal = fp;
         }
 
         private void ctrlMedicion_Load(object sender, EventArgs e)
@@ -191,5 +194,9 @@ namespace TestIt.Formularios
             return true;
         }
 
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleMediciones();
+        }
     }
 }
