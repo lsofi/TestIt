@@ -91,6 +91,7 @@ namespace TestIt.Formularios
             if (mediciones)
             {
                 panelContenedor.Controls.Add(ctrlTest);
+                ctrlTest.actualizarMediciones();
                 mediciones = false;
             }
             else

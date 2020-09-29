@@ -56,6 +56,12 @@ namespace TestIt.Formularios
             grdMediciones.ClearSelection();
         }
 
+        public void actualizarMediciones()
+        {
+            lMediciones = Medicion.buscarMediciones();
+            cargarMediciones();
+        }
+
         private void grdTest_SelectionChanged(object sender, EventArgs e)
         {
             if (grdTest.SelectedRows.Count == 0)
@@ -250,6 +256,7 @@ namespace TestIt.Formularios
 
         private void btnModificarMediciones_Click(object sender, EventArgs e)
         {
+            txtBuscarMediciones.Text = "Buscar mediciones...";
             fPrincipal.toggleMediciones();
         }
 
