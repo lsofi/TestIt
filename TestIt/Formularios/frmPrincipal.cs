@@ -25,11 +25,11 @@ namespace TestIt.Formularios
         public frmPrincipal()
         {
             InitializeComponent();
-           
 
-            //frmLogin login = new frmLogin();
-            //login.ShowDialog();
-            //this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
+
+            frmLogin login = new frmLogin();
+            login.ShowDialog();
+            this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
 
         }
 
