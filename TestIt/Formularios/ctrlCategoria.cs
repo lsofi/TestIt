@@ -167,6 +167,7 @@ namespace TestIt.Formularios
   
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            nuevo = false;
             toggleEdit(false);
             grdCategoría.ClearSelection();
         }

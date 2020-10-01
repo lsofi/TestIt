@@ -60,6 +60,7 @@ namespace TestIt.Formularios
         {
             lMediciones = Medicion.buscarMediciones();
             cargarMediciones();
+            if (grdTest.SelectedRows.Count != 0) cargarCampos();
         }
 
         private void grdTest_SelectionChanged(object sender, EventArgs e)
@@ -223,6 +224,7 @@ namespace TestIt.Formularios
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
+            nuevo = false;
             toggleEdit(false);
             limpiarCampos();
             grdTest.ClearSelection();
