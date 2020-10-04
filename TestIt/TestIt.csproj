@@ -51,9 +51,22 @@
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DBHelper.cs" />
     <Compile Include="Datos\DeportistaDao.cs" />
+    <Compile Include="Datos\EjecucionDao.cs" />
     <Compile Include="Datos\EquipoDao.cs" />
     <Compile Include="Datos\MedicionDao.cs" />
     <Compile Include="Datos\TestDao.cs" />
+    <Compile Include="Formularios\ctrlEjecucion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlEjecucion.designer.cs">
+      <DependentUpon>ctrlEjecucion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ctrlDetalleEjecucion.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Formularios\ctrlDetalleEjecucion.designer.cs">
+      <DependentUpon>ctrlDetalleEjecucion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ctrlMedicion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -113,6 +126,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soporte\Combo.cs" />
+    <EmbeddedResource Include="Formularios\ctrlEjecucion.resx">
+      <DependentUpon>ctrlEjecucion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ctrlDetalleEjecucion.resx">
+      <DependentUpon>ctrlDetalleEjecucion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\ctrlMedicion.resx">
       <DependentUpon>ctrlMedicion.cs</DependentUpon>
     </EmbeddedResource>

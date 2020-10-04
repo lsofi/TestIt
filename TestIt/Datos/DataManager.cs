@@ -10,7 +10,7 @@ public class DataManager
 
     private static DataManager instance = new DataManager();
     public DataManager()
-    {
+    {   
         dbConnection = new SqlConnection();
         // var dataBaseName = ConfigurationManager.AppSettings["dataBaseName"];
         // var string_conexion = ConfigurationManager.ConnectionStrings[dataBaseName].ConnectionString;
@@ -21,7 +21,7 @@ public class DataManager
         string sofi = @"Data Source=DESKTOP-F1HR73L\SQLEXPRESS;Initial Catalog=Testit;Integrated Security=True";
 
 
-        dbConnection.ConnectionString = joaco;
+        dbConnection.ConnectionString = guada;
     }
 
     public void BeginTransaction()

@@ -40,6 +40,7 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnDeportistas = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnEjecuciones = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -98,6 +99,7 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.Controls.Add(this.btnEjecuciones);
             this.panelMenuVertical.Controls.Add(this.btnTests);
             this.panelMenuVertical.Controls.Add(this.btnDeportes);
             this.panelMenuVertical.Controls.Add(this.btnCategoria);
@@ -204,6 +206,21 @@
             this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
             this.panelContenedor.TabIndex = 2;
             // 
+            // btnEjecuciones
+            // 
+            this.btnEjecuciones.FlatAppearance.BorderSize = 0;
+            this.btnEjecuciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnEjecuciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEjecuciones.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEjecuciones.ForeColor = System.Drawing.Color.LightGray;
+            this.btnEjecuciones.Location = new System.Drawing.Point(3, 354);
+            this.btnEjecuciones.Name = "btnEjecuciones";
+            this.btnEjecuciones.Size = new System.Drawing.Size(224, 32);
+            this.btnEjecuciones.TabIndex = 5;
+            this.btnEjecuciones.Text = "Ejecuciones";
+            this.btnEjecuciones.UseVisualStyleBackColor = true;
+            this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,5 +258,6 @@
         private System.Windows.Forms.Button btnCategoria;
         private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Button btnTests;
+        private System.Windows.Forms.Button btnEjecuciones;
     }
 }
