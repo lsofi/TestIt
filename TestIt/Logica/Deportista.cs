@@ -53,6 +53,16 @@ namespace TestIt.Logica
             return dDao.filtrarDeportistas(apellido, equipo, deporte, categoria);
         }
 
+        public static int buscarId(string nombre)
+        {
+            return dDao.getId(nombre);
+        }
+
+        public static string buscarApellido(int id)
+        {
+            return dDao.getApellido(id);
+        }
+
         public bool grabar()
         {
             return dDao.Create(this);

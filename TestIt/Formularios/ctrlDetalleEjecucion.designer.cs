@@ -31,12 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlDetalleEjecucion));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
-            this.txtDetNombre = new System.Windows.Forms.TextBox();
+            this.txtNumero = new System.Windows.Forms.TextBox();
             this.lblNumeroDet = new System.Windows.Forms.Label();
             this.grpEjecucion = new System.Windows.Forms.GroupBox();
             this.txtObservacion = new System.Windows.Forms.TextBox();
@@ -48,11 +49,11 @@
             this.lblTest = new System.Windows.Forms.Label();
             this.lblDeportistaDet = new System.Windows.Forms.Label();
             this.grdMediciones = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.colMediciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Unidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colMediciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colValor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpEjecucion.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMediciones)).BeginInit();
             this.SuspendLayout();
@@ -89,7 +90,6 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.Enabled = false;
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Location = new System.Drawing.Point(610, 547);
             this.btnEditar.Name = "btnEditar";
@@ -99,23 +99,22 @@
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
-            // txtDetNombre
+            // txtNumero
             // 
-            this.txtDetNombre.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtDetNombre.Enabled = false;
-            this.txtDetNombre.Location = new System.Drawing.Point(148, 95);
-            this.txtDetNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtDetNombre.MaxLength = 20;
-            this.txtDetNombre.Name = "txtDetNombre";
-            this.txtDetNombre.Size = new System.Drawing.Size(197, 23);
-            this.txtDetNombre.TabIndex = 9;
+            this.txtNumero.BackColor = System.Drawing.SystemColors.Menu;
+            this.txtNumero.Enabled = false;
+            this.txtNumero.Location = new System.Drawing.Point(148, 47);
+            this.txtNumero.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNumero.MaxLength = 20;
+            this.txtNumero.Name = "txtNumero";
+            this.txtNumero.Size = new System.Drawing.Size(197, 23);
+            this.txtNumero.TabIndex = 9;
             // 
             // lblNumeroDet
             // 
             this.lblNumeroDet.AutoSize = true;
-            this.lblNumeroDet.Enabled = false;
             this.lblNumeroDet.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNumeroDet.Location = new System.Drawing.Point(58, 99);
+            this.lblNumeroDet.Location = new System.Drawing.Point(58, 51);
             this.lblNumeroDet.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblNumeroDet.Name = "lblNumeroDet";
             this.lblNumeroDet.Size = new System.Drawing.Size(64, 17);
@@ -131,9 +130,9 @@
             this.grpEjecucion.Controls.Add(this.cboDeportista);
             this.grpEjecucion.Controls.Add(this.cboTest);
             this.grpEjecucion.Controls.Add(this.lblTest);
-            this.grpEjecucion.Controls.Add(this.lblDeportistaDet);
-            this.grpEjecucion.Controls.Add(this.txtDetNombre);
+            this.grpEjecucion.Controls.Add(this.txtNumero);
             this.grpEjecucion.Controls.Add(this.lblNumeroDet);
+            this.grpEjecucion.Controls.Add(this.lblDeportistaDet);
             this.grpEjecucion.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpEjecucion.ForeColor = System.Drawing.Color.LightGray;
             this.grpEjecucion.Location = new System.Drawing.Point(98, 81);
@@ -181,6 +180,8 @@
             // 
             // dtpFecha
             // 
+            this.dtpFecha.Enabled = false;
+            this.dtpFecha.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtpFecha.Location = new System.Drawing.Point(148, 193);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(197, 23);
@@ -191,6 +192,7 @@
             this.cboDeportista.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
             this.cboDeportista.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cboDeportista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDeportista.Enabled = false;
             this.cboDeportista.FormattingEnabled = true;
             this.cboDeportista.Location = new System.Drawing.Point(148, 143);
             this.cboDeportista.Name = "cboDeportista";
@@ -199,23 +201,25 @@
             // 
             // cboTest
             // 
+            this.cboTest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTest.Enabled = false;
             this.cboTest.FormattingEnabled = true;
-            this.cboTest.Location = new System.Drawing.Point(148, 47);
+            this.cboTest.Location = new System.Drawing.Point(148, 92);
             this.cboTest.Name = "cboTest";
             this.cboTest.Size = new System.Drawing.Size(197, 24);
             this.cboTest.TabIndex = 10;
+            this.cboTest.SelectedIndexChanged += new System.EventHandler(this.cboTest_SelectedIndexChanged);
             // 
             // lblTest
             // 
             this.lblTest.AutoSize = true;
             this.lblTest.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTest.Location = new System.Drawing.Point(87, 50);
+            this.lblTest.Location = new System.Drawing.Point(87, 95);
             this.lblTest.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblTest.Name = "lblTest";
             this.lblTest.Size = new System.Drawing.Size(35, 17);
             this.lblTest.TabIndex = 7;
             this.lblTest.Text = "Test:";
-            this.lblTest.Click += new System.EventHandler(this.lblTest_Click);
             // 
             // lblDeportistaDet
             // 
@@ -247,48 +251,20 @@
             this.grdMediciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdMediciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdMediciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
+            this.colId,
             this.colMediciones,
-            this.Valor,
-            this.Unidad});
+            this.colValor,
+            this.colUnidad});
             this.grdMediciones.Enabled = false;
             this.grdMediciones.Location = new System.Drawing.Point(610, 90);
             this.grdMediciones.Margin = new System.Windows.Forms.Padding(4);
             this.grdMediciones.MultiSelect = false;
             this.grdMediciones.Name = "grdMediciones";
-            this.grdMediciones.ReadOnly = true;
             this.grdMediciones.RowHeadersVisible = false;
             this.grdMediciones.RowHeadersWidth = 51;
             this.grdMediciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdMediciones.Size = new System.Drawing.Size(381, 413);
             this.grdMediciones.TabIndex = 15;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn1.MinimumWidth = 6;
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            this.dataGridViewTextBoxColumn1.Visible = false;
-            // 
-            // colMediciones
-            // 
-            this.colMediciones.HeaderText = "Mediciones";
-            this.colMediciones.MinimumWidth = 6;
-            this.colMediciones.Name = "colMediciones";
-            this.colMediciones.ReadOnly = true;
-            // 
-            // Valor
-            // 
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            this.Valor.ReadOnly = true;
-            // 
-            // Unidad
-            // 
-            this.Unidad.HeaderText = "Unidad";
-            this.Unidad.Name = "Unidad";
-            this.Unidad.ReadOnly = true;
             // 
             // btnVolver
             // 
@@ -300,6 +276,34 @@
             this.btnVolver.TabIndex = 16;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
+            // 
+            // colId
+            // 
+            this.colId.HeaderText = "Id";
+            this.colId.MinimumWidth = 6;
+            this.colId.Name = "colId";
+            this.colId.Visible = false;
+            // 
+            // colMediciones
+            // 
+            this.colMediciones.HeaderText = "Mediciones";
+            this.colMediciones.MinimumWidth = 6;
+            this.colMediciones.Name = "colMediciones";
+            this.colMediciones.ReadOnly = true;
+            // 
+            // colValor
+            // 
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.colValor.DefaultCellStyle = dataGridViewCellStyle2;
+            this.colValor.HeaderText = "Valor";
+            this.colValor.Name = "colValor";
+            // 
+            // colUnidad
+            // 
+            this.colUnidad.HeaderText = "Unidad";
+            this.colUnidad.Name = "colUnidad";
+            this.colUnidad.ReadOnly = true;
             // 
             // ctrlDetalleEjecucion
             // 
@@ -316,6 +320,7 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlDetalleEjecucion";
             this.Size = new System.Drawing.Size(1047, 677);
+            this.Load += new System.EventHandler(this.ctrlDetalleEjecucion_Load);
             this.grpEjecucion.ResumeLayout(false);
             this.grpEjecucion.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdMediciones)).EndInit();
@@ -329,7 +334,7 @@
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.TextBox txtDetNombre;
+        private System.Windows.Forms.TextBox txtNumero;
         private System.Windows.Forms.Label lblNumeroDet;
         private System.Windows.Forms.GroupBox grpEjecucion;
         private System.Windows.Forms.Label lblDeportistaDet;
@@ -341,10 +346,10 @@
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.ComboBox cboDeportista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colMediciones;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Unidad;
         private System.Windows.Forms.Button btnVolver;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colMediciones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colValor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colUnidad;
     }
 }

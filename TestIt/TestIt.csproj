@@ -107,6 +107,7 @@
     <Compile Include="Logica\Deporte.cs" />
     <Compile Include="Logica\Categoria.cs" />
     <Compile Include="Logica\Deportista.cs" />
+    <Compile Include="Logica\Ejecucion.cs" />
     <Compile Include="Logica\Equipo.cs" />
     <Compile Include="Logica\Medicion.cs" />
     <Compile Include="Logica\Test.cs" />
@@ -126,6 +127,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soporte\Combo.cs" />
+    <Compile Include="Soporte\Globals.cs" />
     <EmbeddedResource Include="Formularios\ctrlEjecucion.resx">
       <DependentUpon>ctrlEjecucion.cs</DependentUpon>
     </EmbeddedResource>

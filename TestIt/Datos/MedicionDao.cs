@@ -28,6 +28,14 @@ namespace TestIt.Datos
             return null;
         }
 
+        public Medicion buscarMedicionPorId(int id)
+        {
+            var resultado = DataManager.GetInstance().ConsultaSQL("SELECT * FROM mediciones WHERE id = " + id);
+            if (resultado.Rows.Count > 0)
+                return mappingMedicion(resultado.Rows[0]);
+            return null;
+        }
+
         public List<Medicion> filtrarMediciones(string nombre)
         {
             String consultaSql = string.Concat("SELECT * FROM Mediciones WHERE borrado=0");
@@ -45,6 +53,23 @@ namespace TestIt.Datos
             }
 
             return null;
+        }
+
+        public int getId(string nombre)
+        {
+            var respuesta = DataManager.GetInstance().ConsultaSQLScalar("SELECT id FROM mediciones WHERE nombre = '" + nombre + "'");
+            if (respuesta == null) return -1;
+            return (int)respuesta;
+        }
+
+        public string getNombre(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM mediciones WHERE id = " + id).ToString();
+        }
+
+        public string getUnidad(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT unidad FROM mediciones WHERE id = " + id).ToString();
         }
 
         private Medicion mappingMedicion(DataRow row)

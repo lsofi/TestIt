@@ -49,6 +49,18 @@ namespace TestIt.Datos
             return null;
         }
 
+        public int getId(string nombre)
+        {
+            var respuesta = DataManager.GetInstance().ConsultaSQLScalar("SELECT id FROM deportistas WHERE nombre = '" + nombre + "'");
+            if (respuesta == null) return -1;
+            return (int) respuesta;
+        }
+
+        public string getApellido(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT apellido FROM deportistas WHERE id = " + id).ToString();
+        }
+
         private Deportista mappingDeportista(DataRow row)
         {
             Deportista oDeportista = new Deportista(Convert.ToInt32(row["id"]));

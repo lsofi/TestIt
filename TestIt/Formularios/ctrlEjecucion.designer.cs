@@ -29,66 +29,67 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlEjecucion));
-            this.grdTest = new System.Windows.Forms.DataGridView();
+            this.grdEjecuciones = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.colTest = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Deportista = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colDeportista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.dtpHasta = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaHasta = new System.Windows.Forms.Label();
+            this.dtpDesde = new System.Windows.Forms.DateTimePicker();
+            this.lblFechaDesde = new System.Windows.Forms.Label();
             this.lblDeportista = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.lblTest = new System.Windows.Forms.Label();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblFechaDesde = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.lblFechaHasta = new System.Windows.Forms.Label();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.grdTest)).BeginInit();
+            this.cboTest = new System.Windows.Forms.ComboBox();
+            this.cboDeportista = new System.Windows.Forms.ComboBox();
+            ((System.ComponentModel.ISupportInitialize)(this.grdEjecuciones)).BeginInit();
             this.grpFiltros.SuspendLayout();
             this.SuspendLayout();
             // 
-            // grdTest
+            // grdEjecuciones
             // 
-            this.grdTest.AllowUserToAddRows = false;
-            this.grdTest.AllowUserToDeleteRows = false;
-            this.grdTest.AllowUserToResizeColumns = false;
-            this.grdTest.AllowUserToResizeRows = false;
-            this.grdTest.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.grdTest.BackgroundColor = System.Drawing.SystemColors.Menu;
-            this.grdTest.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdTest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.grdTest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.grdTest.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.grdEjecuciones.AllowUserToAddRows = false;
+            this.grdEjecuciones.AllowUserToDeleteRows = false;
+            this.grdEjecuciones.AllowUserToResizeColumns = false;
+            this.grdEjecuciones.AllowUserToResizeRows = false;
+            this.grdEjecuciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.grdEjecuciones.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.grdEjecuciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdEjecuciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.grdEjecuciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.grdEjecuciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
             this.colTest,
-            this.Deportista,
+            this.colDeportista,
             this.Fecha});
-            this.grdTest.Location = new System.Drawing.Point(83, 266);
-            this.grdTest.Margin = new System.Windows.Forms.Padding(4);
-            this.grdTest.MultiSelect = false;
-            this.grdTest.Name = "grdTest";
-            this.grdTest.ReadOnly = true;
-            this.grdTest.RowHeadersVisible = false;
-            this.grdTest.RowHeadersWidth = 51;
-            this.grdTest.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdTest.Size = new System.Drawing.Size(872, 279);
-            this.grdTest.TabIndex = 3;
+            this.grdEjecuciones.Location = new System.Drawing.Point(83, 266);
+            this.grdEjecuciones.Margin = new System.Windows.Forms.Padding(4);
+            this.grdEjecuciones.MultiSelect = false;
+            this.grdEjecuciones.Name = "grdEjecuciones";
+            this.grdEjecuciones.ReadOnly = true;
+            this.grdEjecuciones.RowHeadersVisible = false;
+            this.grdEjecuciones.RowHeadersWidth = 51;
+            this.grdEjecuciones.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.grdEjecuciones.Size = new System.Drawing.Size(872, 279);
+            this.grdEjecuciones.TabIndex = 3;
+            this.grdEjecuciones.SelectionChanged += new System.EventHandler(this.grdEjecuciones_SelectionChanged);
             // 
             // colId
             // 
@@ -104,11 +105,11 @@
             this.colTest.Name = "colTest";
             this.colTest.ReadOnly = true;
             // 
-            // Deportista
+            // colDeportista
             // 
-            this.Deportista.HeaderText = "Deportista";
-            this.Deportista.Name = "Deportista";
-            this.Deportista.ReadOnly = true;
+            this.colDeportista.HeaderText = "Deportista";
+            this.colDeportista.Name = "colDeportista";
+            this.colDeportista.ReadOnly = true;
             // 
             // Fecha
             // 
@@ -118,15 +119,15 @@
             // 
             // grpFiltros
             // 
+            this.grpFiltros.Controls.Add(this.cboDeportista);
+            this.grpFiltros.Controls.Add(this.cboTest);
             this.grpFiltros.Controls.Add(this.btnBuscar);
             this.grpFiltros.Controls.Add(this.btnLimpiar);
-            this.grpFiltros.Controls.Add(this.dateTimePicker2);
+            this.grpFiltros.Controls.Add(this.dtpHasta);
             this.grpFiltros.Controls.Add(this.lblFechaHasta);
-            this.grpFiltros.Controls.Add(this.dateTimePicker1);
+            this.grpFiltros.Controls.Add(this.dtpDesde);
             this.grpFiltros.Controls.Add(this.lblFechaDesde);
-            this.grpFiltros.Controls.Add(this.textBox1);
             this.grpFiltros.Controls.Add(this.lblDeportista);
-            this.grpFiltros.Controls.Add(this.txtNombre);
             this.grpFiltros.Controls.Add(this.lblTest);
             this.grpFiltros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltros.ForeColor = System.Drawing.Color.LightGray;
@@ -139,14 +140,65 @@
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros de Búsqueda";
             // 
-            // textBox1
+            // btnBuscar
             // 
-            this.textBox1.BackColor = System.Drawing.SystemColors.Menu;
-            this.textBox1.Location = new System.Drawing.Point(148, 91);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(197, 23);
-            this.textBox1.TabIndex = 11;
+            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnBuscar.Location = new System.Drawing.Point(591, 147);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(114, 23);
+            this.btnBuscar.TabIndex = 18;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnLimpiar.Location = new System.Drawing.Point(722, 147);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(114, 23);
+            this.btnLimpiar.TabIndex = 17;
+            this.btnLimpiar.Text = "Limpiar filtros";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // dtpHasta
+            // 
+            this.dtpHasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpHasta.Location = new System.Drawing.Point(546, 89);
+            this.dtpHasta.Name = "dtpHasta";
+            this.dtpHasta.Size = new System.Drawing.Size(200, 23);
+            this.dtpHasta.TabIndex = 15;
+            // 
+            // lblFechaHasta
+            // 
+            this.lblFechaHasta.AutoSize = true;
+            this.lblFechaHasta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaHasta.Location = new System.Drawing.Point(416, 92);
+            this.lblFechaHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaHasta.Name = "lblFechaHasta";
+            this.lblFechaHasta.Size = new System.Drawing.Size(91, 17);
+            this.lblFechaHasta.TabIndex = 14;
+            this.lblFechaHasta.Text = "Fecha hasta:";
+            // 
+            // dtpDesde
+            // 
+            this.dtpDesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDesde.Location = new System.Drawing.Point(546, 43);
+            this.dtpDesde.Name = "dtpDesde";
+            this.dtpDesde.Size = new System.Drawing.Size(200, 23);
+            this.dtpDesde.TabIndex = 13;
+            // 
+            // lblFechaDesde
+            // 
+            this.lblFechaDesde.AutoSize = true;
+            this.lblFechaDesde.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFechaDesde.Location = new System.Drawing.Point(416, 46);
+            this.lblFechaDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFechaDesde.Name = "lblFechaDesde";
+            this.lblFechaDesde.Size = new System.Drawing.Size(94, 17);
+            this.lblFechaDesde.TabIndex = 12;
+            this.lblFechaDesde.Text = "Fecha desde:";
             // 
             // lblDeportista
             // 
@@ -158,16 +210,6 @@
             this.lblDeportista.Size = new System.Drawing.Size(79, 17);
             this.lblDeportista.TabIndex = 10;
             this.lblDeportista.Text = "Deportista:";
-            this.lblDeportista.Click += new System.EventHandler(this.lblDeportista_Click);
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.BackColor = System.Drawing.SystemColors.Menu;
-            this.txtNombre.Location = new System.Drawing.Point(148, 43);
-            this.txtNombre.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(197, 23);
-            this.txtNombre.TabIndex = 9;
             // 
             // lblTest
             // 
@@ -196,6 +238,7 @@
             this.btnEliminar.TabIndex = 11;
             this.toolTip.SetToolTip(this.btnEliminar, "Eliminar");
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnDetalle
             // 
@@ -207,6 +250,7 @@
             this.btnDetalle.TabIndex = 10;
             this.toolTip.SetToolTip(this.btnDetalle, "Detalle");
             this.btnDetalle.UseVisualStyleBackColor = true;
+            this.btnDetalle.Click += new System.EventHandler(this.btnDetalle_Click);
             // 
             // btnAgregar
             // 
@@ -217,63 +261,25 @@
             this.btnAgregar.TabIndex = 9;
             this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
-            // lblFechaDesde
+            // cboTest
             // 
-            this.lblFechaDesde.AutoSize = true;
-            this.lblFechaDesde.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaDesde.Location = new System.Drawing.Point(416, 46);
-            this.lblFechaDesde.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaDesde.Name = "lblFechaDesde";
-            this.lblFechaDesde.Size = new System.Drawing.Size(94, 17);
-            this.lblFechaDesde.TabIndex = 12;
-            this.lblFechaDesde.Text = "Fecha desde:";
+            this.cboTest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTest.FormattingEnabled = true;
+            this.cboTest.Location = new System.Drawing.Point(148, 42);
+            this.cboTest.Name = "cboTest";
+            this.cboTest.Size = new System.Drawing.Size(197, 24);
+            this.cboTest.TabIndex = 19;
             // 
-            // dateTimePicker1
+            // cboDeportista
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(546, 43);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(546, 89);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker2.TabIndex = 15;
-            // 
-            // lblFechaHasta
-            // 
-            this.lblFechaHasta.AutoSize = true;
-            this.lblFechaHasta.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaHasta.Location = new System.Drawing.Point(416, 92);
-            this.lblFechaHasta.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblFechaHasta.Name = "lblFechaHasta";
-            this.lblFechaHasta.Size = new System.Drawing.Size(91, 17);
-            this.lblFechaHasta.TabIndex = 14;
-            this.lblFechaHasta.Text = "Fecha hasta:";
-            // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnLimpiar.Location = new System.Drawing.Point(722, 147);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(114, 23);
-            this.btnLimpiar.TabIndex = 17;
-            this.btnLimpiar.Text = "Limpiar filtros";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Enabled = false;
-            this.btnBuscar.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnBuscar.Location = new System.Drawing.Point(591, 147);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(114, 23);
-            this.btnBuscar.TabIndex = 18;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.cboDeportista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDeportista.FormattingEnabled = true;
+            this.cboDeportista.Location = new System.Drawing.Point(148, 88);
+            this.cboDeportista.Name = "cboDeportista";
+            this.cboDeportista.Size = new System.Drawing.Size(197, 24);
+            this.cboDeportista.TabIndex = 20;
             // 
             // ctrlEjecucion
             // 
@@ -283,13 +289,14 @@
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnDetalle);
             this.Controls.Add(this.btnAgregar);
-            this.Controls.Add(this.grdTest);
+            this.Controls.Add(this.grdEjecuciones);
             this.Controls.Add(this.grpFiltros);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "ctrlEjecucion";
             this.Size = new System.Drawing.Size(1047, 677);
-            ((System.ComponentModel.ISupportInitialize)(this.grdTest)).EndInit();
+            this.Load += new System.EventHandler(this.ctrlEjecucion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.grdEjecuciones)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
             this.ResumeLayout(false);
@@ -297,26 +304,26 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridView grdTest;
+        private System.Windows.Forms.DataGridView grdEjecuciones;
         private System.Windows.Forms.GroupBox grpFiltros;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Label lblTest;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnDetalle;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.ToolTip toolTip;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
-        private System.Windows.Forms.DataGridViewTextBoxColumn colTest;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Deportista;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label lblDeportista;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label lblFechaHasta;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colId;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colTest;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colDeportista;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fecha;
+        private System.Windows.Forms.ComboBox cboDeportista;
+        private System.Windows.Forms.ComboBox cboTest;
     }
 }

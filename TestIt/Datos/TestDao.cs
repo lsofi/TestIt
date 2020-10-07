@@ -27,6 +27,14 @@ namespace TestIt.Datos
             return null;
         }
 
+        public Test buscarTestPorId(int id)
+        {
+            var resultado = DataManager.GetInstance().ConsultaSQL("SELECT * FROM tests WHERE id = " + id);
+            if (resultado.Rows.Count > 0)
+                return mappingTest(resultado.Rows[0]);
+            return null;
+        }
+
         public List<Test> filtrarTests(string nombre)
         {
             String consultaSql = string.Concat("SELECT * FROM Tests WHERE borrado=0");
@@ -44,6 +52,18 @@ namespace TestIt.Datos
             }
 
             return null;
+        }
+
+        public int getId(string nombre)
+        {
+            var respuesta = DataManager.GetInstance().ConsultaSQLScalar("SELECT id FROM tests WHERE nombre = '" + nombre + "'");
+            if (respuesta == null) return -1;
+            return (int)respuesta;
+        }
+
+        public string getNombre(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM tests WHERE id = " + id).ToString();
         }
 
         private List<int> buscarIdMediciones(int testId)

@@ -1,191 +1,195 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TestIt.Logica;
 
 namespace TestIt.Datos
 {
     class EjecucionDao
     {
-        //public List<Ejecucion> buscarEjecuciones()
-        //{
-        //    String consultaSql = string.Concat("SELECT * FROM Ejecuciones WHERE borrado=0");
+        public List<Ejecucion> buscarEjecuciones()
+        {
+            String consultaSql = string.Concat("SELECT * FROM Ejecuciones WHERE borrado=0");
 
-        //    var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
+            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
 
-        //    if (resultado.Rows.Count > 0)
-        //    {
-        //        List<Ejecucion> ejecuciones = new List<Ejecucion>();
-        //        foreach (DataRow row in resultado.Rows)
-        //            tests.Add(mappingTest(row));
-        //        return tests;
-        //    }
+            if (resultado.Rows.Count > 0)
+            {
+                List<Ejecucion> ejecuciones = new List<Ejecucion>();
+                foreach (DataRow row in resultado.Rows)
+                {
+                    DataTable mediciones = buscarMediciones((int)row["nro_ejecucion"]);
 
-        //    return null;
-        //}
+                    ejecuciones.Add(mappingEjecucion(row, mediciones));
+                }
+                return ejecuciones;
+            }
 
-        //public List<Test> filtrarTests(string nombre)
-        //{
-        //    String consultaSql = string.Concat("SELECT * FROM Tests WHERE borrado=0");
+            return null;
+        }
 
-        //    if (nombre != "") consultaSql += " AND nombre LIKE '" + nombre + "%'";
+        public List<Ejecucion> filtrarEjecuciones(int test, int deportista, DateTime fechaDesde, DateTime fechaHasta)
+        {
+            String consultaSql = string.Concat("SELECT * FROM Ejecuciones WHERE borrado=0");
 
-        //    var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
+            if (test != -1) consultaSql += " AND id_test = " + test;
+            if (deportista != -1) consultaSql += " AND id_deportista = " + deportista;
+            consultaSql += " AND fecha BETWEEN '" + fechaDesde.ToString("yyyy-MM-dd") + "' AND '" + fechaHasta.ToString("yyyy-MM-dd") + "'";
 
-        //    if (resultado.Rows.Count > 0)
-        //    {
-        //        List<Test> tests = new List<Test>();
-        //        foreach (DataRow row in resultado.Rows)
-        //            tests.Add(mappingTest(row));
-        //        return tests;
-        //    }
+            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
 
-        //    return null;
-        //}
+            if (resultado.Rows.Count > 0)
+            {
+                List<Ejecucion> ejecuciones = new List<Ejecucion>();
+                foreach (DataRow row in resultado.Rows)
+                {
+                    DataTable mediciones = buscarMediciones((int)row["nro_ejecucion"]);
+                    ejecuciones.Add(mappingEjecucion(row, mediciones));
+                }
+                return ejecuciones;
+            }
 
-        //private List<int> buscarIdMediciones(int testId)
-        //{
-        //    String consultaSql = string.Concat("SELECT id_campo FROM medicionesxTests WHERE id_test = " + testId);
+            return null;
+        }
 
-        //    var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
+        private DataTable buscarMediciones(int nro_ejecucion)
+        {
+            String consultaSql = "SELECT * FROM detalle_ejecuciones WHERE borrado = 0 AND nro_ejecucion = " + nro_ejecucion;
+            return DataManager.GetInstance().ConsultaSQL(consultaSql);
+        }
 
-        //    List<int> idMediciones = new List<int>();
+        private Ejecucion mappingEjecucion(DataRow row, DataTable mediciones)
+        {
+            Ejecucion oEjecucion = new Ejecucion(Convert.ToInt32(row["nro_ejecucion"]));
 
-        //    if (resultado.Rows.Count > 0)
-        //    {
-        //        foreach (DataRow row in resultado.Rows)
-        //        {
-        //            idMediciones.Add((int)row["id_campo"]);
-        //        }
-        //    }
-        //    return idMediciones;
-        //}
+            oEjecucion.IdTest = Convert.ToInt32(row["id_test"]);
+            oEjecucion.IdDeportista = Convert.ToInt32(row["id_deportista"]);
+            oEjecucion.Fecha = DateTime.Parse(row["fecha"].ToString());
+            oEjecucion.Borrado = Convert.ToInt32(row["borrado"]);
 
-        //private Test mappingTest(DataRow row)
-        //{
-        //    Test oTest = new Test(Convert.ToInt32(row["id"]));
+            foreach (DataRow mRow in mediciones.Rows)
+            {
+                oEjecucion.addMedicion((int)mRow["id_campo"], mRow["valor"].ToString());
+            }
 
-        //    oTest.Nombre = row["nombre"].ToString();
-        //    oTest.Descripcion = row["descripcion"].ToString();
-        //    oTest.Borrado = Convert.ToInt32(row["borrado"]);
-        //    oTest.IdMediciones = buscarIdMediciones((int)row["id"]);
+            return oEjecucion;
+        }
 
-        //    return oTest;
-        //}
+        public bool Create(Ejecucion oEjecucion)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+                //SIN PARAMETROS
 
-        //public bool Create(Test oTest)
-        //{
-        //    DataManager dm = new DataManager();
-        //    try
-        //    {
-        //        dm.Open();
-        //        dm.BeginTransaction();
-        //        //SIN PARAMETROS
+                string str_sql = "INSERT INTO Ejecuciones VALUES (" +
+                            oEjecucion.IdTest + ", " +
+                            oEjecucion.IdDeportista + ", " +
+                            oEjecucion.IdUsuario + ", '" +
+                            oEjecucion.Fecha.ToString("yyyy-MM-dd") + "', ";
+                if (oEjecucion.Observacion == null) str_sql += "NULL";
+                else str_sql += "'" + oEjecucion.Observacion + "'";
+                str_sql += ", 0)";
 
-        //        string str_sql = "INSERT INTO Tests VALUES ('" +
-        //                    oTest.Nombre + "', '" +
-        //                    oTest.Descripcion + "', 0)";
+                dm.EjecutarSQL(str_sql);
+                int newId = Convert.ToInt32(dm.ConsultaSQLScalar(" SELECT @@IDENTITY"));
 
-        //        dm.EjecutarSQL(str_sql);
-        //        int newId = Convert.ToInt32(dm.ConsultaSQLScalar(" SELECT @@IDENTITY"));
+                foreach (int key in oEjecucion.Mediciones.Keys)
+                {
+                    string valor = oEjecucion.Mediciones[key];
+                    str_sql = "INSERT INTO Detalle_Ejecuciones VALUES (" + newId + "," + key + ", ";
+                    if (valor == null) str_sql += "NULL";
+                    else str_sql += "'" + valor + "'";
+                    str_sql += ", 0)";
 
-        //        foreach (int idMedicion in oTest.IdNuevas)
-        //        {
-        //            str_sql = "INSERT INTO MedicionesXTests VALUES (" + idMedicion + "," + newId + ",0)";
-        //            dm.EjecutarSQL(str_sql);
-        //        }
+                    dm.EjecutarSQL(str_sql);
+                }
 
-        //        dm.Commit();
-        //    }
+                dm.Commit();
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        dm.Rollback();
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        dm.Close();
-        //    }
-        //    return true;
-        //}
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                dm.Close();
+            }
+            return true;
+        }
 
-        //internal bool Update(Test oTest)
-        //{
+        public bool Update(Ejecucion oEjecucion)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
 
-        //    DataManager dm = new DataManager();
-        //    try
-        //    {
-        //        dm.Open();
-        //        dm.BeginTransaction();
-        //        string str_sql = "UPDATE Tests SET " +
-        //                      "nombre='" + oTest.Nombre + "' ," +
-        //                      "descripcion= " + "'" + oTest.Descripcion +
-        //                      "' WHERE id=" + oTest.Id + " AND  borrado=0";
+                foreach (int key in oEjecucion.Mediciones.Keys)
+                {
+                    string valor = oEjecucion.Mediciones[key];
+                    string str_sql = "UPDATE Detalle_Ejecuciones SET valor = " + oEjecucion.Mediciones[key] + 
+                        " WHERE nro_ejecucion = " + oEjecucion.Numero + " AND id_campo = " + key;
+                    dm.EjecutarSQL(str_sql);
+                }
 
-        //        dm.EjecutarSQL(str_sql);
+                dm.Commit();
+            }
 
-        //        foreach (int idMedicion in oTest.IdNuevas)
-        //        {
-        //            str_sql = "INSERT INTO MedicionesXTests VALUES (" + idMedicion + "," + oTest.Id + ",0)";
-        //            dm.EjecutarSQL(str_sql);
-        //        }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
+            finally
+            {
+                dm.Close();
+            }
+            return true;
+        }
 
-        //        foreach (int idMedicion in oTest.IdEliminadas)
-        //        {
-        //            str_sql = "DELETE FROM MedicionesXTests WHERE id_campo =" + idMedicion + " AND id_test = " + oTest.Id;
-        //            dm.EjecutarSQL(str_sql);
-        //        }
+        public bool Delete(Ejecucion oEjecucion)
+        {
+            DataManager dm = new DataManager();
+            try
+            {
+                dm.Open();
+                dm.BeginTransaction();
+                string str_sql = "UPDATE Ejecuciones" +
+                                " SET borrado = " + 1 +
+                                " WHERE nro_ejecucion = " + oEjecucion.Numero;
 
-        //        dm.Commit();
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        dm.Rollback();
-        //        throw ex;
-        //    }
-        //    finally
-        //    {
-        //        dm.Close();
-        //    }
-        //    return true;
-        //}
+                dm.EjecutarSQL(str_sql);
 
-        //public bool Delete(Test oTest)
-        //{
-        //    DataManager dm = new DataManager();
-        //    try
-        //    {
-        //        dm.Open();
-        //        dm.BeginTransaction();
-        //        string str_sql = "UPDATE Tests" +
-        //                        " SET borrado = " + 1 +
-        //                        " WHERE id = " + oTest.Id;
+                foreach (int key in oEjecucion.Mediciones.Keys)
+                {
+                    str_sql = "UPDATE Detalle_Ejecuciones SET borrado = 1 WHERE id_campo =" + key + " AND nro_ejecucion = " + oEjecucion.Numero;
+                    dm.EjecutarSQL(str_sql);
+                }
 
-        //        dm.EjecutarSQL(str_sql);
+                dm.Commit();
+            }
 
-        //        foreach (int idMedicion in oTest.IdMediciones)
-        //        {
-        //            str_sql = "UPDATE MedicionesXTests SET borrado = 1 WHERE id_campo =" + idMedicion + " AND id_test = " + oTest.Id;
-        //            dm.EjecutarSQL(str_sql);
-        //        }
+            catch (Exception ex)
+            {
+                dm.Rollback();
+                throw ex;
+            }
 
-        //        dm.Commit();
-        //    }
+            finally
+            {
+                dm.Close();
+            }
 
-        //    catch (Exception ex)
-        //    {
-        //        dm.Rollback();
-        //        throw ex;
-        //    }
-
-        //    finally
-        //    {
-        //        dm.Close();
-        //    }
-
-        //    return true;
-        //}
+            return true;
+        }
     }
 }

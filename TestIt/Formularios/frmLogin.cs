@@ -14,7 +14,9 @@ namespace TestIt.Formularios
 {
     public partial class frmLogin : Form
     {
-        public string UsuarioLogueado { get; internal set; }
+        private Usuario usuarioLogueado = null;
+
+        public Usuario UsuarioLogueado { get => usuarioLogueado; }
 
         public frmLogin()
         {
@@ -74,7 +76,7 @@ namespace TestIt.Formularios
 
             if (validarUsuario(user)) 
             { 
-                UsuarioLogueado = user.NombreUsuario;
+                usuarioLogueado = user;
                 Close();
             }
         }

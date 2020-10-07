@@ -43,6 +43,26 @@ namespace TestIt.Logica
             return mDao.filtrarMediciones(nombre);
         }
 
+        public static int buscarId(string nombre)
+        {
+            return mDao.getId(nombre);
+        }
+
+        public static string buscarNombre(int id)
+        {
+            return mDao.getNombre(id);
+        }
+        public static string buscarUnidad(int id)
+        {
+            return mDao.getUnidad(id);
+        }
+
+
+        public static Medicion buscarMedicionPorId(int id)
+        {
+            return mDao.buscarMedicionPorId(id);
+        }
+
         public bool grabar()
         {
             return mDao.Create(this);

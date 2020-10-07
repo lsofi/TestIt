@@ -54,9 +54,24 @@ namespace TestIt.Logica
             return tDao.buscarTests();
         }
 
+        public static Test buscarTestPorId (int id)
+        {
+            return tDao.buscarTestPorId(id);
+        }
+
         public static List<Test> filtrarTests(string nombre)
         {
             return tDao.filtrarTests(nombre);
+        }
+
+        public static int buscarId(string nombre)
+        {
+            return tDao.getId(nombre);
+        }
+
+        public static string buscarNombre(int id)
+        {
+            return tDao.getNombre(id);
         }
 
         public bool grabar()

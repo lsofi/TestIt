@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using TestIt.Soporte;
+using TestIt.Logica;
 
 namespace TestIt.Formularios
 {
@@ -21,6 +23,7 @@ namespace TestIt.Formularios
         ctrlMedicion ctrlMedicion;
         ctrlEjecucion ctrlEjecucion;
         private bool mediciones = false;
+        private bool detalleEjecuciones = false;
 
 
         public frmPrincipal()
@@ -29,9 +32,12 @@ namespace TestIt.Formularios
 
 
             frmLogin login = new frmLogin();
-            login.ShowDialog();
-            this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado;
-
+            //login.ShowDialog();
+            if(login.UsuarioLogueado != null)
+                this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado.NombreUsuario;
+            //Globals.UsuarioActual = login.UsuarioLogueado;            
+            Globals.UsuarioActual = new Usuario();
+            Globals.UsuarioActual.IdUsuario = 1;
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -107,6 +113,23 @@ namespace TestIt.Formularios
         {
             panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlEjecucion);
+        }
+
+        public void toggleEjecuciones(Ejecucion ejecucion)
+        {
+            panelContenedor.Controls.Clear();
+            if (detalleEjecuciones)
+            {
+                panelContenedor.Controls.Add(ctrlEjecucion);
+                ctrlEjecucion.cargarDatos();
+                detalleEjecuciones = false;
+            }
+            else
+            {
+                ctrlDetalleEjecucion ctrlDetalleEjecucion = new ctrlDetalleEjecucion(this, ejecucion);
+                panelContenedor.Controls.Add(ctrlDetalleEjecucion);
+                detalleEjecuciones = true;
+            }
         }
     }
 }
