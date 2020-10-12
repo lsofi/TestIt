@@ -93,6 +93,16 @@ namespace TestIt.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _139_page {
+            get {
+                object obj = ResourceManager.GetObject("139-page", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _198_add_user__Personalizado_ {
             get {
                 object obj = ResourceManager.GetObject("198-add-user (Personalizado)", resourceCulture);

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlEjecucion));
             this.grdEjecuciones = new System.Windows.Forms.DataGridView();
             this.colId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -37,6 +37,8 @@
             this.colDeportista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpFiltros = new System.Windows.Forms.GroupBox();
+            this.cboDeportista = new System.Windows.Forms.ComboBox();
+            this.cboTest = new System.Windows.Forms.ComboBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -50,8 +52,6 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnDetalle = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.cboTest = new System.Windows.Forms.ComboBox();
-            this.cboDeportista = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.grdEjecuciones)).BeginInit();
             this.grpFiltros.SuspendLayout();
             this.SuspendLayout();
@@ -65,14 +65,14 @@
             this.grdEjecuciones.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.grdEjecuciones.BackgroundColor = System.Drawing.SystemColors.Menu;
             this.grdEjecuciones.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.grdEjecuciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.grdEjecuciones.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.grdEjecuciones.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grdEjecuciones.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.colId,
@@ -139,6 +139,24 @@
             this.grpFiltros.TabIndex = 6;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros de Búsqueda";
+            // 
+            // cboDeportista
+            // 
+            this.cboDeportista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDeportista.FormattingEnabled = true;
+            this.cboDeportista.Location = new System.Drawing.Point(148, 88);
+            this.cboDeportista.Name = "cboDeportista";
+            this.cboDeportista.Size = new System.Drawing.Size(197, 24);
+            this.cboDeportista.TabIndex = 20;
+            // 
+            // cboTest
+            // 
+            this.cboTest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboTest.FormattingEnabled = true;
+            this.cboTest.Location = new System.Drawing.Point(148, 42);
+            this.cboTest.Name = "cboTest";
+            this.cboTest.Size = new System.Drawing.Size(197, 24);
+            this.cboTest.TabIndex = 19;
             // 
             // btnBuscar
             // 
@@ -262,24 +280,6 @@
             this.toolTip.SetToolTip(this.btnAgregar, "Agregar");
             this.btnAgregar.UseVisualStyleBackColor = true;
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
-            // 
-            // cboTest
-            // 
-            this.cboTest.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTest.FormattingEnabled = true;
-            this.cboTest.Location = new System.Drawing.Point(148, 42);
-            this.cboTest.Name = "cboTest";
-            this.cboTest.Size = new System.Drawing.Size(197, 24);
-            this.cboTest.TabIndex = 19;
-            // 
-            // cboDeportista
-            // 
-            this.cboDeportista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboDeportista.FormattingEnabled = true;
-            this.cboDeportista.Location = new System.Drawing.Point(148, 88);
-            this.cboDeportista.Name = "cboDeportista";
-            this.cboDeportista.Size = new System.Drawing.Size(197, 24);
-            this.cboDeportista.TabIndex = 20;
             // 
             // ctrlEjecucion
             // 

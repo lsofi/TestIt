@@ -21,7 +21,7 @@ public class DataManager
         string sofi = @"Data Source=DESKTOP-F1HR73L\SQLEXPRESS;Initial Catalog=Testit;Integrated Security=True";
 
 
-        dbConnection.ConnectionString = joaco;
+        dbConnection.ConnectionString = sofi;
     }
 
     public void BeginTransaction()
