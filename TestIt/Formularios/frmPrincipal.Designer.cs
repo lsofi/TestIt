@@ -33,6 +33,7 @@
             this.btnMinimizar = new System.Windows.Forms.Label();
             this.btnCerrar = new System.Windows.Forms.Label();
             this.panelMenuVertical = new System.Windows.Forms.Panel();
+            this.btnEjecuciones = new System.Windows.Forms.Button();
             this.btnListado = new System.Windows.Forms.Button();
             this.btnTests = new System.Windows.Forms.Button();
             this.btnDeportes = new System.Windows.Forms.Button();
@@ -41,7 +42,6 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnDeportistas = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -100,7 +100,7 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
-            this.panelMenuVertical.Controls.Add(this.button1);
+            this.panelMenuVertical.Controls.Add(this.btnEjecuciones);
             this.panelMenuVertical.Controls.Add(this.btnListado);
             this.panelMenuVertical.Controls.Add(this.btnTests);
             this.panelMenuVertical.Controls.Add(this.btnDeportes);
@@ -114,6 +114,21 @@
             this.panelMenuVertical.Size = new System.Drawing.Size(233, 677);
             this.panelMenuVertical.TabIndex = 1;
             // 
+            // btnEjecuciones
+            // 
+            this.btnEjecuciones.FlatAppearance.BorderSize = 0;
+            this.btnEjecuciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnEjecuciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEjecuciones.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEjecuciones.ForeColor = System.Drawing.Color.LightGray;
+            this.btnEjecuciones.Location = new System.Drawing.Point(4, 322);
+            this.btnEjecuciones.Name = "btnEjecuciones";
+            this.btnEjecuciones.Size = new System.Drawing.Size(224, 32);
+            this.btnEjecuciones.TabIndex = 6;
+            this.btnEjecuciones.Text = "Ejecuciones";
+            this.btnEjecuciones.UseVisualStyleBackColor = true;
+            this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
+            // 
             // btnListado
             // 
             this.btnListado.FlatAppearance.BorderSize = 0;
@@ -121,13 +136,13 @@
             this.btnListado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListado.ForeColor = System.Drawing.Color.LightGray;
-            this.btnListado.Location = new System.Drawing.Point(3, 354);
+            this.btnListado.Location = new System.Drawing.Point(3, 360);
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(224, 32);
             this.btnListado.TabIndex = 5;
             this.btnListado.Text = "Listados";
             this.btnListado.UseVisualStyleBackColor = true;
-            this.btnListado.Click += new System.EventHandler(this.btnEjecuciones_Click);
+            this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
             // 
             // btnTests
             // 
@@ -223,20 +238,6 @@
             this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
             this.panelContenedor.TabIndex = 2;
             // 
-            // button1
-            // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.LightGray;
-            this.button1.Location = new System.Drawing.Point(4, 322);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(224, 32);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Ejecuciones";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -275,6 +276,6 @@
         private System.Windows.Forms.Button btnDeportes;
         private System.Windows.Forms.Button btnTests;
         private System.Windows.Forms.Button btnListado;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnEjecuciones;
     }
 }

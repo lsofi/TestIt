@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.components = new System.ComponentModel.Container();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.EjecucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
@@ -36,16 +38,14 @@
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
+            this.rpvEjecuciones = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.dataSetListados = new TestIt.DataSets.DataSetListados();
+            this.dataSetListadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).BeginInit();
             this.grpFiltros.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
             this.SuspendLayout();
-            // 
-            // reportViewer1
-            // 
-            this.reportViewer1.Location = new System.Drawing.Point(376, 59);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(603, 557);
-            this.reportViewer1.TabIndex = 0;
             // 
             // grpFiltros
             // 
@@ -74,6 +74,7 @@
             this.btnFiltrar.TabIndex = 18;
             this.btnFiltrar.Text = "Filtrar";
             this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
             // 
             // dtpHasta
             // 
@@ -117,25 +118,50 @@
             // 
             this.btnVolver.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnVolver.Location = new System.Drawing.Point(128, 593);
+            this.btnVolver.Location = new System.Drawing.Point(128, 621);
             this.btnVolver.Name = "btnVolver";
-            this.btnVolver.Size = new System.Drawing.Size(114, 23);
+            this.btnVolver.Size = new System.Drawing.Size(114, 28);
             this.btnVolver.TabIndex = 19;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
+            // 
+            // rpvEjecuciones
+            // 
+            reportDataSource1.Name = "DataSetEjecuciones";
+            reportDataSource1.Value = this.dataSetListadosBindingSource;
+            this.rpvEjecuciones.LocalReport.DataSources.Add(reportDataSource1);
+            this.rpvEjecuciones.LocalReport.ReportEmbeddedResource = "TestIt.Listados.repEjecucionesListado.rdlc";
+            this.rpvEjecuciones.Location = new System.Drawing.Point(387, 22);
+            this.rpvEjecuciones.Name = "rpvEjecuciones";
+            this.rpvEjecuciones.ServerReport.BearerToken = null;
+            this.rpvEjecuciones.Size = new System.Drawing.Size(633, 627);
+            this.rpvEjecuciones.TabIndex = 20;
+            // 
+            // dataSetListados
+            // 
+            this.dataSetListados.DataSetName = "DataSetListados";
+            this.dataSetListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // dataSetListadosBindingSource
+            // 
+            this.dataSetListadosBindingSource.DataSource = this.dataSetListados;
+            this.dataSetListadosBindingSource.Position = 0;
             // 
             // ctrlListadoEjecuciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
+            this.Controls.Add(this.rpvEjecuciones);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.grpFiltros);
-            this.Controls.Add(this.reportViewer1);
             this.Name = "ctrlListadoEjecuciones";
             this.Size = new System.Drawing.Size(1047, 677);
+            ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -150,5 +176,10 @@
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Button btnVolver;
+        private Microsoft.Reporting.WinForms.ReportViewer rpvEjecuciones;
+        private System.Windows.Forms.BindingSource dataSetTestItBindingSource;
+        private System.Windows.Forms.BindingSource EjecucionesBindingSource;
+        private System.Windows.Forms.BindingSource dataSetListadosBindingSource;
+        private DataSets.DataSetListados dataSetListados;
     }
 }

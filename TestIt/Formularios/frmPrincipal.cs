@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestIt.Soporte;
 using TestIt.Logica;
+using TestIt.Listados;
 
 namespace TestIt.Formularios
 {
@@ -22,8 +23,10 @@ namespace TestIt.Formularios
         ctrlTest ctrlTest;
         ctrlMedicion ctrlMedicion;
         ctrlEjecucion ctrlEjecucion;
+        ctrlListados ctrlListados;
         private bool mediciones = false;
         private bool detalleEjecuciones = false;
+        private bool listado = false;
 
 
         public frmPrincipal()
@@ -32,12 +35,13 @@ namespace TestIt.Formularios
 
 
             frmLogin login = new frmLogin();
-            login.ShowDialog();
+            //login.ShowDialog();
             if(login.UsuarioLogueado != null)
                 this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado.NombreUsuario;
             Globals.UsuarioActual = login.UsuarioLogueado;            
-            //Globals.UsuarioActual = new Usuario();
-            //Globals.UsuarioActual.IdUsuario = 1;
+            Globals.UsuarioActual = new Usuario();
+            Globals.UsuarioActual.IdUsuario = 1;
+            Globals.UsuarioActual.NombreUsuario = "sofia";
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -49,6 +53,7 @@ namespace TestIt.Formularios
             ctrlTest = new ctrlTest(this);
             ctrlMedicion = new ctrlMedicion(this);
             ctrlEjecucion = new ctrlEjecucion(this);
+            ctrlListados = new ctrlListados(this);
         }
 
         private void btnCerrar_Click(object sender, EventArgs e)
@@ -130,6 +135,27 @@ namespace TestIt.Formularios
                 panelContenedor.Controls.Add(ctrlDetalleEjecucion);
                 detalleEjecuciones = true;
             }
+        }
+
+        public void toggleListados(UserControl ctrl)
+        {
+            panelContenedor.Controls.Clear();
+            if (listado)
+            {
+                panelContenedor.Controls.Add(ctrlListados);
+                listado = false;
+            }
+            else
+            {
+                panelContenedor.Controls.Add(ctrl);
+                detalleEjecuciones = true;
+            }
+        }
+
+        private void btnListado_Click(object sender, EventArgs e)
+        {
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlListados);
         }
     }
 }

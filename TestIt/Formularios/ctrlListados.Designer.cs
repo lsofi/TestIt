@@ -128,6 +128,7 @@
             this.btnEjecuciones.Size = new System.Drawing.Size(35, 37);
             this.btnEjecuciones.TabIndex = 30;
             this.btnEjecuciones.UseVisualStyleBackColor = true;
+            this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
             // 
             // lblEjecuciones
             // 
