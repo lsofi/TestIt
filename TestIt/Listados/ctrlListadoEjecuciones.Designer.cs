@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            this.dataSetListadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetListados = new TestIt.DataSets.DataSetListados();
             this.EjecucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpFiltros = new System.Windows.Forms.GroupBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
@@ -39,13 +40,21 @@
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
             this.rpvEjecuciones = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSetListados = new TestIt.DataSets.DataSetListados();
-            this.dataSetListadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).BeginInit();
             this.grpFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // dataSetListadosBindingSource
+            // 
+            this.dataSetListadosBindingSource.DataSource = this.dataSetListados;
+            this.dataSetListadosBindingSource.Position = 0;
+            // 
+            // dataSetListados
+            // 
+            this.dataSetListados.DataSetName = "DataSetListados";
+            this.dataSetListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // grpFiltros
             // 
@@ -56,7 +65,7 @@
             this.grpFiltros.Controls.Add(this.lblFechaDesde);
             this.grpFiltros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltros.ForeColor = System.Drawing.Color.LightGray;
-            this.grpFiltros.Location = new System.Drawing.Point(42, 206);
+            this.grpFiltros.Location = new System.Drawing.Point(28, 204);
             this.grpFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.grpFiltros.Name = "grpFiltros";
             this.grpFiltros.Padding = new System.Windows.Forms.Padding(4);
@@ -127,25 +136,12 @@
             // 
             // rpvEjecuciones
             // 
-            reportDataSource1.Name = "DataSetEjecuciones";
-            reportDataSource1.Value = this.dataSetListadosBindingSource;
-            this.rpvEjecuciones.LocalReport.DataSources.Add(reportDataSource1);
             this.rpvEjecuciones.LocalReport.ReportEmbeddedResource = "TestIt.Listados.repEjecucionesListado.rdlc";
-            this.rpvEjecuciones.Location = new System.Drawing.Point(387, 22);
+            this.rpvEjecuciones.Location = new System.Drawing.Point(341, 33);
             this.rpvEjecuciones.Name = "rpvEjecuciones";
             this.rpvEjecuciones.ServerReport.BearerToken = null;
-            this.rpvEjecuciones.Size = new System.Drawing.Size(633, 627);
+            this.rpvEjecuciones.Size = new System.Drawing.Size(680, 616);
             this.rpvEjecuciones.TabIndex = 20;
-            // 
-            // dataSetListados
-            // 
-            this.dataSetListados.DataSetName = "DataSetListados";
-            this.dataSetListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // dataSetListadosBindingSource
-            // 
-            this.dataSetListadosBindingSource.DataSource = this.dataSetListados;
-            this.dataSetListadosBindingSource.Position = 0;
             // 
             // ctrlListadoEjecuciones
             // 
@@ -157,11 +153,11 @@
             this.Controls.Add(this.grpFiltros);
             this.Name = "ctrlListadoEjecuciones";
             this.Size = new System.Drawing.Size(1047, 677);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).EndInit();
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -176,10 +172,10 @@
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Button btnVolver;
-        private Microsoft.Reporting.WinForms.ReportViewer rpvEjecuciones;
         private System.Windows.Forms.BindingSource dataSetTestItBindingSource;
         private System.Windows.Forms.BindingSource EjecucionesBindingSource;
         private System.Windows.Forms.BindingSource dataSetListadosBindingSource;
         private DataSets.DataSetListados dataSetListados;
+        private Microsoft.Reporting.WinForms.ReportViewer rpvEjecuciones;
     }
 }

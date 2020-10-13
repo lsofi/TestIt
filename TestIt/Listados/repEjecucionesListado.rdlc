@@ -11,7 +11,7 @@
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetEjecuciones">
+    <DataSet Name="DataSetListados">
       <Query>
         <DataSourceName>DataSetListados</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
@@ -44,7 +44,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetListados</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\Desktop\FRC\Sistemas III\PAVI\TP\ProyectoTestIt\TestIt\TestIt\DataSets\DataSetListados.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\Documentos\UTN\PAVI\TP\TestIt\TestIt\DataSets\DataSetListados.xsd</rd:SchemaPath>
         <rd:TableName>Ejecuciones</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
@@ -70,7 +70,13 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> [@usuario]</Value>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>Century Gothic</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!usuario.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -112,7 +118,21 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>[@prFechaDesde] - </Value>
+                    <Value>=Parameters!prFechaDesde.Value</Value>
+                    <Style>
+                      <FontFamily>Century Gothic</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>Century Gothic</FontFamily>
+                      <FontWeight>Normal</FontWeight>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>- </Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -125,7 +145,13 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value> [@prFechaHasta]</Value>
+                    <Value xml:space="preserve"> </Value>
+                    <Style>
+                      <FontFamily>Century Gothic</FontFamily>
+                    </Style>
+                  </TextRun>
+                  <TextRun>
+                    <Value>=Parameters!prFechaHasta.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                     </Style>
@@ -165,7 +191,7 @@
                   <Width>2.5cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>2.5cm</Width>
+                  <Width>3.30886cm</Width>
                 </TablixColumn>
                 <TablixColumn>
                   <Width>2.5cm</Width>
@@ -564,11 +590,11 @@
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetEjecuciones</DataSetName>
+            <DataSetName>DataSetListados</DataSetName>
             <Top>3.46287cm</Top>
             <Left>0.43593cm</Left>
             <Height>1.2cm</Height>
-            <Width>15cm</Width>
+            <Width>15.80886cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -577,10 +603,10 @@
             </Style>
           </Tablix>
         </ReportItems>
-        <Height>3.07292in</Height>
+        <Height>4.8125in</Height>
         <Style />
       </Body>
-      <Width>7.46342in</Width>
+      <Width>6.84363in</Width>
       <Page>
         <PageHeader>
           <Height>2.54cm</Height>
@@ -620,7 +646,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.00508cm</Top>
-              <Left>4.15396cm</Left>
+              <Left>3.78354cm</Left>
               <Height>0.92674cm</Height>
               <Width>9.96125cm</Width>
               <ZIndex>1</ZIndex>
@@ -650,9 +676,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox3</rd:DefaultName>
               <Top>0.26423cm</Top>
-              <Left>16.45708cm</Left>
+              <Left>12.42218cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Width>4.45792cm</Width>
               <ZIndex>2</ZIndex>
               <Style>
                 <Border>
@@ -672,7 +698,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1.79917cm</Height>
+          <Height>1.32292cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -725,9 +751,9 @@
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
               <Top>0.52021cm</Top>
-              <Left>16.2851cm</Left>
+              <Left>15.78239cm</Left>
               <Height>0.6cm</Height>
-              <Width>2.5cm</Width>
+              <Width>1.09771cm</Width>
               <ZIndex>1</ZIndex>
               <Style>
                 <Border>

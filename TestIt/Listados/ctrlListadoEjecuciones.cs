@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using TestIt.Formularios;
 using Microsoft.Reporting.WinForms;
 using TestIt.Soporte;
+using TestIt.Datos;
 
 namespace TestIt.Listados
 {
     public partial class ctrlListadoEjecuciones : UserControl
     {
+        ListadosDao lDao = new ListadosDao();
+
         public ctrlListadoEjecuciones()
         {
             InitializeComponent();
@@ -30,23 +33,9 @@ namespace TestIt.Listados
 
             //DATASOURCE
             rpvEjecuciones.LocalReport.DataSources.Clear();
-            rpvEjecuciones.LocalReport.DataSources.Add(new ReportDataSource("DataSetTestIt", generarListado(dtpDesde.Value, dtpHasta.Value)));
+            rpvEjecuciones.LocalReport.DataSources.Add(new ReportDataSource("DataSetListados", lDao.listadoEjecuciones(dtpDesde.Value, dtpHasta.Value)));
             rpvEjecuciones.RefreshReport();
             
-        }
-
-        private DataTable generarListado(DateTime desde, DateTime hasta)
-        {
-            DataManager dm = DataManager.GetInstance();
-            String consulta = 
-                "SELECT e.nro_ejecucion, t.nombre AS test, d.apellido AS deportista, u.nombre_usuario AS usuario, e.fecha, e.observacion" +
-                " FROM ejecuciones e" +
-                " JOIN deportistas d ON e.id_deportista = d.id" +
-                " JOIN tests t ON e.id_test = t.id" +
-                " JOIN usuarios u ON e.id_usuario = u.id" +
-                " WHERE e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'";
-
-            return dm.ConsultaSQL(consulta);
         }
     }
 }
