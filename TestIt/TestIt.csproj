@@ -49,7 +49,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -136,6 +136,12 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\ctrlListadoDeporistas.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoDeporistas.Designer.cs">
+      <DependentUpon>ctrlListadoDeporistas.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\ctrlListadoEjecuTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -153,6 +159,12 @@
     </Compile>
     <Compile Include="Listados\ctrlListadoEjecuciones.Designer.cs">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoEquipos.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoEquipos.Designer.cs">
+      <DependentUpon>ctrlListadoEquipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Logica\Deporte.cs" />
     <Compile Include="Logica\Categoria.cs" />
@@ -212,6 +224,9 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoDeporistas.resx">
+      <DependentUpon>ctrlListadoDeporistas.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,9 +236,14 @@
     <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoEquipos.resx">
+      <DependentUpon>ctrlListadoEquipos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\repDeportistasListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />
+    <EmbeddedResource Include="Listados\repEquiposListado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

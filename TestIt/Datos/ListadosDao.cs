@@ -22,5 +22,7 @@ namespace TestIt.Datos
 
             return dm.ConsultaSQL(consulta);
         }
+
+
     }
 }
