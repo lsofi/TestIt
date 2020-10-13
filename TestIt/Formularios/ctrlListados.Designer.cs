@@ -86,6 +86,9 @@
             this.btnCategorias.Size = new System.Drawing.Size(35, 37);
             this.btnCategorias.TabIndex = 32;
             this.btnCategorias.UseVisualStyleBackColor = true;
+
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+
             // 
             // btnEjecuEquipo
             // 
@@ -173,6 +176,9 @@
             this.btnUsuarios.Size = new System.Drawing.Size(35, 37);
             this.btnUsuarios.TabIndex = 26;
             this.btnUsuarios.UseVisualStyleBackColor = true;
+
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+
             // 
             // lblUsuarios
             // 
@@ -194,6 +200,9 @@
             this.btnTests.Size = new System.Drawing.Size(35, 37);
             this.btnTests.TabIndex = 24;
             this.btnTests.UseVisualStyleBackColor = true;
+
+            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
+
             // 
             // lblTests
             // 
@@ -215,7 +224,9 @@
             this.btnEquipos.Size = new System.Drawing.Size(35, 37);
             this.btnEquipos.TabIndex = 22;
             this.btnEquipos.UseVisualStyleBackColor = true;
+
             this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+
             // 
             // lblEquipos
             // 
@@ -237,7 +248,9 @@
             this.btnDeportista.Size = new System.Drawing.Size(35, 37);
             this.btnDeportista.TabIndex = 20;
             this.btnDeportista.UseVisualStyleBackColor = true;
+
             this.btnDeportista.Click += new System.EventHandler(this.btnDeportista_Click);
+
             // 
             // lblDeportista
             // 

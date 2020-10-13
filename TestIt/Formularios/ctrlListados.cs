@@ -36,6 +36,7 @@ namespace TestIt.Formularios
             fPrincipal.toggleListados(new ctrlListadoEjecuDeportista(fPrincipal));
         }
 
+
         private void btnDeportista_Click(object sender, EventArgs e)
         {
             fPrincipal.toggleListados(new ctrlListadoDeporistas(fPrincipal));
@@ -44,6 +45,21 @@ namespace TestIt.Formularios
         private void btnEquipos_Click(object sender, EventArgs e)
         {
             fPrincipal.toggleListados(new ctrlListadoEquipos(fPrincipal));
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoUsuarios(fPrincipal));
+        }
+
+        private void btnTests_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoTests(fPrincipal));
+
+        
+	private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoCategorias(fPrincipal));
+
         }
     }
 }

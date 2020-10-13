@@ -28,5 +28,11 @@ namespace TestIt.Logica
         {
             return NombreUsuario;
         }
+
+        public static string buscarNombre(int id)
+        {
+            UsuarioDao ud = new UsuarioDao();
+            return ud.getNombre(id);
+        }
     }
 }

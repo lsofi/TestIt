@@ -1,6 +1,6 @@
 ﻿namespace TestIt.Listados
 {
-    partial class ctrlListadoEjecuDeportista
+    partial class ctrlListadoCategorias
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -28,30 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.EjecucionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.grpFiltros = new System.Windows.Forms.GroupBox();
-            this.lblDeportista = new System.Windows.Forms.Label();
-            this.cboDeportista = new System.Windows.Forms.ComboBox();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.cboCategorias = new System.Windows.Forms.ComboBox();
             this.btnFiltrar = new System.Windows.Forms.Button();
             this.dtpHasta = new System.Windows.Forms.DateTimePicker();
             this.lblFechaHasta = new System.Windows.Forms.Label();
             this.dtpDesde = new System.Windows.Forms.DateTimePicker();
             this.lblFechaDesde = new System.Windows.Forms.Label();
             this.btnVolver = new System.Windows.Forms.Button();
-            this.rpvEjecuciones = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSetListadosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetListados = new TestIt.DataSets.DataSetListados();
-            ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).BeginInit();
+            this.rpvCategorias = new Microsoft.Reporting.WinForms.ReportViewer();
             this.grpFiltros.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).BeginInit();
             this.SuspendLayout();
             // 
             // grpFiltros
             // 
-            this.grpFiltros.Controls.Add(this.lblDeportista);
-            this.grpFiltros.Controls.Add(this.cboDeportista);
+            this.grpFiltros.Controls.Add(this.lblCategoria);
+            this.grpFiltros.Controls.Add(this.cboCategorias);
             this.grpFiltros.Controls.Add(this.btnFiltrar);
             this.grpFiltros.Controls.Add(this.dtpHasta);
             this.grpFiltros.Controls.Add(this.lblFechaHasta);
@@ -59,33 +52,33 @@
             this.grpFiltros.Controls.Add(this.lblFechaDesde);
             this.grpFiltros.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grpFiltros.ForeColor = System.Drawing.Color.LightGray;
-            this.grpFiltros.Location = new System.Drawing.Point(28, 204);
+            this.grpFiltros.Location = new System.Drawing.Point(24, 191);
             this.grpFiltros.Margin = new System.Windows.Forms.Padding(4);
             this.grpFiltros.Name = "grpFiltros";
             this.grpFiltros.Padding = new System.Windows.Forms.Padding(4);
             this.grpFiltros.Size = new System.Drawing.Size(283, 239);
-            this.grpFiltros.TabIndex = 7;
+            this.grpFiltros.TabIndex = 8;
             this.grpFiltros.TabStop = false;
             this.grpFiltros.Text = "Filtros";
             // 
-            // lblDeportista
+            // lblCategoria
             // 
-            this.lblDeportista.AutoSize = true;
-            this.lblDeportista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeportista.Location = new System.Drawing.Point(33, 141);
-            this.lblDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDeportista.Name = "lblDeportista";
-            this.lblDeportista.Size = new System.Drawing.Size(79, 17);
-            this.lblDeportista.TabIndex = 20;
-            this.lblDeportista.Text = "Deportista:";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCategoria.Location = new System.Drawing.Point(33, 141);
+            this.lblCategoria.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(79, 17);
+            this.lblCategoria.TabIndex = 20;
+            this.lblCategoria.Text = "Categoria:";
             // 
-            // cboDeportista
+            // cboCategorias
             // 
-            this.cboDeportista.FormattingEnabled = true;
-            this.cboDeportista.Location = new System.Drawing.Point(128, 138);
-            this.cboDeportista.Name = "cboDeportista";
-            this.cboDeportista.Size = new System.Drawing.Size(138, 24);
-            this.cboDeportista.TabIndex = 19;
+            this.cboCategorias.FormattingEnabled = true;
+            this.cboCategorias.Location = new System.Drawing.Point(128, 138);
+            this.cboCategorias.Name = "cboCategorias";
+            this.cboCategorias.Size = new System.Drawing.Size(138, 24);
+            this.cboCategorias.TabIndex = 19;
             // 
             // btnFiltrar
             // 
@@ -140,69 +133,51 @@
             // 
             this.btnVolver.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold);
             this.btnVolver.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnVolver.Location = new System.Drawing.Point(114, 621);
+            this.btnVolver.Location = new System.Drawing.Point(110, 613);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(114, 28);
-            this.btnVolver.TabIndex = 19;
+            this.btnVolver.TabIndex = 20;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
             // 
-            // rpvEjecuciones
+            // rpvCategorias
             // 
-            this.rpvEjecuciones.LocalReport.ReportEmbeddedResource = "TestIt.Listados.repEjecuDeportistaListado.rdlc";
-            this.rpvEjecuciones.Location = new System.Drawing.Point(341, 33);
-            this.rpvEjecuciones.Name = "rpvEjecuciones";
-            this.rpvEjecuciones.ServerReport.BearerToken = null;
-            this.rpvEjecuciones.Size = new System.Drawing.Size(680, 616);
-            this.rpvEjecuciones.TabIndex = 20;
+            this.rpvCategorias.LocalReport.ReportEmbeddedResource = "TestIt.Listados.repCategoriaListado.rdlc";
+            this.rpvCategorias.Location = new System.Drawing.Point(345, 25);
+            this.rpvCategorias.Name = "rpvCategorias";
+            this.rpvCategorias.ServerReport.BearerToken = null;
+            this.rpvCategorias.Size = new System.Drawing.Size(680, 616);
+            this.rpvCategorias.TabIndex = 21;
             // 
-            // dataSetListadosBindingSource
-            // 
-            this.dataSetListadosBindingSource.DataSource = this.dataSetListados;
-            this.dataSetListadosBindingSource.Position = 0;
-            // 
-            // dataSetListados
-            // 
-            this.dataSetListados.DataSetName = "DataSetListados";
-            this.dataSetListados.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ctrlListadoEjecuDeportista
+            // ctrlListadoCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
-            this.Controls.Add(this.rpvEjecuciones);
+            this.Controls.Add(this.rpvCategorias);
             this.Controls.Add(this.btnVolver);
             this.Controls.Add(this.grpFiltros);
-            this.Name = "ctrlListadoEjecuDeportista";
+            this.Name = "ctrlListadoCategorias";
             this.Size = new System.Drawing.Size(1047, 677);
-            this.Load += new System.EventHandler(this.ctrlListadoEjecuDeportista_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.EjecucionesBindingSource)).EndInit();
+            this.Load += new System.EventHandler(this.ctrlListadoCategorias_Load);
             this.grpFiltros.ResumeLayout(false);
             this.grpFiltros.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListadosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetListados)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private Microsoft.Reporting.WinForms.ReportViewer reportViewer1;
         private System.Windows.Forms.GroupBox grpFiltros;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.ComboBox cboCategorias;
         private System.Windows.Forms.Button btnFiltrar;
         private System.Windows.Forms.DateTimePicker dtpHasta;
         private System.Windows.Forms.Label lblFechaHasta;
         private System.Windows.Forms.DateTimePicker dtpDesde;
         private System.Windows.Forms.Label lblFechaDesde;
         private System.Windows.Forms.Button btnVolver;
-        private System.Windows.Forms.BindingSource dataSetTestItBindingSource;
-        private System.Windows.Forms.BindingSource EjecucionesBindingSource;
-        private System.Windows.Forms.BindingSource dataSetListadosBindingSource;
-        private DataSets.DataSetListados dataSetListados;
-        private Microsoft.Reporting.WinForms.ReportViewer rpvEjecuciones;
-        private System.Windows.Forms.Label lblDeportista;
-        private System.Windows.Forms.ComboBox cboDeportista;
+        private Microsoft.Reporting.WinForms.ReportViewer rpvCategorias;
     }
 }
