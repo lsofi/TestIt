@@ -1,0 +1,10 @@
+  UPDATE Deportistas SET id_equipo=7 where id_equipo=1 
+  UPDATE Deportistas SET id_equipo=8 where id_equipo=2 
+UPDATE Deportistas SET id_equipo=9 where id_equipo=3 
+
+
+  UPDATE Deportistas set id_categoria=9 where id_categoria=1
+  UPDATE Deportistas set id_categoria=10 where id_categoria=2
+  UPDATE Deportistas set id_categoria=11 where id_categoria=3
+  UPDATE Deportistas set id_categoria=12 where id_categoria=4
+
