@@ -42,6 +42,7 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnDeportistas = new System.Windows.Forms.Button();
             this.panelContenedor = new System.Windows.Forms.Panel();
+            this.btnTests1 = new System.Windows.Forms.Button();
             this.panelTitulo.SuspendLayout();
             this.panelMenuVertical.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -55,8 +56,9 @@
             this.panelTitulo.Controls.Add(this.btnCerrar);
             this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTitulo.Location = new System.Drawing.Point(0, 0);
+            this.panelTitulo.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1280, 43);
+            this.panelTitulo.Size = new System.Drawing.Size(1920, 66);
             this.panelTitulo.TabIndex = 0;
             // 
             // lblBienvenido
@@ -64,10 +66,9 @@
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBienvenido.ForeColor = System.Drawing.Color.LightGray;
-            this.lblBienvenido.Location = new System.Drawing.Point(11, 9);
-            this.lblBienvenido.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblBienvenido.Location = new System.Drawing.Point(16, 14);
             this.lblBienvenido.Name = "lblBienvenido";
-            this.lblBienvenido.Size = new System.Drawing.Size(100, 21);
+            this.lblBienvenido.Size = new System.Drawing.Size(155, 30);
             this.lblBienvenido.TabIndex = 9;
             this.lblBienvenido.Text = "Bienvenido ";
             // 
@@ -76,10 +77,9 @@
             this.btnMinimizar.AutoSize = true;
             this.btnMinimizar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMinimizar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnMinimizar.Location = new System.Drawing.Point(1230, 5);
-            this.btnMinimizar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(1845, 8);
             this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(17, 19);
+            this.btnMinimizar.Size = new System.Drawing.Size(24, 28);
             this.btnMinimizar.TabIndex = 8;
             this.btnMinimizar.Text = "_";
             this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
@@ -89,10 +89,9 @@
             this.btnCerrar.AutoSize = true;
             this.btnCerrar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrar.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCerrar.Location = new System.Drawing.Point(1251, 9);
-            this.btnCerrar.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(1876, 14);
             this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(18, 19);
+            this.btnCerrar.Size = new System.Drawing.Size(25, 28);
             this.btnCerrar.TabIndex = 7;
             this.btnCerrar.Text = "x";
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
@@ -100,6 +99,7 @@
             // panelMenuVertical
             // 
             this.panelMenuVertical.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(26)))), ((int)(((byte)(32)))), ((int)(((byte)(40)))));
+            this.panelMenuVertical.Controls.Add(this.btnTests1);
             this.panelMenuVertical.Controls.Add(this.btnEjecuciones);
             this.panelMenuVertical.Controls.Add(this.btnListado);
             this.panelMenuVertical.Controls.Add(this.btnTests);
@@ -109,9 +109,10 @@
             this.panelMenuVertical.Controls.Add(this.imgLogo);
             this.panelMenuVertical.Controls.Add(this.btnDeportistas);
             this.panelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panelMenuVertical.Location = new System.Drawing.Point(0, 43);
+            this.panelMenuVertical.Location = new System.Drawing.Point(0, 66);
+            this.panelMenuVertical.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelMenuVertical.Name = "panelMenuVertical";
-            this.panelMenuVertical.Size = new System.Drawing.Size(233, 677);
+            this.panelMenuVertical.Size = new System.Drawing.Size(350, 1040);
             this.panelMenuVertical.TabIndex = 1;
             // 
             // btnEjecuciones
@@ -121,9 +122,10 @@
             this.btnEjecuciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEjecuciones.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEjecuciones.ForeColor = System.Drawing.Color.LightGray;
-            this.btnEjecuciones.Location = new System.Drawing.Point(4, 322);
+            this.btnEjecuciones.Location = new System.Drawing.Point(6, 495);
+            this.btnEjecuciones.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEjecuciones.Name = "btnEjecuciones";
-            this.btnEjecuciones.Size = new System.Drawing.Size(224, 32);
+            this.btnEjecuciones.Size = new System.Drawing.Size(336, 49);
             this.btnEjecuciones.TabIndex = 6;
             this.btnEjecuciones.Text = "Ejecuciones";
             this.btnEjecuciones.UseVisualStyleBackColor = true;
@@ -136,9 +138,10 @@
             this.btnListado.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnListado.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnListado.ForeColor = System.Drawing.Color.LightGray;
-            this.btnListado.Location = new System.Drawing.Point(3, 360);
+            this.btnListado.Location = new System.Drawing.Point(4, 613);
+            this.btnListado.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnListado.Name = "btnListado";
-            this.btnListado.Size = new System.Drawing.Size(224, 32);
+            this.btnListado.Size = new System.Drawing.Size(336, 49);
             this.btnListado.TabIndex = 5;
             this.btnListado.Text = "Listados";
             this.btnListado.UseVisualStyleBackColor = true;
@@ -146,18 +149,10 @@
             // 
             // btnTests
             // 
-            this.btnTests.FlatAppearance.BorderSize = 0;
-            this.btnTests.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
-            this.btnTests.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnTests.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTests.ForeColor = System.Drawing.Color.LightGray;
-            this.btnTests.Location = new System.Drawing.Point(3, 316);
+            this.btnTests.Location = new System.Drawing.Point(0, 0);
             this.btnTests.Name = "btnTests";
-            this.btnTests.Size = new System.Drawing.Size(224, 32);
-            this.btnTests.TabIndex = 4;
-            this.btnTests.Text = "Tests";
-            this.btnTests.UseVisualStyleBackColor = true;
-            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
+            this.btnTests.Size = new System.Drawing.Size(75, 23);
+            this.btnTests.TabIndex = 7;
             // 
             // btnDeportes
             // 
@@ -166,9 +161,10 @@
             this.btnDeportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeportes.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeportes.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDeportes.Location = new System.Drawing.Point(3, 278);
+            this.btnDeportes.Location = new System.Drawing.Point(4, 428);
+            this.btnDeportes.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeportes.Name = "btnDeportes";
-            this.btnDeportes.Size = new System.Drawing.Size(224, 32);
+            this.btnDeportes.Size = new System.Drawing.Size(336, 49);
             this.btnDeportes.TabIndex = 3;
             this.btnDeportes.Text = "Deportes";
             this.btnDeportes.UseVisualStyleBackColor = true;
@@ -181,9 +177,10 @@
             this.btnCategoria.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCategoria.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCategoria.ForeColor = System.Drawing.Color.LightGray;
-            this.btnCategoria.Location = new System.Drawing.Point(3, 240);
+            this.btnCategoria.Location = new System.Drawing.Point(4, 369);
+            this.btnCategoria.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnCategoria.Name = "btnCategoria";
-            this.btnCategoria.Size = new System.Drawing.Size(224, 32);
+            this.btnCategoria.Size = new System.Drawing.Size(336, 49);
             this.btnCategoria.TabIndex = 2;
             this.btnCategoria.Text = "Categorías";
             this.btnCategoria.UseVisualStyleBackColor = true;
@@ -196,9 +193,10 @@
             this.btnEquipos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEquipos.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEquipos.ForeColor = System.Drawing.Color.LightGray;
-            this.btnEquipos.Location = new System.Drawing.Point(3, 202);
+            this.btnEquipos.Location = new System.Drawing.Point(4, 311);
+            this.btnEquipos.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(224, 32);
+            this.btnEquipos.Size = new System.Drawing.Size(336, 49);
             this.btnEquipos.TabIndex = 1;
             this.btnEquipos.Text = "Equipos";
             this.btnEquipos.UseVisualStyleBackColor = true;
@@ -207,10 +205,9 @@
             // imgLogo
             // 
             this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
-            this.imgLogo.Location = new System.Drawing.Point(68, 40);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
+            this.imgLogo.Location = new System.Drawing.Point(102, 62);
             this.imgLogo.Name = "imgLogo";
-            this.imgLogo.Size = new System.Drawing.Size(101, 89);
+            this.imgLogo.Size = new System.Drawing.Size(152, 137);
             this.imgLogo.TabIndex = 1;
             this.imgLogo.TabStop = false;
             // 
@@ -221,9 +218,10 @@
             this.btnDeportistas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDeportistas.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDeportistas.ForeColor = System.Drawing.Color.LightGray;
-            this.btnDeportistas.Location = new System.Drawing.Point(3, 164);
+            this.btnDeportistas.Location = new System.Drawing.Point(4, 252);
+            this.btnDeportistas.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDeportistas.Name = "btnDeportistas";
-            this.btnDeportistas.Size = new System.Drawing.Size(224, 32);
+            this.btnDeportistas.Size = new System.Drawing.Size(336, 49);
             this.btnDeportistas.TabIndex = 0;
             this.btnDeportistas.Text = "Deportistas";
             this.btnDeportistas.UseVisualStyleBackColor = true;
@@ -233,22 +231,40 @@
             // 
             this.panelContenedor.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(57)))), ((int)(((byte)(80)))));
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedor.Location = new System.Drawing.Point(233, 43);
+            this.panelContenedor.Location = new System.Drawing.Point(350, 66);
+            this.panelContenedor.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1047, 677);
+            this.panelContenedor.Size = new System.Drawing.Size(1570, 1040);
             this.panelContenedor.TabIndex = 2;
+            // 
+            // btnTests1
+            // 
+            this.btnTests1.FlatAppearance.BorderSize = 0;
+            this.btnTests1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(100)))), ((int)(((byte)(182)))));
+            this.btnTests1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnTests1.Font = new System.Drawing.Font("Century Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTests1.ForeColor = System.Drawing.Color.LightGray;
+            this.btnTests1.Location = new System.Drawing.Point(4, 554);
+            this.btnTests1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnTests1.Name = "btnTests1";
+            this.btnTests1.Size = new System.Drawing.Size(336, 49);
+            this.btnTests1.TabIndex = 8;
+            this.btnTests1.Text = "Tests";
+            this.btnTests1.UseVisualStyleBackColor = true;
+            this.btnTests1.Click += new System.EventHandler(this.btnTests1_Click);
             // 
             // frmPrincipal
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.ClientSize = new System.Drawing.Size(1280, 720);
+            this.ClientSize = new System.Drawing.Size(1920, 1106);
             this.Controls.Add(this.panelContenedor);
             this.Controls.Add(this.panelMenuVertical);
             this.Controls.Add(this.panelTitulo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
@@ -277,5 +293,6 @@
         private System.Windows.Forms.Button btnTests;
         private System.Windows.Forms.Button btnListado;
         private System.Windows.Forms.Button btnEjecuciones;
+        private System.Windows.Forms.Button btnTests1;
     }
 }

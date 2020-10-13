@@ -84,13 +84,6 @@ namespace TestIt.Formularios
             panelContenedor.Controls.Add(ctrlEquipo);
         }
 
-        private void btnTests_Click(object sender, EventArgs e)
-        {
-            mediciones = false;
-            panelContenedor.Controls.Clear();
-            panelContenedor.Controls.Add(ctrlTest);
-        }
-
         private void btnDeportes_Click(object sender, EventArgs e)
         {
             panelContenedor.Controls.Clear();
@@ -153,6 +146,13 @@ namespace TestIt.Formularios
         private void btnListado_Click(object sender, EventArgs e)
         {
             toggleListados(null);
+        }
+
+        private void btnTests1_Click(object sender, EventArgs e)
+        {
+            mediciones = false;
+            panelContenedor.Controls.Clear();
+            panelContenedor.Controls.Add(ctrlTest);
         }
     }
 }
