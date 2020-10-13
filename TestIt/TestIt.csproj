@@ -136,6 +136,12 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\ctrlListadoCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoCategorias.Designer.cs">
+      <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\ctrlListadoEjecuTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +218,9 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoCategorias.resx">
+      <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +230,7 @@
     <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\repCategoriaListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />

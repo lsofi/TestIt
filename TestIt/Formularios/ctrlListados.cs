@@ -35,5 +35,10 @@ namespace TestIt.Formularios
         {
             fPrincipal.toggleListados(new ctrlListadoEjecuDeportista(fPrincipal));
         }
+
+        private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoCategorias(fPrincipal));
+        }
     }
 }
