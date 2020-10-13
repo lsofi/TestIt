@@ -49,6 +49,11 @@ namespace TestIt.Datos
 
             return oUsuario;
         }
+
+        public string getNombre(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre_usuario FROM usuarios WHERE id = " + id).ToString();
+        }
     }
 
 }

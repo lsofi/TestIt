@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             this.grpListados = new System.Windows.Forms.GroupBox();
-            this.lblEjecuTest = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.lblEjecuciones = new System.Windows.Forms.Label();
-            this.lblEjecDeportista = new System.Windows.Forms.Label();
-            this.lblUsuarios = new System.Windows.Forms.Label();
-            this.lblTests = new System.Windows.Forms.Label();
-            this.lblEquipos = new System.Windows.Forms.Label();
-            this.lblDeportista = new System.Windows.Forms.Label();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.btnEjecuEquipo = new System.Windows.Forms.Button();
+            this.lblEjecuTest = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.btnEjecuciones = new System.Windows.Forms.Button();
+            this.lblEjecuciones = new System.Windows.Forms.Label();
             this.btnEjecuDeport = new System.Windows.Forms.Button();
+            this.lblEjecDeportista = new System.Windows.Forms.Label();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.lblUsuarios = new System.Windows.Forms.Label();
             this.btnTests = new System.Windows.Forms.Button();
+            this.lblTests = new System.Windows.Forms.Label();
             this.btnEquipos = new System.Windows.Forms.Button();
+            this.lblEquipos = new System.Windows.Forms.Label();
             this.btnDeportista = new System.Windows.Forms.Button();
+            this.lblDeportista = new System.Windows.Forms.Label();
             this.grpListados.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -77,6 +77,27 @@
             this.grpListados.TabStop = false;
             this.grpListados.Text = "Listados";
             // 
+            // btnCategorias
+            // 
+            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCategorias.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnCategorias.Location = new System.Drawing.Point(329, 128);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(35, 37);
+            this.btnCategorias.TabIndex = 32;
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            // 
+            // btnEjecuEquipo
+            // 
+            this.btnEjecuEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEjecuEquipo.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnEjecuEquipo.Location = new System.Drawing.Point(329, 300);
+            this.btnEjecuEquipo.Name = "btnEjecuEquipo";
+            this.btnEjecuEquipo.Size = new System.Drawing.Size(35, 37);
+            this.btnEjecuEquipo.TabIndex = 18;
+            this.btnEjecuEquipo.UseVisualStyleBackColor = true;
+            this.btnEjecuEquipo.Click += new System.EventHandler(this.btnEjecuEquipo_Click);
+            // 
             // lblEjecuTest
             // 
             this.lblEjecuTest.AutoSize = true;
@@ -99,93 +120,6 @@
             this.lblCategoria.TabIndex = 31;
             this.lblCategoria.Text = "Categorias";
             // 
-            // lblEjecuciones
-            // 
-            this.lblEjecuciones.AutoSize = true;
-            this.lblEjecuciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEjecuciones.Location = new System.Drawing.Point(224, 226);
-            this.lblEjecuciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEjecuciones.Name = "lblEjecuciones";
-            this.lblEjecuciones.Size = new System.Drawing.Size(83, 17);
-            this.lblEjecuciones.TabIndex = 29;
-            this.lblEjecuciones.Text = "Ejecuciones";
-            // 
-            // lblEjecDeportista
-            // 
-            this.lblEjecDeportista.AutoSize = true;
-            this.lblEjecDeportista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEjecDeportista.Location = new System.Drawing.Point(120, 393);
-            this.lblEjecDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEjecDeportista.Name = "lblEjecDeportista";
-            this.lblEjecDeportista.Size = new System.Drawing.Size(184, 17);
-            this.lblEjecDeportista.TabIndex = 27;
-            this.lblEjecDeportista.Text = "Ejecuciones por deportistas";
-            // 
-            // lblUsuarios
-            // 
-            this.lblUsuarios.AutoSize = true;
-            this.lblUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuarios.Location = new System.Drawing.Point(248, 54);
-            this.lblUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblUsuarios.Name = "lblUsuarios";
-            this.lblUsuarios.Size = new System.Drawing.Size(59, 17);
-            this.lblUsuarios.TabIndex = 25;
-            this.lblUsuarios.Text = "Usuarios";
-            // 
-            // lblTests
-            // 
-            this.lblTests.AutoSize = true;
-            this.lblTests.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTests.Location = new System.Drawing.Point(88, 226);
-            this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblTests.Name = "lblTests";
-            this.lblTests.Size = new System.Drawing.Size(36, 17);
-            this.lblTests.TabIndex = 23;
-            this.lblTests.Text = "Tests";
-            // 
-            // lblEquipos
-            // 
-            this.lblEquipos.AutoSize = true;
-            this.lblEquipos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEquipos.Location = new System.Drawing.Point(66, 138);
-            this.lblEquipos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblEquipos.Name = "lblEquipos";
-            this.lblEquipos.Size = new System.Drawing.Size(58, 17);
-            this.lblEquipos.TabIndex = 21;
-            this.lblEquipos.Text = "Equipos";
-            // 
-            // lblDeportista
-            // 
-            this.lblDeportista.AutoSize = true;
-            this.lblDeportista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDeportista.Location = new System.Drawing.Point(44, 54);
-            this.lblDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblDeportista.Name = "lblDeportista";
-            this.lblDeportista.Size = new System.Drawing.Size(80, 17);
-            this.lblDeportista.TabIndex = 19;
-            this.lblDeportista.Text = "Deportistas";
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCategorias.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnCategorias.Location = new System.Drawing.Point(329, 128);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Size = new System.Drawing.Size(35, 37);
-            this.btnCategorias.TabIndex = 32;
-            this.btnCategorias.UseVisualStyleBackColor = true;
-            // 
-            // btnEjecuEquipo
-            // 
-            this.btnEjecuEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEjecuEquipo.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnEjecuEquipo.Location = new System.Drawing.Point(329, 300);
-            this.btnEjecuEquipo.Name = "btnEjecuEquipo";
-            this.btnEjecuEquipo.Size = new System.Drawing.Size(35, 37);
-            this.btnEjecuEquipo.TabIndex = 18;
-            this.btnEjecuEquipo.UseVisualStyleBackColor = true;
-            this.btnEjecuEquipo.Click += new System.EventHandler(this.btnEjecuEquipo_Click);
-            // 
             // btnEjecuciones
             // 
             this.btnEjecuciones.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -196,6 +130,17 @@
             this.btnEjecuciones.TabIndex = 30;
             this.btnEjecuciones.UseVisualStyleBackColor = true;
             this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
+            // 
+            // lblEjecuciones
+            // 
+            this.lblEjecuciones.AutoSize = true;
+            this.lblEjecuciones.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEjecuciones.Location = new System.Drawing.Point(224, 226);
+            this.lblEjecuciones.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEjecuciones.Name = "lblEjecuciones";
+            this.lblEjecuciones.Size = new System.Drawing.Size(83, 17);
+            this.lblEjecuciones.TabIndex = 29;
+            this.lblEjecuciones.Text = "Ejecuciones";
             // 
             // btnEjecuDeport
             // 
@@ -208,6 +153,17 @@
             this.btnEjecuDeport.UseVisualStyleBackColor = true;
             this.btnEjecuDeport.Click += new System.EventHandler(this.btnEjecuDeport_Click);
             // 
+            // lblEjecDeportista
+            // 
+            this.lblEjecDeportista.AutoSize = true;
+            this.lblEjecDeportista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEjecDeportista.Location = new System.Drawing.Point(120, 393);
+            this.lblEjecDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEjecDeportista.Name = "lblEjecDeportista";
+            this.lblEjecDeportista.Size = new System.Drawing.Size(184, 17);
+            this.lblEjecDeportista.TabIndex = 27;
+            this.lblEjecDeportista.Text = "Ejecuciones por deportistas";
+            // 
             // btnUsuarios
             // 
             this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -217,6 +173,18 @@
             this.btnUsuarios.Size = new System.Drawing.Size(35, 37);
             this.btnUsuarios.TabIndex = 26;
             this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // lblUsuarios
+            // 
+            this.lblUsuarios.AutoSize = true;
+            this.lblUsuarios.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuarios.Location = new System.Drawing.Point(248, 54);
+            this.lblUsuarios.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblUsuarios.Name = "lblUsuarios";
+            this.lblUsuarios.Size = new System.Drawing.Size(59, 17);
+            this.lblUsuarios.TabIndex = 25;
+            this.lblUsuarios.Text = "Usuarios";
             // 
             // btnTests
             // 
@@ -227,6 +195,18 @@
             this.btnTests.Size = new System.Drawing.Size(35, 37);
             this.btnTests.TabIndex = 24;
             this.btnTests.UseVisualStyleBackColor = true;
+            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
+            // 
+            // lblTests
+            // 
+            this.lblTests.AutoSize = true;
+            this.lblTests.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTests.Location = new System.Drawing.Point(88, 226);
+            this.lblTests.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblTests.Name = "lblTests";
+            this.lblTests.Size = new System.Drawing.Size(36, 17);
+            this.lblTests.TabIndex = 23;
+            this.lblTests.Text = "Tests";
             // 
             // btnEquipos
             // 
@@ -238,6 +218,17 @@
             this.btnEquipos.TabIndex = 22;
             this.btnEquipos.UseVisualStyleBackColor = true;
             // 
+            // lblEquipos
+            // 
+            this.lblEquipos.AutoSize = true;
+            this.lblEquipos.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEquipos.Location = new System.Drawing.Point(66, 138);
+            this.lblEquipos.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblEquipos.Name = "lblEquipos";
+            this.lblEquipos.Size = new System.Drawing.Size(58, 17);
+            this.lblEquipos.TabIndex = 21;
+            this.lblEquipos.Text = "Equipos";
+            // 
             // btnDeportista
             // 
             this.btnDeportista.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -247,6 +238,17 @@
             this.btnDeportista.Size = new System.Drawing.Size(35, 37);
             this.btnDeportista.TabIndex = 20;
             this.btnDeportista.UseVisualStyleBackColor = true;
+            // 
+            // lblDeportista
+            // 
+            this.lblDeportista.AutoSize = true;
+            this.lblDeportista.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDeportista.Location = new System.Drawing.Point(44, 54);
+            this.lblDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblDeportista.Name = "lblDeportista";
+            this.lblDeportista.Size = new System.Drawing.Size(80, 17);
+            this.lblDeportista.TabIndex = 19;
+            this.lblDeportista.Text = "Deportistas";
             // 
             // ctrlListados
             // 

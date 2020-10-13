@@ -49,7 +49,7 @@
       <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1404.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
-      <HintPath>packages\Microsoft.SqlServer.Types.14.0.1016.290\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -136,6 +136,18 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\ctrlListadoTests.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoTests.Designer.cs">
+      <DependentUpon>ctrlListadoTests.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoUsuarios.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoUsuarios.Designer.cs">
+      <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\ctrlListadoEjecuTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -212,6 +224,12 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoTests.resx">
+      <DependentUpon>ctrlListadoTests.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoUsuarios.resx">
+      <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
     </EmbeddedResource>
@@ -221,6 +239,8 @@
     <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\repTestsListado.rdlc" />
+    <EmbeddedResource Include="Listados\repUsuariosListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />
