@@ -136,6 +136,7 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <Compile Include="Listados\ctrlListadoTests.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -147,6 +148,13 @@
     </Compile>
     <Compile Include="Listados\ctrlListadoUsuarios.Designer.cs">
       <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
+=======
+    <Compile Include="Listados\ctrlListadoCategorias.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoCategorias.Designer.cs">
+      <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
+>>>>>>> e6556ca6a2614aa4f614c9d13a4b2df2582f9c6a
     </Compile>
     <Compile Include="Listados\ctrlListadoEjecuTest.cs">
       <SubType>UserControl</SubType>
@@ -224,11 +232,16 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Listados\ctrlListadoTests.resx">
       <DependentUpon>ctrlListadoTests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoUsuarios.resx">
       <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
+=======
+    <EmbeddedResource Include="Listados\ctrlListadoCategorias.resx">
+      <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
+>>>>>>> e6556ca6a2614aa4f614c9d13a4b2df2582f9c6a
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
@@ -239,8 +252,12 @@
     <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
+<<<<<<< HEAD
     <EmbeddedResource Include="Listados\repTestsListado.rdlc" />
     <EmbeddedResource Include="Listados\repUsuariosListado.rdlc" />
+=======
+    <EmbeddedResource Include="Listados\repCategoriaListado.rdlc" />
+>>>>>>> e6556ca6a2614aa4f614c9d13a4b2df2582f9c6a
     <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
     <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />

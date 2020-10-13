@@ -86,6 +86,7 @@
             this.btnCategorias.Size = new System.Drawing.Size(35, 37);
             this.btnCategorias.TabIndex = 32;
             this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
             // 
             // btnEjecuEquipo
             // 

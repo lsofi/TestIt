@@ -44,6 +44,11 @@ namespace TestIt.Formularios
         private void btnTests_Click(object sender, EventArgs e)
         {
             fPrincipal.toggleListados(new ctrlListadoTests(fPrincipal));
+
+        
+	private void btnCategorias_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoCategorias(fPrincipal));
         }
     }
 }

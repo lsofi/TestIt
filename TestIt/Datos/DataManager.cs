@@ -22,6 +22,7 @@ public class DataManager
 
 
         dbConnection.ConnectionString = guada;
+
     }
 
     public void BeginTransaction()
