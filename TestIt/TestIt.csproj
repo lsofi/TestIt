@@ -64,6 +64,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\DataSetListados.cs">
+      <DependentUpon>DataSetListados.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetListados.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -133,6 +136,18 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
+    <Compile Include="Listados\ctrlListadoEjecuTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoEjecuTest.Designer.cs">
+      <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoEjecuDeportista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Listados\ctrlListadoEjecuDeportista.Designer.cs">
+      <DependentUpon>ctrlListadoEjecuDeportista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Listados\ctrlListadoEjecuciones.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -197,10 +212,18 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
+      <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Listados\ctrlListadoEjecuDeportista.resx">
+      <DependentUpon>ctrlListadoEjecuDeportista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
+    <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
+    <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>

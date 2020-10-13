@@ -26,7 +26,6 @@ namespace TestIt.Formularios
         ctrlListados ctrlListados;
         private bool mediciones = false;
         private bool detalleEjecuciones = false;
-        private bool listado = false;
 
 
         public frmPrincipal()
@@ -118,6 +117,7 @@ namespace TestIt.Formularios
         {
             panelContenedor.Controls.Clear();
             panelContenedor.Controls.Add(ctrlEjecucion);
+            detalleEjecuciones = false;
         }
 
         public void toggleEjecuciones(Ejecucion ejecucion)
@@ -140,22 +140,19 @@ namespace TestIt.Formularios
         public void toggleListados(UserControl ctrl)
         {
             panelContenedor.Controls.Clear();
-            if (listado)
+            if (ctrl == null)
             {
                 panelContenedor.Controls.Add(ctrlListados);
-                listado = false;
             }
             else
             {
                 panelContenedor.Controls.Add(ctrl);
-                detalleEjecuciones = true;
             }
         }
 
         private void btnListado_Click(object sender, EventArgs e)
         {
-            panelContenedor.Controls.Clear();
-            panelContenedor.Controls.Add(ctrlListados);
+            toggleListados(null);
         }
     }
 }

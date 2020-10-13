@@ -58,6 +58,11 @@ namespace TestIt.Logica
             return dDao.getId(nombre);
         }
 
+        public static Deportista buscarPorId(int id)
+        {
+            return dDao.getFromId(id);
+        }
+
         public static string buscarApellido(int id)
         {
             return dDao.getApellido(id);

@@ -17,10 +17,12 @@ namespace TestIt.Listados
     public partial class ctrlListadoEjecuciones : UserControl
     {
         ListadosDao lDao = new ListadosDao();
+        frmPrincipal fPrincipal;
 
-        public ctrlListadoEjecuciones()
+        public ctrlListadoEjecuciones(frmPrincipal fp)
         {
             InitializeComponent();
+            fPrincipal = fp;
         }
 
         private void btnFiltrar_Click(object sender, EventArgs e)
@@ -36,6 +38,11 @@ namespace TestIt.Listados
             rpvEjecuciones.LocalReport.DataSources.Add(new ReportDataSource("DataSetListados", lDao.listadoEjecuciones(dtpDesde.Value, dtpHasta.Value)));
             rpvEjecuciones.RefreshReport();
             
+        }
+
+        private void btnVolver_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleEjecuciones(null);
         }
     }
 }

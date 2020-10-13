@@ -56,6 +56,13 @@ namespace TestIt.Datos
             return (int) respuesta;
         }
 
+        public Deportista getFromId(int id)
+        {
+            var respuesta = DataManager.GetInstance().ConsultaSQL("SELECT * FROM deportistas WHERE id = " + id);
+            if (respuesta.Rows.Count == 0) return null;
+            return mappingDeportista(respuesta.Rows[0]);
+        }
+
         public string getApellido(int id)
         {
             return DataManager.GetInstance().ConsultaSQLScalar("SELECT apellido FROM deportistas WHERE id = " + id).ToString();

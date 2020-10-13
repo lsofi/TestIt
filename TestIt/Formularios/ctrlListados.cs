@@ -23,7 +23,17 @@ namespace TestIt.Formularios
 
         private void btnEjecuciones_Click(object sender, EventArgs e)
         {
-            fPrincipal.toggleListados(new ctrlListadoEjecuciones());
+            fPrincipal.toggleListados(new ctrlListadoEjecuciones(fPrincipal));
+        }
+
+        private void btnEjecuEquipo_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoEjecuTest(fPrincipal));
+        }
+
+        private void btnEjecuDeport_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlListadoEjecuDeportista(fPrincipal));
         }
     }
 }
