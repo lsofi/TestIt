@@ -34,13 +34,13 @@ namespace TestIt.Formularios
 
 
             frmLogin login = new frmLogin();
-            //login.ShowDialog();
+            login.ShowDialog();
             if(login.UsuarioLogueado != null)
                 this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado.NombreUsuario;
             Globals.UsuarioActual = login.UsuarioLogueado;            
-            Globals.UsuarioActual = new Usuario();
-            Globals.UsuarioActual.IdUsuario = 1;
-            Globals.UsuarioActual.NombreUsuario = "sofia";
+            //Globals.UsuarioActual = new Usuario();
+            //Globals.UsuarioActual.IdUsuario = 1;
+            //Globals.UsuarioActual.NombreUsuario = "sofia";
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)
@@ -148,7 +148,7 @@ namespace TestIt.Formularios
             toggleListados(null);
         }
 
-        private void btnTests1_Click(object sender, EventArgs e)
+        private void btnTests_Click(object sender, EventArgs e)
         {
             mediciones = false;
             panelContenedor.Controls.Clear();

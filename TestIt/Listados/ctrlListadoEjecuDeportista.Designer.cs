@@ -81,6 +81,7 @@
             // 
             // cboDeportista
             // 
+            this.cboDeportista.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboDeportista.FormattingEnabled = true;
             this.cboDeportista.Location = new System.Drawing.Point(128, 138);
             this.cboDeportista.Name = "cboDeportista";
