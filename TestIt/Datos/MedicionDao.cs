@@ -36,6 +36,16 @@ namespace TestIt.Datos
             return null;
         }
 
+        public DataTable buscarMedicionesPorTest(int idTest)
+        {
+            var resultado = DataManager.GetInstance().ConsultaSQL(
+                "SELECT m.id, m.nombre FROM mediciones m" +
+                " JOIN medicionesXtests t ON m.id = t.id_campo " +
+                " WHERE t.id_test = " + idTest);
+
+            return resultado;
+        }
+
         public List<Medicion> filtrarMediciones(string nombre)
         {
             String consultaSql = string.Concat("SELECT * FROM Mediciones WHERE borrado=0");

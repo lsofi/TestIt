@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -41,6 +42,11 @@ namespace TestIt.Logica
         public static List<Medicion> filtrarMediciones(string nombre)
         {
             return mDao.filtrarMediciones(nombre);
+        }
+
+        public static DataTable buscarMedicionesPorTest(int idTest)
+        {
+            return mDao.buscarMedicionesPorTest(idTest);
         }
 
         public static int buscarId(string nombre)

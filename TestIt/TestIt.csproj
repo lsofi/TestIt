@@ -64,6 +64,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSets\DataSetEstadisticas.cs">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\DataSetEstadisticas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DataSets\DataSetListados.cs">
       <DependentUpon>DataSetListados.xsd</DependentUpon>
     </Compile>
@@ -78,9 +86,16 @@
     <Compile Include="Datos\DeportistaDao.cs" />
     <Compile Include="Datos\EjecucionDao.cs" />
     <Compile Include="Datos\EquipoDao.cs" />
+    <Compile Include="Datos\EstadisticasDao.cs" />
     <Compile Include="Datos\ListadosDao.cs" />
     <Compile Include="Datos\MedicionDao.cs" />
     <Compile Include="Datos\TestDao.cs" />
+    <Compile Include="Estadisticas\ctrlEstEvolucionDeportista.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\ctrlEstEvolucionDeportista.Designer.cs">
+      <DependentUpon>ctrlEstEvolucionDeportista.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\ctrlEjecucion.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -209,6 +224,10 @@
     <Compile Include="Soporte\Combo.cs" />
     <Compile Include="Soporte\Globals.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Estadisticas\ctrlEstEvolucionDeportista.resx">
+      <DependentUpon>ctrlEstEvolucionDeportista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\repEvolucionDeportista.rdlc" />
     <EmbeddedResource Include="Formularios\ctrlEjecucion.resx">
       <DependentUpon>ctrlEjecucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -284,6 +303,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="DataSets\DataSetEstadisticas.xsc">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\DataSetEstadisticas.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEstadisticas.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\DataSetEstadisticas.xss">
+      <DependentUpon>DataSetEstadisticas.xsd</DependentUpon>
+    </None>
     <None Include="DataSets\DataSetListados.xsc">
       <DependentUpon>DataSetListados.xsd</DependentUpon>
     </None>
@@ -314,6 +344,7 @@
     <Content Include="Imágenes\logo.png" />
     <Content Include="Imágenes\logoIco.ico" />
     <Content Include="Resources\032-cancel.png" />
+    <None Include="Resources\estadisticas.png" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

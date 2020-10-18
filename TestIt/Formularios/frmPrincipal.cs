@@ -34,13 +34,13 @@ namespace TestIt.Formularios
 
 
             frmLogin login = new frmLogin();
-            login.ShowDialog();
+            //login.ShowDialog();
             if(login.UsuarioLogueado != null)
                 this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado.NombreUsuario;
-            Globals.UsuarioActual = login.UsuarioLogueado;            
-            //Globals.UsuarioActual = new Usuario();
-            //Globals.UsuarioActual.IdUsuario = 1;
-            //Globals.UsuarioActual.NombreUsuario = "sofia";
+            Globals.UsuarioActual = login.UsuarioLogueado;
+            Globals.UsuarioActual = new Usuario();
+            Globals.UsuarioActual.IdUsuario = 1;
+            Globals.UsuarioActual.NombreUsuario = "sofia";
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)

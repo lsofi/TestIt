@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestIt.Listados;
+using TestIt.Estadisticas;
 
 namespace TestIt.Formularios
 {
@@ -62,6 +63,11 @@ namespace TestIt.Formularios
         {
             fPrincipal.toggleListados(new ctrlListadoCategorias(fPrincipal));
 
+        }
+
+        private void btnRendDeportista_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlEstEvolucionDeportista(fPrincipal));
         }
     }
 }
