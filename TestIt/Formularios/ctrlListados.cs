@@ -69,5 +69,10 @@ namespace TestIt.Formularios
         {
             fPrincipal.toggleListados(new ctrlEstEvolucionDeportista(fPrincipal));
         }
+
+        private void btnCompEquipos_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlEstComparacionEquipos(fPrincipal));
+        }
     }
 }

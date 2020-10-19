@@ -26,7 +26,7 @@ namespace TestIt.DataSets {
         
         private DeportistasDataTable tableDeportistas;
         
-        private TestDataTable tableTest;
+        private EjecEquiposDataTable tableEjecEquipos;
         
         private EjecucionesDataTable tableEjecuciones;
         
@@ -63,8 +63,8 @@ namespace TestIt.DataSets {
                 if ((ds.Tables["Deportistas"] != null)) {
                     base.Tables.Add(new DeportistasDataTable(ds.Tables["Deportistas"]));
                 }
-                if ((ds.Tables["Test"] != null)) {
-                    base.Tables.Add(new TestDataTable(ds.Tables["Test"]));
+                if ((ds.Tables["EjecEquipos"] != null)) {
+                    base.Tables.Add(new EjecEquiposDataTable(ds.Tables["EjecEquipos"]));
                 }
                 if ((ds.Tables["Ejecuciones"] != null)) {
                     base.Tables.Add(new EjecucionesDataTable(ds.Tables["Ejecuciones"]));
@@ -101,9 +101,9 @@ namespace TestIt.DataSets {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public TestDataTable Test {
+        public EjecEquiposDataTable EjecEquipos {
             get {
-                return this.tableTest;
+                return this.tableEjecEquipos;
             }
         }
         
@@ -187,8 +187,8 @@ namespace TestIt.DataSets {
                 if ((ds.Tables["Deportistas"] != null)) {
                     base.Tables.Add(new DeportistasDataTable(ds.Tables["Deportistas"]));
                 }
-                if ((ds.Tables["Test"] != null)) {
-                    base.Tables.Add(new TestDataTable(ds.Tables["Test"]));
+                if ((ds.Tables["EjecEquipos"] != null)) {
+                    base.Tables.Add(new EjecEquiposDataTable(ds.Tables["EjecEquipos"]));
                 }
                 if ((ds.Tables["Ejecuciones"] != null)) {
                     base.Tables.Add(new EjecucionesDataTable(ds.Tables["Ejecuciones"]));
@@ -232,10 +232,10 @@ namespace TestIt.DataSets {
                     this.tableDeportistas.InitVars();
                 }
             }
-            this.tableTest = ((TestDataTable)(base.Tables["Test"]));
+            this.tableEjecEquipos = ((EjecEquiposDataTable)(base.Tables["EjecEquipos"]));
             if ((initTable == true)) {
-                if ((this.tableTest != null)) {
-                    this.tableTest.InitVars();
+                if ((this.tableEjecEquipos != null)) {
+                    this.tableEjecEquipos.InitVars();
                 }
             }
             this.tableEjecuciones = ((EjecucionesDataTable)(base.Tables["Ejecuciones"]));
@@ -257,8 +257,8 @@ namespace TestIt.DataSets {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableDeportistas = new DeportistasDataTable();
             base.Tables.Add(this.tableDeportistas);
-            this.tableTest = new TestDataTable();
-            base.Tables.Add(this.tableTest);
+            this.tableEjecEquipos = new EjecEquiposDataTable();
+            base.Tables.Add(this.tableEjecEquipos);
             this.tableEjecuciones = new EjecucionesDataTable();
             base.Tables.Add(this.tableEjecuciones);
             this.relationDeportistas_Ejecuciones = new global::System.Data.DataRelation("Deportistas_Ejecuciones", new global::System.Data.DataColumn[] {
@@ -275,7 +275,7 @@ namespace TestIt.DataSets {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeTest() {
+        private bool ShouldSerializeEjecEquipos() {
             return false;
         }
         
@@ -344,7 +344,7 @@ namespace TestIt.DataSets {
         public delegate void DeportistasRowChangeEventHandler(object sender, DeportistasRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void TestRowChangeEventHandler(object sender, TestRowChangeEvent e);
+        public delegate void EjecEquiposRowChangeEventHandler(object sender, EjecEquiposRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void EjecucionesRowChangeEventHandler(object sender, EjecucionesRowChangeEvent e);
@@ -671,16 +671,22 @@ namespace TestIt.DataSets {
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class TestDataTable : global::System.Data.TypedTableBase<TestRow> {
+        public partial class EjecEquiposDataTable : global::System.Data.TypedTableBase<EjecEquiposRow> {
             
-            private global::System.Data.DataColumn columnid;
+            private global::System.Data.DataColumn columnid_equipo;
             
-            private global::System.Data.DataColumn columnnombre;
+            private global::System.Data.DataColumn columnnombre_equipo;
+            
+            private global::System.Data.DataColumn columnid_campo;
+            
+            private global::System.Data.DataColumn columnnombre_campo;
+            
+            private global::System.Data.DataColumn columnvalor;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestDataTable() {
-                this.TableName = "Test";
+            public EjecEquiposDataTable() {
+                this.TableName = "EjecEquipos";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -688,7 +694,7 @@ namespace TestIt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TestDataTable(global::System.Data.DataTable table) {
+            internal EjecEquiposDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -705,24 +711,48 @@ namespace TestIt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected TestDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected EjecEquiposDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn idColumn {
+            public global::System.Data.DataColumn id_equipoColumn {
                 get {
-                    return this.columnid;
+                    return this.columnid_equipo;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn nombreColumn {
+            public global::System.Data.DataColumn nombre_equipoColumn {
                 get {
-                    return this.columnnombre;
+                    return this.columnnombre_equipo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn id_campoColumn {
+                get {
+                    return this.columnid_campo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn nombre_campoColumn {
+                get {
+                    return this.columnnombre_campo;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn valorColumn {
+                get {
+                    return this.columnvalor;
                 }
             }
             
@@ -737,46 +767,49 @@ namespace TestIt.DataSets {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestRow this[int index] {
+            public EjecEquiposRow this[int index] {
                 get {
-                    return ((TestRow)(this.Rows[index]));
+                    return ((EjecEquiposRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestRowChangeEventHandler TestRowChanging;
+            public event EjecEquiposRowChangeEventHandler EjecEquiposRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestRowChangeEventHandler TestRowChanged;
+            public event EjecEquiposRowChangeEventHandler EjecEquiposRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestRowChangeEventHandler TestRowDeleting;
+            public event EjecEquiposRowChangeEventHandler EjecEquiposRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event TestRowChangeEventHandler TestRowDeleted;
+            public event EjecEquiposRowChangeEventHandler EjecEquiposRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddTestRow(TestRow row) {
+            public void AddEjecEquiposRow(EjecEquiposRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestRow AddTestRow(string id, string nombre) {
-                TestRow rowTestRow = ((TestRow)(this.NewRow()));
+            public EjecEquiposRow AddEjecEquiposRow(string id_equipo, string nombre_equipo, string id_campo, string nombre_campo, string valor) {
+                EjecEquiposRow rowEjecEquiposRow = ((EjecEquiposRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        id,
-                        nombre};
-                rowTestRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowTestRow);
-                return rowTestRow;
+                        id_equipo,
+                        nombre_equipo,
+                        id_campo,
+                        nombre_campo,
+                        valor};
+                rowEjecEquiposRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowEjecEquiposRow);
+                return rowEjecEquiposRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                TestDataTable cln = ((TestDataTable)(base.Clone()));
+                EjecEquiposDataTable cln = ((EjecEquiposDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -784,49 +817,58 @@ namespace TestIt.DataSets {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new TestDataTable();
+                return new EjecEquiposDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.columnid = base.Columns["id"];
-                this.columnnombre = base.Columns["nombre"];
+                this.columnid_equipo = base.Columns["id_equipo"];
+                this.columnnombre_equipo = base.Columns["nombre_equipo"];
+                this.columnid_campo = base.Columns["id_campo"];
+                this.columnnombre_campo = base.Columns["nombre_campo"];
+                this.columnvalor = base.Columns["valor"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.columnid = new global::System.Data.DataColumn("id", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnid);
-                this.columnnombre = new global::System.Data.DataColumn("nombre", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnnombre);
+                this.columnid_equipo = new global::System.Data.DataColumn("id_equipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_equipo);
+                this.columnnombre_equipo = new global::System.Data.DataColumn("nombre_equipo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_equipo);
+                this.columnid_campo = new global::System.Data.DataColumn("id_campo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnid_campo);
+                this.columnnombre_campo = new global::System.Data.DataColumn("nombre_campo", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnnombre_campo);
+                this.columnvalor = new global::System.Data.DataColumn("valor", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnvalor);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestRow NewTestRow() {
-                return ((TestRow)(this.NewRow()));
+            public EjecEquiposRow NewEjecEquiposRow() {
+                return ((EjecEquiposRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new TestRow(builder);
+                return new EjecEquiposRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(TestRow);
+                return typeof(EjecEquiposRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.TestRowChanged != null)) {
-                    this.TestRowChanged(this, new TestRowChangeEvent(((TestRow)(e.Row)), e.Action));
+                if ((this.EjecEquiposRowChanged != null)) {
+                    this.EjecEquiposRowChanged(this, new EjecEquiposRowChangeEvent(((EjecEquiposRow)(e.Row)), e.Action));
                 }
             }
             
@@ -834,8 +876,8 @@ namespace TestIt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.TestRowChanging != null)) {
-                    this.TestRowChanging(this, new TestRowChangeEvent(((TestRow)(e.Row)), e.Action));
+                if ((this.EjecEquiposRowChanging != null)) {
+                    this.EjecEquiposRowChanging(this, new EjecEquiposRowChangeEvent(((EjecEquiposRow)(e.Row)), e.Action));
                 }
             }
             
@@ -843,8 +885,8 @@ namespace TestIt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.TestRowDeleted != null)) {
-                    this.TestRowDeleted(this, new TestRowChangeEvent(((TestRow)(e.Row)), e.Action));
+                if ((this.EjecEquiposRowDeleted != null)) {
+                    this.EjecEquiposRowDeleted(this, new EjecEquiposRowChangeEvent(((EjecEquiposRow)(e.Row)), e.Action));
                 }
             }
             
@@ -852,14 +894,14 @@ namespace TestIt.DataSets {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.TestRowDeleting != null)) {
-                    this.TestRowDeleting(this, new TestRowChangeEvent(((TestRow)(e.Row)), e.Action));
+                if ((this.EjecEquiposRowDeleting != null)) {
+                    this.EjecEquiposRowDeleting(this, new EjecEquiposRowChangeEvent(((EjecEquiposRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveTestRow(TestRow row) {
+            public void RemoveEjecEquiposRow(EjecEquiposRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -886,7 +928,7 @@ namespace TestIt.DataSets {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "TestDataTable";
+                attribute2.FixedValue = "EjecEquiposDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -1416,71 +1458,155 @@ namespace TestIt.DataSets {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class TestRow : global::System.Data.DataRow {
+        public partial class EjecEquiposRow : global::System.Data.DataRow {
             
-            private TestDataTable tableTest;
+            private EjecEquiposDataTable tableEjecEquipos;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal TestRow(global::System.Data.DataRowBuilder rb) : 
+            internal EjecEquiposRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableTest = ((TestDataTable)(this.Table));
+                this.tableEjecEquipos = ((EjecEquiposDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string id {
+            public string id_equipo {
                 get {
                     try {
-                        return ((string)(this[this.tableTest.idColumn]));
+                        return ((string)(this[this.tableEjecEquipos.id_equipoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id\' de la tabla \'Test\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_equipo\' de la tabla \'EjecEquipos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTest.idColumn] = value;
+                    this[this.tableEjecEquipos.id_equipoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string nombre {
+            public string nombre_equipo {
                 get {
                     try {
-                        return ((string)(this[this.tableTest.nombreColumn]));
+                        return ((string)(this[this.tableEjecEquipos.nombre_equipoColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre\' de la tabla \'Test\' es DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_equipo\' de la tabla \'EjecEquipos\' es DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tableTest.nombreColumn] = value;
+                    this[this.tableEjecEquipos.nombre_equipoColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsidNull() {
-                return this.IsNull(this.tableTest.idColumn);
+            public string id_campo {
+                get {
+                    try {
+                        return ((string)(this[this.tableEjecEquipos.id_campoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'id_campo\' de la tabla \'EjecEquipos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEjecEquipos.id_campoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetidNull() {
-                this[this.tableTest.idColumn] = global::System.Convert.DBNull;
+            public string nombre_campo {
+                get {
+                    try {
+                        return ((string)(this[this.tableEjecEquipos.nombre_campoColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'nombre_campo\' de la tabla \'EjecEquipos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEjecEquipos.nombre_campoColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsnombreNull() {
-                return this.IsNull(this.tableTest.nombreColumn);
+            public string valor {
+                get {
+                    try {
+                        return ((string)(this[this.tableEjecEquipos.valorColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("El valor de la columna \'valor\' de la tabla \'EjecEquipos\' es DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableEjecEquipos.valorColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetnombreNull() {
-                this[this.tableTest.nombreColumn] = global::System.Convert.DBNull;
+            public bool Isid_equipoNull() {
+                return this.IsNull(this.tableEjecEquipos.id_equipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_equipoNull() {
+                this[this.tableEjecEquipos.id_equipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_equipoNull() {
+                return this.IsNull(this.tableEjecEquipos.nombre_equipoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_equipoNull() {
+                this[this.tableEjecEquipos.nombre_equipoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isid_campoNull() {
+                return this.IsNull(this.tableEjecEquipos.id_campoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setid_campoNull() {
+                this[this.tableEjecEquipos.id_campoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Isnombre_campoNull() {
+                return this.IsNull(this.tableEjecEquipos.nombre_campoColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Setnombre_campoNull() {
+                this[this.tableEjecEquipos.nombre_campoColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsvalorNull() {
+                return this.IsNull(this.tableEjecEquipos.valorColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetvalorNull() {
+                this[this.tableEjecEquipos.valorColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1660,22 +1786,22 @@ namespace TestIt.DataSets {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class TestRowChangeEvent : global::System.EventArgs {
+        public class EjecEquiposRowChangeEvent : global::System.EventArgs {
             
-            private TestRow eventRow;
+            private EjecEquiposRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestRowChangeEvent(TestRow row, global::System.Data.DataRowAction action) {
+            public EjecEquiposRowChangeEvent(EjecEquiposRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public TestRow Row {
+            public EjecEquiposRow Row {
                 get {
                     return this.eventRow;
                 }

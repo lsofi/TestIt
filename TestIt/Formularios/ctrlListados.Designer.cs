@@ -30,39 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ctrlListados));
             this.grpListados = new System.Windows.Forms.GroupBox();
-            this.lblEjecuTest = new System.Windows.Forms.Label();
-            this.lblCategoria = new System.Windows.Forms.Label();
-            this.lblEjecuciones = new System.Windows.Forms.Label();
-            this.lblEjecDeportista = new System.Windows.Forms.Label();
-            this.lblUsuarios = new System.Windows.Forms.Label();
-            this.lblTests = new System.Windows.Forms.Label();
-            this.lblEquipos = new System.Windows.Forms.Label();
-            this.lblDeportista = new System.Windows.Forms.Label();
-            this.gbEstadísticas = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnTestsxCategoria = new System.Windows.Forms.Button();
-            this.btnR = new System.Windows.Forms.Button();
-            this.btnResultadoxTest = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnTestsxEquipo = new System.Windows.Forms.Button();
-            this.btnEsfuerzosSubjetivos = new System.Windows.Forms.Button();
-            this.btnRendEquipos = new System.Windows.Forms.Button();
-            this.btnRendDeportista = new System.Windows.Forms.Button();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.btnEjecuEquipo = new System.Windows.Forms.Button();
+            this.lblEjecuTest = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
             this.btnEjecuciones = new System.Windows.Forms.Button();
+            this.lblEjecuciones = new System.Windows.Forms.Label();
             this.btnEjecuDeport = new System.Windows.Forms.Button();
+            this.lblEjecDeportista = new System.Windows.Forms.Label();
             this.btnUsuarios = new System.Windows.Forms.Button();
+            this.lblUsuarios = new System.Windows.Forms.Label();
             this.btnTests = new System.Windows.Forms.Button();
+            this.lblTests = new System.Windows.Forms.Label();
             this.btnEquipos = new System.Windows.Forms.Button();
+            this.lblEquipos = new System.Windows.Forms.Label();
             this.btnDeportista = new System.Windows.Forms.Button();
+            this.lblDeportista = new System.Windows.Forms.Label();
+            this.gbEstadísticas = new System.Windows.Forms.GroupBox();
+            this.btnTestsxCategoria = new System.Windows.Forms.Button();
+            this.btnR = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnResultadoxTest = new System.Windows.Forms.Button();
+            this.label3 = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.btnTestsxEquipo = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnEsfuerzosSubjetivos = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.btnCompEquipos = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btnRendDeportista = new System.Windows.Forms.Button();
+            this.label8 = new System.Windows.Forms.Label();
             this.grpListados.SuspendLayout();
             this.gbEstadísticas.SuspendLayout();
             this.SuspendLayout();
@@ -96,6 +96,28 @@
             this.grpListados.TabStop = false;
             this.grpListados.Text = "Listados";
             // 
+            // btnCategorias
+            // 
+            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCategorias.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnCategorias.Location = new System.Drawing.Point(340, 266);
+            this.btnCategorias.Name = "btnCategorias";
+            this.btnCategorias.Size = new System.Drawing.Size(35, 37);
+            this.btnCategorias.TabIndex = 32;
+            this.btnCategorias.UseVisualStyleBackColor = true;
+            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
+            // 
+            // btnEjecuEquipo
+            // 
+            this.btnEjecuEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEjecuEquipo.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnEjecuEquipo.Location = new System.Drawing.Point(340, 502);
+            this.btnEjecuEquipo.Name = "btnEjecuEquipo";
+            this.btnEjecuEquipo.Size = new System.Drawing.Size(35, 37);
+            this.btnEjecuEquipo.TabIndex = 18;
+            this.btnEjecuEquipo.UseVisualStyleBackColor = true;
+            this.btnEjecuEquipo.Click += new System.EventHandler(this.btnEjecuEquipo_Click);
+            // 
             // lblEjecuTest
             // 
             this.lblEjecuTest.AutoSize = true;
@@ -116,7 +138,18 @@
             this.lblCategoria.Name = "lblCategoria";
             this.lblCategoria.Size = new System.Drawing.Size(266, 17);
             this.lblCategoria.TabIndex = 31;
-            this.lblCategoria.Text = "Cantidad de ejecuciones por categoria";
+            this.lblCategoria.Text = "Cantidad de ejecuciones por categoría";
+            // 
+            // btnEjecuciones
+            // 
+            this.btnEjecuciones.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEjecuciones.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnEjecuciones.Location = new System.Drawing.Point(340, 419);
+            this.btnEjecuciones.Name = "btnEjecuciones";
+            this.btnEjecuciones.Size = new System.Drawing.Size(35, 37);
+            this.btnEjecuciones.TabIndex = 30;
+            this.btnEjecuciones.UseVisualStyleBackColor = true;
+            this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
             // 
             // lblEjecuciones
             // 
@@ -129,6 +162,17 @@
             this.lblEjecuciones.TabIndex = 29;
             this.lblEjecuciones.Text = "Ejecuciones totales";
             // 
+            // btnEjecuDeport
+            // 
+            this.btnEjecuDeport.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEjecuDeport.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnEjecuDeport.Location = new System.Drawing.Point(340, 575);
+            this.btnEjecuDeport.Name = "btnEjecuDeport";
+            this.btnEjecuDeport.Size = new System.Drawing.Size(35, 37);
+            this.btnEjecuDeport.TabIndex = 28;
+            this.btnEjecuDeport.UseVisualStyleBackColor = true;
+            this.btnEjecuDeport.Click += new System.EventHandler(this.btnEjecuDeport_Click);
+            // 
             // lblEjecDeportista
             // 
             this.lblEjecDeportista.AutoSize = true;
@@ -139,6 +183,17 @@
             this.lblEjecDeportista.Size = new System.Drawing.Size(184, 17);
             this.lblEjecDeportista.TabIndex = 27;
             this.lblEjecDeportista.Text = "Ejecuciones por deportistas";
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnUsuarios.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnUsuarios.Location = new System.Drawing.Point(340, 44);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(35, 37);
+            this.btnUsuarios.TabIndex = 26;
+            this.btnUsuarios.UseVisualStyleBackColor = true;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
             // lblUsuarios
             // 
@@ -151,6 +206,17 @@
             this.lblUsuarios.TabIndex = 25;
             this.lblUsuarios.Text = "Cantidad de ejecuciones por usuario";
             // 
+            // btnTests
+            // 
+            this.btnTests.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTests.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnTests.Location = new System.Drawing.Point(340, 341);
+            this.btnTests.Name = "btnTests";
+            this.btnTests.Size = new System.Drawing.Size(35, 37);
+            this.btnTests.TabIndex = 24;
+            this.btnTests.UseVisualStyleBackColor = true;
+            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
+            // 
             // lblTests
             // 
             this.lblTests.AutoSize = true;
@@ -162,6 +228,17 @@
             this.lblTests.TabIndex = 23;
             this.lblTests.Text = "Cantidad de ejecuciones por tests";
             // 
+            // btnEquipos
+            // 
+            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEquipos.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnEquipos.Location = new System.Drawing.Point(340, 193);
+            this.btnEquipos.Name = "btnEquipos";
+            this.btnEquipos.Size = new System.Drawing.Size(35, 37);
+            this.btnEquipos.TabIndex = 22;
+            this.btnEquipos.UseVisualStyleBackColor = true;
+            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
+            // 
             // lblEquipos
             // 
             this.lblEquipos.AutoSize = true;
@@ -172,6 +249,17 @@
             this.lblEquipos.Size = new System.Drawing.Size(248, 17);
             this.lblEquipos.TabIndex = 21;
             this.lblEquipos.Text = "Cantidad de ejecuciones por equipo";
+            // 
+            // btnDeportista
+            // 
+            this.btnDeportista.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnDeportista.Image = global::TestIt.Properties.Resources._139_page;
+            this.btnDeportista.Location = new System.Drawing.Point(340, 118);
+            this.btnDeportista.Name = "btnDeportista";
+            this.btnDeportista.Size = new System.Drawing.Size(35, 37);
+            this.btnDeportista.TabIndex = 20;
+            this.btnDeportista.UseVisualStyleBackColor = true;
+            this.btnDeportista.Click += new System.EventHandler(this.btnDeportista_Click);
             // 
             // lblDeportista
             // 
@@ -198,7 +286,7 @@
             this.gbEstadísticas.Controls.Add(this.label5);
             this.gbEstadísticas.Controls.Add(this.btnEsfuerzosSubjetivos);
             this.gbEstadísticas.Controls.Add(this.label6);
-            this.gbEstadísticas.Controls.Add(this.btnRendEquipos);
+            this.gbEstadísticas.Controls.Add(this.btnCompEquipos);
             this.gbEstadísticas.Controls.Add(this.label7);
             this.gbEstadísticas.Controls.Add(this.btnRendDeportista);
             this.gbEstadísticas.Controls.Add(this.label8);
@@ -212,6 +300,26 @@
             this.gbEstadísticas.TabIndex = 33;
             this.gbEstadísticas.TabStop = false;
             this.gbEstadísticas.Text = "Estadísticas";
+            // 
+            // btnTestsxCategoria
+            // 
+            this.btnTestsxCategoria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTestsxCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxCategoria.Image")));
+            this.btnTestsxCategoria.Location = new System.Drawing.Point(349, 341);
+            this.btnTestsxCategoria.Name = "btnTestsxCategoria";
+            this.btnTestsxCategoria.Size = new System.Drawing.Size(35, 37);
+            this.btnTestsxCategoria.TabIndex = 32;
+            this.btnTestsxCategoria.UseVisualStyleBackColor = true;
+            // 
+            // btnR
+            // 
+            this.btnR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnR.Image = ((System.Drawing.Image)(resources.GetObject("btnR.Image")));
+            this.btnR.Location = new System.Drawing.Point(349, 502);
+            this.btnR.Name = "btnR";
+            this.btnR.Size = new System.Drawing.Size(35, 37);
+            this.btnR.TabIndex = 18;
+            this.btnR.UseVisualStyleBackColor = true;
             // 
             // label1
             // 
@@ -235,6 +343,16 @@
             this.label2.TabIndex = 31;
             this.label2.Text = "Tipos de tests por categoria";
             // 
+            // btnResultadoxTest
+            // 
+            this.btnResultadoxTest.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnResultadoxTest.Image = ((System.Drawing.Image)(resources.GetObject("btnResultadoxTest.Image")));
+            this.btnResultadoxTest.Location = new System.Drawing.Point(349, 419);
+            this.btnResultadoxTest.Name = "btnResultadoxTest";
+            this.btnResultadoxTest.Size = new System.Drawing.Size(35, 37);
+            this.btnResultadoxTest.TabIndex = 30;
+            this.btnResultadoxTest.UseVisualStyleBackColor = true;
+            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -245,6 +363,16 @@
             this.label3.Size = new System.Drawing.Size(130, 17);
             this.label3.TabIndex = 29;
             this.label3.Text = "Resultados por test";
+            // 
+            // button4
+            // 
+            this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
+            this.button4.Location = new System.Drawing.Point(349, 575);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(35, 37);
+            this.button4.TabIndex = 28;
+            this.button4.UseVisualStyleBackColor = true;
             // 
             // label4
             // 
@@ -257,6 +385,16 @@
             this.label4.TabIndex = 27;
             this.label4.Text = "Realizaciones de test por categoría";
             // 
+            // btnTestsxEquipo
+            // 
+            this.btnTestsxEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTestsxEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxEquipo.Image")));
+            this.btnTestsxEquipo.Location = new System.Drawing.Point(349, 266);
+            this.btnTestsxEquipo.Name = "btnTestsxEquipo";
+            this.btnTestsxEquipo.Size = new System.Drawing.Size(35, 37);
+            this.btnTestsxEquipo.TabIndex = 26;
+            this.btnTestsxEquipo.UseVisualStyleBackColor = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -267,6 +405,16 @@
             this.label5.Size = new System.Drawing.Size(168, 17);
             this.label5.TabIndex = 25;
             this.label5.Text = "Tipos de tests por equipo";
+            // 
+            // btnEsfuerzosSubjetivos
+            // 
+            this.btnEsfuerzosSubjetivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnEsfuerzosSubjetivos.Image = ((System.Drawing.Image)(resources.GetObject("btnEsfuerzosSubjetivos.Image")));
+            this.btnEsfuerzosSubjetivos.Location = new System.Drawing.Point(349, 193);
+            this.btnEsfuerzosSubjetivos.Name = "btnEsfuerzosSubjetivos";
+            this.btnEsfuerzosSubjetivos.Size = new System.Drawing.Size(35, 37);
+            this.btnEsfuerzosSubjetivos.TabIndex = 24;
+            this.btnEsfuerzosSubjetivos.UseVisualStyleBackColor = true;
             // 
             // label6
             // 
@@ -279,97 +427,27 @@
             this.label6.TabIndex = 23;
             this.label6.Text = "Esfuerzos subjetivos";
             // 
+            // btnCompEquipos
+            // 
+            this.btnCompEquipos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnCompEquipos.Image = global::TestIt.Properties.Resources.estadisticas;
+            this.btnCompEquipos.Location = new System.Drawing.Point(349, 118);
+            this.btnCompEquipos.Name = "btnCompEquipos";
+            this.btnCompEquipos.Size = new System.Drawing.Size(35, 37);
+            this.btnCompEquipos.TabIndex = 22;
+            this.btnCompEquipos.UseVisualStyleBackColor = true;
+            this.btnCompEquipos.Click += new System.EventHandler(this.btnCompEquipos_Click);
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(158, 128);
+            this.label7.Location = new System.Drawing.Point(148, 128);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(166, 17);
+            this.label7.Size = new System.Drawing.Size(176, 17);
             this.label7.TabIndex = 21;
-            this.label7.Text = "Rendimiento de equipos";
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(162, 54);
-            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(162, 17);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Evolucion de deportista";
-            // 
-            // btnTestsxCategoria
-            // 
-            this.btnTestsxCategoria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTestsxCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxCategoria.Image")));
-            this.btnTestsxCategoria.Location = new System.Drawing.Point(349, 341);
-            this.btnTestsxCategoria.Name = "btnTestsxCategoria";
-            this.btnTestsxCategoria.Size = new System.Drawing.Size(35, 37);
-            this.btnTestsxCategoria.TabIndex = 32;
-            this.btnTestsxCategoria.UseVisualStyleBackColor = true;
-            // 
-            // btnR
-            // 
-            this.btnR.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnR.Image = ((System.Drawing.Image)(resources.GetObject("btnR.Image")));
-            this.btnR.Location = new System.Drawing.Point(349, 502);
-            this.btnR.Name = "btnR";
-            this.btnR.Size = new System.Drawing.Size(35, 37);
-            this.btnR.TabIndex = 18;
-            this.btnR.UseVisualStyleBackColor = true;
-            // 
-            // btnResultadoxTest
-            // 
-            this.btnResultadoxTest.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnResultadoxTest.Image = ((System.Drawing.Image)(resources.GetObject("btnResultadoxTest.Image")));
-            this.btnResultadoxTest.Location = new System.Drawing.Point(349, 419);
-            this.btnResultadoxTest.Name = "btnResultadoxTest";
-            this.btnResultadoxTest.Size = new System.Drawing.Size(35, 37);
-            this.btnResultadoxTest.TabIndex = 30;
-            this.btnResultadoxTest.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(349, 575);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(35, 37);
-            this.button4.TabIndex = 28;
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // btnTestsxEquipo
-            // 
-            this.btnTestsxEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTestsxEquipo.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxEquipo.Image")));
-            this.btnTestsxEquipo.Location = new System.Drawing.Point(349, 266);
-            this.btnTestsxEquipo.Name = "btnTestsxEquipo";
-            this.btnTestsxEquipo.Size = new System.Drawing.Size(35, 37);
-            this.btnTestsxEquipo.TabIndex = 26;
-            this.btnTestsxEquipo.UseVisualStyleBackColor = true;
-            // 
-            // btnEsfuerzosSubjetivos
-            // 
-            this.btnEsfuerzosSubjetivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEsfuerzosSubjetivos.Image = ((System.Drawing.Image)(resources.GetObject("btnEsfuerzosSubjetivos.Image")));
-            this.btnEsfuerzosSubjetivos.Location = new System.Drawing.Point(349, 193);
-            this.btnEsfuerzosSubjetivos.Name = "btnEsfuerzosSubjetivos";
-            this.btnEsfuerzosSubjetivos.Size = new System.Drawing.Size(35, 37);
-            this.btnEsfuerzosSubjetivos.TabIndex = 24;
-            this.btnEsfuerzosSubjetivos.UseVisualStyleBackColor = true;
-            // 
-            // btnRendEquipos
-            // 
-            this.btnRendEquipos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnRendEquipos.Image = global::TestIt.Properties.Resources.estadisticas;
-            this.btnRendEquipos.Location = new System.Drawing.Point(349, 118);
-            this.btnRendEquipos.Name = "btnRendEquipos";
-            this.btnRendEquipos.Size = new System.Drawing.Size(35, 37);
-            this.btnRendEquipos.TabIndex = 22;
-            this.btnRendEquipos.UseVisualStyleBackColor = true;
+            this.label7.Text = "Comparación de equipos";
             // 
             // btnRendDeportista
             // 
@@ -382,93 +460,16 @@
             this.btnRendDeportista.UseVisualStyleBackColor = true;
             this.btnRendDeportista.Click += new System.EventHandler(this.btnRendDeportista_Click);
             // 
-            // btnCategorias
+            // label8
             // 
-            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnCategorias.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnCategorias.Location = new System.Drawing.Point(340, 266);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Size = new System.Drawing.Size(35, 37);
-            this.btnCategorias.TabIndex = 32;
-            this.btnCategorias.UseVisualStyleBackColor = true;
-            this.btnCategorias.Click += new System.EventHandler(this.btnCategorias_Click);
-            // 
-            // btnEjecuEquipo
-            // 
-            this.btnEjecuEquipo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEjecuEquipo.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnEjecuEquipo.Location = new System.Drawing.Point(340, 502);
-            this.btnEjecuEquipo.Name = "btnEjecuEquipo";
-            this.btnEjecuEquipo.Size = new System.Drawing.Size(35, 37);
-            this.btnEjecuEquipo.TabIndex = 18;
-            this.btnEjecuEquipo.UseVisualStyleBackColor = true;
-            this.btnEjecuEquipo.Click += new System.EventHandler(this.btnEjecuEquipo_Click);
-            // 
-            // btnEjecuciones
-            // 
-            this.btnEjecuciones.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEjecuciones.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnEjecuciones.Location = new System.Drawing.Point(340, 419);
-            this.btnEjecuciones.Name = "btnEjecuciones";
-            this.btnEjecuciones.Size = new System.Drawing.Size(35, 37);
-            this.btnEjecuciones.TabIndex = 30;
-            this.btnEjecuciones.UseVisualStyleBackColor = true;
-            this.btnEjecuciones.Click += new System.EventHandler(this.btnEjecuciones_Click);
-            // 
-            // btnEjecuDeport
-            // 
-            this.btnEjecuDeport.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEjecuDeport.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnEjecuDeport.Location = new System.Drawing.Point(340, 575);
-            this.btnEjecuDeport.Name = "btnEjecuDeport";
-            this.btnEjecuDeport.Size = new System.Drawing.Size(35, 37);
-            this.btnEjecuDeport.TabIndex = 28;
-            this.btnEjecuDeport.UseVisualStyleBackColor = true;
-            this.btnEjecuDeport.Click += new System.EventHandler(this.btnEjecuDeport_Click);
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnUsuarios.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnUsuarios.Location = new System.Drawing.Point(340, 44);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(35, 37);
-            this.btnUsuarios.TabIndex = 26;
-            this.btnUsuarios.UseVisualStyleBackColor = true;
-            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
-            // 
-            // btnTests
-            // 
-            this.btnTests.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTests.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnTests.Location = new System.Drawing.Point(340, 341);
-            this.btnTests.Name = "btnTests";
-            this.btnTests.Size = new System.Drawing.Size(35, 37);
-            this.btnTests.TabIndex = 24;
-            this.btnTests.UseVisualStyleBackColor = true;
-            this.btnTests.Click += new System.EventHandler(this.btnTests_Click);
-            // 
-            // btnEquipos
-            // 
-            this.btnEquipos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEquipos.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnEquipos.Location = new System.Drawing.Point(340, 193);
-            this.btnEquipos.Name = "btnEquipos";
-            this.btnEquipos.Size = new System.Drawing.Size(35, 37);
-            this.btnEquipos.TabIndex = 22;
-            this.btnEquipos.UseVisualStyleBackColor = true;
-            this.btnEquipos.Click += new System.EventHandler(this.btnEquipos_Click);
-            // 
-            // btnDeportista
-            // 
-            this.btnDeportista.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnDeportista.Image = global::TestIt.Properties.Resources._139_page;
-            this.btnDeportista.Location = new System.Drawing.Point(340, 118);
-            this.btnDeportista.Name = "btnDeportista";
-            this.btnDeportista.Size = new System.Drawing.Size(35, 37);
-            this.btnDeportista.TabIndex = 20;
-            this.btnDeportista.UseVisualStyleBackColor = true;
-            this.btnDeportista.Click += new System.EventHandler(this.btnDeportista_Click);
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(162, 54);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(162, 17);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Evolución de deportista";
             // 
             // ctrlListados
             // 
@@ -519,7 +520,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnEsfuerzosSubjetivos;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnRendEquipos;
+        private System.Windows.Forms.Button btnCompEquipos;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button btnRendDeportista;
         private System.Windows.Forms.Label label8;

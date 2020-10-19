@@ -31,5 +31,36 @@ namespace TestIt.Datos
 
             return dm.ConsultaSQL(consulta);
         }
+
+        public DataTable comparacionEquipos(int mes, int anio, List<int> idsEquipos, int idTest, List<int> idsMediciones)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            string idsEquiposList = "(" + idsEquipos[0];
+            for (int i = 1; i < idsEquipos.Count; i++)
+                idsEquiposList += ", " + idsEquipos[i];
+            idsEquiposList += ")";
+
+            string idsMedicionesList = "(" + idsMediciones[0];
+            for (int i = 1; i < idsMediciones.Count; i++)
+                idsMedicionesList += ", " + idsMediciones[i];
+            idsMedicionesList += ")";
+
+            string consulta = "SELECT e.id AS id_equipo, e.nombre AS nombre_equipo, m.id AS id_campo, m.nombre AS nombre_campo, AVG(det.valor) AS valor" +
+                " FROM Equipos e" +
+                " JOIN Deportistas d ON d.id_equipo = e.id" +
+                " JOIN Ejecuciones ej ON ej.id_deportista = d.id" +
+                " JOIN Detalle_Ejecuciones det ON det.nro_ejecucion = ej.nro_ejecucion" +
+                " JOIN Mediciones m ON m.id = det.id_campo" +
+                " WHERE ej.id_test = " + idTest +
+                " AND e.id IN " + idsEquiposList +
+                " AND det.id_campo IN " + idsMedicionesList +
+                " AND e.borrado = 0" +
+                " AND MONTH(ej.fecha) = " + mes +
+                " AND YEAR(ej.fecha) = " + anio +
+                " GROUP BY e.id, e.nombre, m.id, m.nombre";
+
+            return dm.ConsultaSQL(consulta);
+        }
     }
 }
