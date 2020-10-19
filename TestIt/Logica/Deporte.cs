@@ -47,5 +47,10 @@ namespace TestIt.Logica
         {
             return dDao.Delete(this);
         }
+
+        public static string buscarNombre(int id)
+        {
+            return dDao.buscarNombre(id);
+        }
     }
 }

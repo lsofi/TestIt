@@ -57,7 +57,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btnTestsxEquipo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnEsfuerzosSubjetivos = new System.Windows.Forms.Button();
+            this.btnTestRealizados = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.btnCompEquipos = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -284,7 +284,7 @@
             this.gbEstadísticas.Controls.Add(this.label4);
             this.gbEstadísticas.Controls.Add(this.btnTestsxEquipo);
             this.gbEstadísticas.Controls.Add(this.label5);
-            this.gbEstadísticas.Controls.Add(this.btnEsfuerzosSubjetivos);
+            this.gbEstadísticas.Controls.Add(this.btnTestRealizados);
             this.gbEstadísticas.Controls.Add(this.label6);
             this.gbEstadísticas.Controls.Add(this.btnCompEquipos);
             this.gbEstadísticas.Controls.Add(this.label7);
@@ -406,26 +406,27 @@
             this.label5.TabIndex = 25;
             this.label5.Text = "Tipos de tests por equipo";
             // 
-            // btnEsfuerzosSubjetivos
+            // btnTestRealizados
             // 
-            this.btnEsfuerzosSubjetivos.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnEsfuerzosSubjetivos.Image = ((System.Drawing.Image)(resources.GetObject("btnEsfuerzosSubjetivos.Image")));
-            this.btnEsfuerzosSubjetivos.Location = new System.Drawing.Point(349, 193);
-            this.btnEsfuerzosSubjetivos.Name = "btnEsfuerzosSubjetivos";
-            this.btnEsfuerzosSubjetivos.Size = new System.Drawing.Size(35, 37);
-            this.btnEsfuerzosSubjetivos.TabIndex = 24;
-            this.btnEsfuerzosSubjetivos.UseVisualStyleBackColor = true;
+            this.btnTestRealizados.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTestRealizados.Image = ((System.Drawing.Image)(resources.GetObject("btnTestRealizados.Image")));
+            this.btnTestRealizados.Location = new System.Drawing.Point(349, 193);
+            this.btnTestRealizados.Name = "btnTestRealizados";
+            this.btnTestRealizados.Size = new System.Drawing.Size(35, 37);
+            this.btnTestRealizados.TabIndex = 24;
+            this.btnTestRealizados.UseVisualStyleBackColor = true;
+            this.btnTestRealizados.Click += new System.EventHandler(this.btnTestRealizados_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(196, 203);
+            this.label6.Location = new System.Drawing.Point(123, 203);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(131, 17);
+            this.label6.Size = new System.Drawing.Size(201, 17);
             this.label6.TabIndex = 23;
-            this.label6.Text = "Esfuerzos subjetivos";
+            this.label6.Text = "Proporción de tests realizados";
             // 
             // btnCompEquipos
             // 
@@ -518,7 +519,7 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnTestsxEquipo;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Button btnEsfuerzosSubjetivos;
+        private System.Windows.Forms.Button btnTestRealizados;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Button btnCompEquipos;
         private System.Windows.Forms.Label label7;

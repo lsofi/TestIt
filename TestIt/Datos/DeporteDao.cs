@@ -65,6 +65,11 @@ namespace TestIt.Datos
             return true;
         }
 
+        internal string buscarNombre(int id)
+        {
+            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM deportes WHERE id = " + id).ToString();
+        }
+
         internal bool Update(Deporte oDeporte)
         {
 

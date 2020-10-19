@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace TestIt.Datos
 {
@@ -60,6 +61,18 @@ namespace TestIt.Datos
                 " AND YEAR(ej.fecha) = " + anio +
                 " GROUP BY e.id, e.nombre, m.id, m.nombre";
 
+            return dm.ConsultaSQL(consulta);
+        }
+
+        internal DataTable proporcionTest(DateTime desde, DateTime hasta, int categoria, int deporte)
+        {
+            DataManager dm = DataManager.GetInstance();
+            string consulta = "SELECT t.id, t.nombre" +
+                " FROM tests t JOIN ejecuciones e ON e.id_test = t.id" +
+                " JOIN deportistas d ON d.id = e.id_deportista" +
+                " WHERE d.id_categoria = " + categoria +
+                " AND d.id_deporte = " + deporte +
+                " AND e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'";
             return dm.ConsultaSQL(consulta);
         }
     }

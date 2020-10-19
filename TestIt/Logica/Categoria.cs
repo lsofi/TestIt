@@ -37,6 +37,11 @@ namespace TestIt.Logica
             return cDao.buscarCategoria();
         }
 
+        public static string buscarNombre(int id)
+        {
+            return cDao.buscarNombre(id);
+        }
+
         public bool grabar()
         {
             return cDao.Create(this);

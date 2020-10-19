@@ -40,6 +40,11 @@ namespace TestIt.Datos
             return oCategoria;
         }
 
+        public string buscarNombre(int id)
+        {
+                return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM categorias WHERE id = " + id).ToString();
+        }
+
         public bool Create(Categoria oCategoria)
         {
             DataManager dm = new DataManager();

@@ -74,5 +74,10 @@ namespace TestIt.Formularios
         {
             fPrincipal.toggleListados(new ctrlEstComparacionEquipos(fPrincipal));
         }
+
+        private void btnTestRealizados_Click(object sender, EventArgs e)
+        {
+            fPrincipal.toggleListados(new ctrlEstProporcionTests(fPrincipal));
+        }
     }
 }
