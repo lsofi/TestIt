@@ -89,5 +89,10 @@ namespace TestIt.Formularios
         {
             fPrincipal.toggleListados(new ctrlEstEsfuerzoPorTest(fPrincipal));
         }
+
+        private void gbEstadísticas_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
