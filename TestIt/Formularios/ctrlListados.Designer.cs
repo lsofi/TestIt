@@ -47,7 +47,7 @@
             this.btnDeportista = new System.Windows.Forms.Button();
             this.lblDeportista = new System.Windows.Forms.Label();
             this.gbEstadísticas = new System.Windows.Forms.GroupBox();
-            this.btnTestsxCategoria = new System.Windows.Forms.Button();
+            this.btnTestsxEsSubjetivo = new System.Windows.Forms.Button();
             this.btnR = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -274,7 +274,7 @@
             // 
             // gbEstadísticas
             // 
-            this.gbEstadísticas.Controls.Add(this.btnTestsxCategoria);
+            this.gbEstadísticas.Controls.Add(this.btnTestsxEsSubjetivo);
             this.gbEstadísticas.Controls.Add(this.btnR);
             this.gbEstadísticas.Controls.Add(this.label1);
             this.gbEstadísticas.Controls.Add(this.label2);
@@ -301,15 +301,16 @@
             this.gbEstadísticas.TabStop = false;
             this.gbEstadísticas.Text = "Estadísticas";
             // 
-            // btnTestsxCategoria
+            // btnTestsxEsSubjetivo
             // 
-            this.btnTestsxCategoria.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.btnTestsxCategoria.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxCategoria.Image")));
-            this.btnTestsxCategoria.Location = new System.Drawing.Point(349, 341);
-            this.btnTestsxCategoria.Name = "btnTestsxCategoria";
-            this.btnTestsxCategoria.Size = new System.Drawing.Size(35, 37);
-            this.btnTestsxCategoria.TabIndex = 32;
-            this.btnTestsxCategoria.UseVisualStyleBackColor = true;
+            this.btnTestsxEsSubjetivo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnTestsxEsSubjetivo.Image = ((System.Drawing.Image)(resources.GetObject("btnTestsxEsSubjetivo.Image")));
+            this.btnTestsxEsSubjetivo.Location = new System.Drawing.Point(349, 341);
+            this.btnTestsxEsSubjetivo.Name = "btnTestsxEsSubjetivo";
+            this.btnTestsxEsSubjetivo.Size = new System.Drawing.Size(35, 37);
+            this.btnTestsxEsSubjetivo.TabIndex = 32;
+            this.btnTestsxEsSubjetivo.UseVisualStyleBackColor = true;
+            this.btnTestsxEsSubjetivo.Click += new System.EventHandler(this.btnTestsxEsSubjetivo_Click);
             // 
             // btnR
             // 
@@ -339,9 +340,9 @@
             this.label2.Location = new System.Drawing.Point(141, 351);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(186, 17);
+            this.label2.Size = new System.Drawing.Size(174, 17);
             this.label2.TabIndex = 31;
-            this.label2.Text = "Tipos de tests por categoria";
+            this.label2.Text = "Esfuerzo subjetivo por test";
             // 
             // btnResultadoxTest
             // 
@@ -510,7 +511,7 @@
         private System.Windows.Forms.Button btnEjecuDeport;
         private System.Windows.Forms.Label lblEjecDeportista;
         private System.Windows.Forms.GroupBox gbEstadísticas;
-        private System.Windows.Forms.Button btnTestsxCategoria;
+        private System.Windows.Forms.Button btnTestsxEsSubjetivo;
         private System.Windows.Forms.Button btnR;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

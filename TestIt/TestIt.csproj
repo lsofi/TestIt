@@ -90,6 +90,12 @@
     <Compile Include="Estadisticas\ctrlEstComparacionEquipos.Designer.cs">
       <DependentUpon>ctrlEstComparacionEquipos.cs</DependentUpon>
     </Compile>
+    <Compile Include="Estadisticas\ctrlEstEsfuerzoPorTest.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Estadisticas\ctrlEstEsfuerzoPorTest.designer.cs">
+      <DependentUpon>ctrlEstEsfuerzoPorTest.cs</DependentUpon>
+    </Compile>
     <Compile Include="Estadisticas\ctrlEstRendimientoDeportista.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -239,6 +245,9 @@
     <EmbeddedResource Include="Estadisticas\ctrlEstComparacionEquipos.resx">
       <DependentUpon>ctrlEstComparacionEquipos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Estadisticas\ctrlEstEsfuerzoPorTest.resx">
+      <DependentUpon>ctrlEstEsfuerzoPorTest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\ctrlEstRendimientoDeportista.resx">
       <DependentUpon>ctrlEstRendimientoDeportista.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +258,7 @@
       <DependentUpon>ctrlEstProporcionTests.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Estadisticas\repComparacionEquipos.rdlc" />
+    <EmbeddedResource Include="Estadisticas\repEsfuerzoPorTest.rdlc" />
     <EmbeddedResource Include="Estadisticas\repEvolucionDeportista.rdlc" />
     <EmbeddedResource Include="Estadisticas\repProporcionTests.rdlc" />
     <EmbeddedResource Include="Estadisticas\repRendimientoDeportista.rdlc" />

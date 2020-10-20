@@ -76,5 +76,19 @@ namespace TestIt.Datos
             if (deporte != 0) consulta += " AND d.id_deporte = " + deporte;
             return dm.ConsultaSQL(consulta);
         }
+        public DataTable esfuerzoTest(string desde, string hasta)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            string consulta = "SELECT t.id, t.nombre, d.valor as 'cantidad' FROM Tests t" +
+                " JOIN Ejecuciones e on t.id = e.id_test" +
+                " JOIN Detalle_Ejecuciones d on e.nro_ejecucion = d.nro_ejecucion" +
+                " JOIN Mediciones m on m.id = d.id_campo " +
+                " WHERE m.nombre = 'Esfuerzo subjetivo' AND e.fecha BETWEEN '" + desde + "'AND '" + hasta + "' ";
+
+            return dm.ConsultaSQL(consulta);
+
+        }
+
     }
 }
