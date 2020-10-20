@@ -394,17 +394,18 @@
             this.btnTestsxEquipo.Size = new System.Drawing.Size(35, 37);
             this.btnTestsxEquipo.TabIndex = 26;
             this.btnTestsxEquipo.UseVisualStyleBackColor = true;
+            this.btnTestsxEquipo.Click += new System.EventHandler(this.btnTestsxEquipo_Click);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(159, 276);
+            this.label5.Location = new System.Drawing.Point(143, 276);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(168, 17);
+            this.label5.Size = new System.Drawing.Size(181, 17);
             this.label5.TabIndex = 25;
-            this.label5.Text = "Tipos de tests por equipo";
+            this.label5.Text = "Rendimiento de deportista";
             // 
             // btnTestRealizados
             // 

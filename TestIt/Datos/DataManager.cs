@@ -22,7 +22,7 @@ public class DataManager
 
 
 
-        dbConnection.ConnectionString = sofi;
+        dbConnection.ConnectionString = joaco;
 
     }
 

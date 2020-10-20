@@ -29,9 +29,9 @@ namespace TestIt.Estadisticas
         private void ctrlEstProporcionTests_Load(object sender, EventArgs e)
         {
             comboOk = false;
-            Combo.cargarCombo(cboCategoria, "categorias");
+            Combo.cargarComboTodos(cboCategoria, "categorias");
             cboCategoria.SelectedIndex = -1;
-            Combo.cargarCombo(cboDeporte, "deportes");
+            Combo.cargarComboTodos(cboDeporte, "deportes");
             cboDeporte.SelectedIndex = -1;
             comboOk = true;
         }
@@ -40,12 +40,15 @@ namespace TestIt.Estadisticas
         {
             if (cboDeporte.SelectedIndex == -1 || cboCategoria.SelectedIndex == -1) return;
 
+            string cat = (int)cboCategoria.SelectedValue == 0 ? "Todas" : Categoria.buscarNombre((int)cboCategoria.SelectedValue);
+            string dep = (int)cboDeporte.SelectedValue == 0 ? "Todos" : Deporte.buscarNombre((int)cboDeporte.SelectedValue);
+
             rpvEjecuciones.LocalReport.SetParameters(new ReportParameter[]{
                 new ReportParameter("usuario", Globals.UsuarioActual.NombreUsuario),
                 new ReportParameter("prFechaDesde", dtpDesde.Value.ToString("dd/MM/yyyy")),
                 new ReportParameter("prFechaHasta", dtpHasta.Value.ToString("dd/MM/yyyy")),
-                new ReportParameter("categoria", Categoria.buscarNombre((int)cboCategoria.SelectedValue)),
-                new ReportParameter("deporte", Deporte.buscarNombre((int)cboDeporte.SelectedValue))});
+                new ReportParameter("categoria", cat),
+                new ReportParameter("deporte", dep)});
 
             DataTable dt = eDao.proporcionTest(dtpDesde.Value, dtpHasta.Value, (int)cboCategoria.SelectedValue, (int)cboDeporte.SelectedValue);
             //DATASOURCE

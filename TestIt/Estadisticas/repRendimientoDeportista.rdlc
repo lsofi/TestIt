@@ -7,29 +7,33 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>57fae9c8-36f1-4603-bcdc-451de995e79b</rd:DataSourceID>
+      <rd:DataSourceID>bd9e76d9-c1fb-4fc1-aac9-c6b78192f474</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetTest">
+    <DataSet Name="DataSetRendDepo">
       <Query>
         <DataSourceName>DataSetEstadisticas</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="id">
-          <DataField>id</DataField>
+        <Field Name="medicion">
+          <DataField>medicion</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
-        <Field Name="nombre">
-          <DataField>nombre</DataField>
+        <Field Name="valor">
+          <DataField>valor</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="vari">
+          <DataField>vari</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetEstadisticas</rd:DataSetName>
-        <rd:SchemaPath>C:\Users\Usuario\Desktop\FRC\Sistemas III\PAVI\TP\ProyectoTestIt\TestItPosta\TestIt\TestIt\DataSets\DataSetEstadisticas.xsd</rd:SchemaPath>
-        <rd:TableName>Tests</rd:TableName>
+        <rd:SchemaPath>D:\Documentos\UTN\PAVI\TestIt\TestIt\TestIt\DataSets\DataSetEstadisticas.xsd</rd:SchemaPath>
+        <rd:TableName>RendDepo</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />
         <rd:TableAdapterName />
@@ -157,7 +161,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Deporte</Value>
+                    <Value>Deportista</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -181,7 +185,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!deporte.Value</Value>
+                    <Value>=Parameters!deportista.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Normal</FontWeight>
@@ -197,7 +201,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>Categoría</Value>
+                    <Value>Test</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -213,7 +217,7 @@
                     </Style>
                   </TextRun>
                   <TextRun>
-                    <Value>=Parameters!categoria.Value</Value>
+                    <Value>=Parameters!test.Value</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Normal</FontWeight>
@@ -225,10 +229,10 @@
               </Paragraph>
             </Paragraphs>
             <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>0.34633cm</Top>
-            <Left>0.33735cm</Left>
+            <Top>0.38792cm</Top>
+            <Left>0.43593cm</Left>
             <Height>2.8225cm</Height>
-            <Width>10.67688cm</Width>
+            <Width>9.08938cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -245,46 +249,54 @@
                 <ChartMember>
                   <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
-                      <GroupExpression>=Fields!nombre.Value</GroupExpression>
+                      <GroupExpression>=Fields!medicion.Value</GroupExpression>
                     </GroupExpressions>
                   </Group>
                   <SortExpressions>
                     <SortExpression>
-                      <Value>=Fields!nombre.Value</Value>
+                      <Value>=Fields!medicion.Value</Value>
                     </SortExpression>
                   </SortExpressions>
-                  <Label>=Fields!nombre.Value</Label>
+                  <Label>=Fields!medicion.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartCategoryHierarchy>
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>id</Label>
+                  <Group Name="Chart1_SeriesGroup">
+                    <GroupExpressions>
+                      <GroupExpression>=Fields!vari.Value</GroupExpression>
+                    </GroupExpressions>
+                  </Group>
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!vari.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
+                  <Label>=Fields!vari.Value</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="id">
+                <ChartSeries Name="valor">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Count(Fields!id.Value)</Y>
+                        <Y>=Avg(Fields!valor.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
-                        <UseValueAsLabel>true</UseValueAsLabel>
-                        <Visible>true</Visible>
                       </ChartDataLabel>
                       <Style />
                       <ChartMarker>
+                        <Size>375pt</Size>
                         <Style />
                       </ChartMarker>
                       <DataElementOutput>Output</DataElementOutput>
                     </ChartDataPoint>
                   </ChartDataPoints>
-                  <Type>Shape</Type>
                   <Style />
                   <ChartEmptyPoints>
                     <Style />
@@ -542,6 +554,7 @@
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>8pt</FontSize>
                 </Style>
+                <Position>TopLeft</Position>
                 <ChartLegendTitle>
                   <Caption />
                   <Style>
@@ -556,7 +569,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Proporcion de ejcuciones por test</Caption>
+                <Caption>Rendimiento de deportista vs Rendimiento promedio</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
@@ -585,11 +598,11 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSetTest</DataSetName>
-            <Top>4.91808cm</Top>
-            <Left>1.92828cm</Left>
-            <Height>5.50271cm</Height>
-            <Width>10.64854cm</Width>
+            <DataSetName>DataSetRendDepo</DataSetName>
+            <Top>3.78368cm</Top>
+            <Left>0.43593cm</Left>
+            <Height>8.175cm</Height>
+            <Width>16.15187cm</Width>
             <ZIndex>1</ZIndex>
             <Style>
               <Border>
@@ -631,7 +644,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CANTIDAD DE EJECUCIONES POR TEST</Value>
+                      <Value>RENDIMIENTO DEPORTISTA</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>14pt</FontSize>
@@ -719,8 +732,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox5</rd:DefaultName>
-              <Top>0.36146cm</Top>
-              <Left>0.33735cm</Left>
+              <Top>0.52021cm</Top>
+              <Left>0.17198cm</Left>
               <Height>0.6cm</Height>
               <Width>5.59562cm</Width>
               <Style>
@@ -748,8 +761,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox4</rd:DefaultName>
-              <Top>0.36146cm</Top>
-              <Left>15.94776cm</Left>
+              <Top>0.52021cm</Top>
+              <Left>15.78239cm</Left>
               <Height>0.6cm</Height>
               <Width>1.09771cm</Width>
               <ZIndex>1</ZIndex>
@@ -782,11 +795,11 @@
     </ReportSection>
   </ReportSections>
   <ReportParameters>
-    <ReportParameter Name="usuario">
+    <ReportParameter Name="prFechaDesde">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="prFechaDesde">
+    <ReportParameter Name="usuario">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -794,11 +807,11 @@
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="categoria">
+    <ReportParameter Name="test">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
-    <ReportParameter Name="deporte">
+    <ReportParameter Name="deportista">
       <DataType>String</DataType>
       <Prompt>ReportParameter1</Prompt>
     </ReportParameter>
@@ -811,12 +824,12 @@
         <CellDefinition>
           <ColumnIndex>0</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>usuario</ParameterName>
+          <ParameterName>prFechaDesde</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>1</ColumnIndex>
           <RowIndex>0</RowIndex>
-          <ParameterName>prFechaDesde</ParameterName>
+          <ParameterName>usuario</ParameterName>
         </CellDefinition>
         <CellDefinition>
           <ColumnIndex>2</ColumnIndex>
@@ -824,14 +837,14 @@
           <ParameterName>prFechaHasta</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>0</ColumnIndex>
-          <RowIndex>1</RowIndex>
-          <ParameterName>categoria</ParameterName>
+          <ColumnIndex>3</ColumnIndex>
+          <RowIndex>0</RowIndex>
+          <ParameterName>test</ParameterName>
         </CellDefinition>
         <CellDefinition>
-          <ColumnIndex>1</ColumnIndex>
+          <ColumnIndex>0</ColumnIndex>
           <RowIndex>1</RowIndex>
-          <ParameterName>deporte</ParameterName>
+          <ParameterName>deportista</ParameterName>
         </CellDefinition>
       </CellDefinitions>
     </GridLayoutDefinition>
@@ -862,5 +875,5 @@ TqyxEFcMHVrzo7FnTZ3icA8tkcQ/ZxHVB5YRpA1yCRquSxdH7Y2F3m/hkwp1FkZ/VJoKcM3MD73D5//R
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>5703e1f1-2a2d-449b-90f7-d1f0ffad6180</rd:ReportID>
+  <rd:ReportID>b93317f9-1c31-40d7-aa74-828e061ec2cc</rd:ReportID>
 </Report>

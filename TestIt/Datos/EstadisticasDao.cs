@@ -70,9 +70,10 @@ namespace TestIt.Datos
             string consulta = "SELECT t.id, t.nombre" +
                 " FROM tests t JOIN ejecuciones e ON e.id_test = t.id" +
                 " JOIN deportistas d ON d.id = e.id_deportista" +
-                " WHERE d.id_categoria = " + categoria +
-                " AND d.id_deporte = " + deporte +
-                " AND e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'";
+                " WHERE e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'";
+
+            if (categoria != 0) consulta += " AND d.id_categoria = " + categoria;
+            if (deporte != 0) consulta += " AND d.id_deporte = " + deporte;
             return dm.ConsultaSQL(consulta);
         }
     }
