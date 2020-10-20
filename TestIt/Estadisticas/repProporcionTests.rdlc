@@ -631,7 +631,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>CANTIDAD DE EJECUCIONES POR TEST</Value>
+                      <Value>PROPORCIÓN DE EJECUCIONES POR TEST</Value>
                       <Style>
                         <FontFamily>Century Gothic</FontFamily>
                         <FontSize>14pt</FontSize>
@@ -643,7 +643,7 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.00508cm</Top>
+              <Top>1.04062cm</Top>
               <Left>2.93593cm</Left>
               <Height>0.92674cm</Height>
               <Width>13.17688cm</Width>
