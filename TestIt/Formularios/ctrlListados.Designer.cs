@@ -47,6 +47,11 @@
             this.btnDeportista = new System.Windows.Forms.Button();
             this.lblDeportista = new System.Windows.Forms.Label();
             this.gbEstadísticas = new System.Windows.Forms.GroupBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblExplicacionEvDeportista = new System.Windows.Forms.Label();
             this.btnTestsxEsSubjetivo = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.btnTestsxEquipo = new System.Windows.Forms.Button();
@@ -57,11 +62,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.btnRendDeportista = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.lblExplicacionEvDeportista = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.grpListados.SuspendLayout();
             this.gbEstadísticas.SuspendLayout();
             this.SuspendLayout();
@@ -300,6 +300,77 @@
             this.gbEstadísticas.Text = "Estadísticas";
             this.gbEstadísticas.Enter += new System.EventHandler(this.gbEstadísticas_Enter);
             // 
+            // label9
+            // 
+            this.label9.AllowDrop = true;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.LightGray;
+            this.label9.Location = new System.Drawing.Point(82, 586);
+            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(302, 32);
+            this.label9.TabIndex = 37;
+            this.label9.Text = "Muestra el esfuerzo subjetivo percibido promedio para\r\ntodos los tests, en un per" +
+    "íodo de tiempo indicado";
+            // 
+            // label4
+            // 
+            this.label4.AllowDrop = true;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.LightGray;
+            this.label4.Location = new System.Drawing.Point(22, 463);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(359, 48);
+            this.label4.TabIndex = 36;
+            this.label4.Text = "Muestra una comparación entre los resultados de un deportista \r\nparticular y el r" +
+    "esultado promedio para un tests determinado, en \r\nun período de tiempo indicado\r" +
+    "\n";
+            // 
+            // label3
+            // 
+            this.label3.AllowDrop = true;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.LightGray;
+            this.label3.Location = new System.Drawing.Point(24, 336);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(360, 32);
+            this.label3.TabIndex = 35;
+            this.label3.Text = "Muestra la cantidad de ejecuciones realizadas por un deporte y \r\nuna categoría de" +
+    "terminada, en un período de tiempo indicado\r\n";
+            // 
+            // label1
+            // 
+            this.label1.AllowDrop = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.LightGray;
+            this.label1.Location = new System.Drawing.Point(41, 215);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(343, 32);
+            this.label1.TabIndex = 34;
+            this.label1.Text = "Muestra los resultados promedios obtenidos de uno o más \r\nequipos para un test pa" +
+    "rticular, en un mes y un año indicados\r\n";
+            // 
+            // lblExplicacionEvDeportista
+            // 
+            this.lblExplicacionEvDeportista.AllowDrop = true;
+            this.lblExplicacionEvDeportista.AutoSize = true;
+            this.lblExplicacionEvDeportista.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExplicacionEvDeportista.ForeColor = System.Drawing.Color.LightGray;
+            this.lblExplicacionEvDeportista.Location = new System.Drawing.Point(41, 99);
+            this.lblExplicacionEvDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblExplicacionEvDeportista.Name = "lblExplicacionEvDeportista";
+            this.lblExplicacionEvDeportista.Size = new System.Drawing.Size(340, 32);
+            this.lblExplicacionEvDeportista.TabIndex = 33;
+            this.lblExplicacionEvDeportista.Text = "Muestra la evolución de uno o varios deportistas en un test \r\ny una medición part" +
+    "icular, en un período de tiempo indicado";
+            // 
             // btnTestsxEsSubjetivo
             // 
             this.btnTestsxEsSubjetivo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
@@ -409,77 +480,6 @@
             this.label8.Size = new System.Drawing.Size(162, 17);
             this.label8.TabIndex = 19;
             this.label8.Text = "Evolución de deportista";
-            // 
-            // lblExplicacionEvDeportista
-            // 
-            this.lblExplicacionEvDeportista.AllowDrop = true;
-            this.lblExplicacionEvDeportista.AutoSize = true;
-            this.lblExplicacionEvDeportista.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExplicacionEvDeportista.ForeColor = System.Drawing.Color.LightGray;
-            this.lblExplicacionEvDeportista.Location = new System.Drawing.Point(41, 99);
-            this.lblExplicacionEvDeportista.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.lblExplicacionEvDeportista.Name = "lblExplicacionEvDeportista";
-            this.lblExplicacionEvDeportista.Size = new System.Drawing.Size(343, 32);
-            this.lblExplicacionEvDeportista.TabIndex = 33;
-            this.lblExplicacionEvDeportista.Text = "Muestra la evolución de uno o varios deportistas en un test  \r\ny una medición par" +
-    "ticular, en  un periodo de tiempo indicado";
-            // 
-            // label1
-            // 
-            this.label1.AllowDrop = true;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.LightGray;
-            this.label1.Location = new System.Drawing.Point(41, 215);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(343, 32);
-            this.label1.TabIndex = 34;
-            this.label1.Text = "Muestra los resultados promedios obtenidos de uno o más \r\nequipos para un test pa" +
-    "rticular, en un mes y un año indicados\r\n";
-            // 
-            // label3
-            // 
-            this.label3.AllowDrop = true;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(24, 336);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(360, 32);
-            this.label3.TabIndex = 35;
-            this.label3.Text = "Muestra la cantidad de ejecuciones realizadas por un deporte y \r\nuna categoría de" +
-    "terminada, en un periodo de tiempo indicado\r\n";
-            // 
-            // label4
-            // 
-            this.label4.AllowDrop = true;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(25, 465);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(359, 48);
-            this.label4.TabIndex = 36;
-            this.label4.Text = "Muestra una comparación entre los resultados de un deportista \r\nparticular y el r" +
-    "esultado promedio para un tests determinado, en \r\nun periodo de tiempo indicado\r" +
-    "\n";
-            // 
-            // label9
-            // 
-            this.label9.AllowDrop = true;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Century Gothic", 8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.LightGray;
-            this.label9.Location = new System.Drawing.Point(82, 586);
-            this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(302, 32);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Muestra el esfuerzo subjetivo percibido promedio para\r\ntodos los tests, en un per" +
-    "iodo de tiempo indicado";
             // 
             // ctrlListados
             // 

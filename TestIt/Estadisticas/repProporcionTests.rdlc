@@ -82,7 +82,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Periodo</Value>
+                    <Value>Período</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -556,7 +556,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Proporcion de ejcuciones por test</Caption>
+                <Caption>Proporción de ejecuciones por test</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>

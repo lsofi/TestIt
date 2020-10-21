@@ -155,7 +155,7 @@
             this.btnListado.Name = "btnListado";
             this.btnListado.Size = new System.Drawing.Size(224, 32);
             this.btnListado.TabIndex = 5;
-            this.btnListado.Text = "Listados";
+            this.btnListado.Text = "Listados y estadísticas";
             this.btnListado.UseVisualStyleBackColor = true;
             this.btnListado.Click += new System.EventHandler(this.btnListado_Click);
             // 
@@ -208,7 +208,7 @@
             // 
             this.imgLogo.Image = global::TestIt.Properties.Resources.imgLogo__Personalizado_;
             this.imgLogo.Location = new System.Drawing.Point(68, 40);
-            this.imgLogo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.imgLogo.Margin = new System.Windows.Forms.Padding(2);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(101, 89);
             this.imgLogo.TabIndex = 1;

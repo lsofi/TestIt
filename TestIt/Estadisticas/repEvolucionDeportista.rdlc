@@ -90,7 +90,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Periodo</Value>
+                    <Value>Período</Value>
                     <Style>
                       <FontFamily>Century Gothic</FontFamily>
                       <FontWeight>Bold</FontWeight>
@@ -566,7 +566,7 @@
             </ChartLegends>
             <ChartTitles>
               <ChartTitle Name="Default">
-                <Caption>Título del gráfico</Caption>
+                <Caption>Evolución mensual de deportistas</Caption>
                 <Style>
                   <BackgroundGradientType>None</BackgroundGradientType>
                   <FontSize>9pt</FontSize>
