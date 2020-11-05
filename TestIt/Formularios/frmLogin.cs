@@ -15,6 +15,7 @@ namespace TestIt.Formularios
     public partial class frmLogin : Form
     {
         private Usuario usuarioLogueado = null;
+        private UsuarioService sUsuario = new UsuarioService();
 
         public Usuario UsuarioLogueado { get => usuarioLogueado; }
 
@@ -72,7 +73,7 @@ namespace TestIt.Formularios
         {
             if (validarCamposVacios()) return;
 
-            Usuario user = Usuario.buscarUsuario(txtUser.Text);
+            Usuario user = sUsuario.buscarUsuario(txtUser.Text);
 
             if (validarUsuario(user)) 
             { 

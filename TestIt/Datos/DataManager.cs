@@ -22,7 +22,7 @@ public class DataManager
 
 
 
-        dbConnection.ConnectionString = guada;
+        dbConnection.ConnectionString = joaco;
 
     }
 
@@ -82,6 +82,7 @@ public class DataManager
         DataTable tabla = new DataTable();
         try
         {
+            Open();
             cmd.Connection = dbConnection;
             cmd.CommandType = CommandType.Text;
             cmd.CommandText = strSql;

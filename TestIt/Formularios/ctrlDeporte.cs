@@ -14,6 +14,7 @@ namespace TestIt.Formularios
 {
     public partial class ctrlDeporte : UserControl
     {
+        private DeporteService sDeporte = new DeporteService();
         private List<Deporte> lDeportes;
         private bool nuevo = false;
         public ctrlDeporte()
@@ -29,7 +30,7 @@ namespace TestIt.Formularios
         private void cargarGrilla()
         {
             grdDeporte.Rows.Clear();
-            lDeportes = Deporte.buscarDeporte();
+            lDeportes = sDeporte.buscarTodos();
             foreach (Deporte deporte in lDeportes)
             {
                 grdDeporte.Rows.Add(deporte.Id, deporte.Nombre);
@@ -42,12 +43,22 @@ namespace TestIt.Formularios
             btnAceptar.Enabled = edit;
             btnCancelar.Enabled = edit;
             btnAgregar.Enabled = !edit;
-            btnEditar.Enabled = !edit;
-            btnEliminar.Enabled = !edit;
 
             txtNombreDet.Enabled = edit;
 
             grdDeporte.Enabled = !edit;
+
+            if (grdDeporte.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !edit;
+                btnEliminar.Enabled = !edit;
+            }
+
         }
         private void grdDeporte_SelectionChanged(object sender, EventArgs e)
         {
@@ -107,7 +118,7 @@ namespace TestIt.Formularios
                 "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (answer == DialogResult.Yes)
             {
-                if (actual.eliminar())
+                if (sDeporte.eliminar(actual))
                 {
                     MessageBox.Show("Deporte eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cargarGrilla();
@@ -128,10 +139,10 @@ namespace TestIt.Formularios
                 {
                     deporte.Borrado = 0;
 
-                    if (deporte.grabar())
+                    if (sDeporte.grabar(deporte))
                     {
                         MessageBox.Show("Deporte grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lDeportes = Deporte.buscarDeporte();
+                        lDeportes = sDeporte.buscarTodos();
                         cargarGrilla();
                     }
                     else
@@ -140,10 +151,10 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (deporte.actualizar())
+                    if (sDeporte.actualizar(deporte))
                     {
                         MessageBox.Show("Deporte actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lDeportes = Deporte.buscarDeporte();
+                        lDeportes = sDeporte.buscarTodos();
                         cargarGrilla();
                     }
                     else

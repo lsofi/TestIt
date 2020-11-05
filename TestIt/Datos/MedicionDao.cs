@@ -8,33 +8,9 @@ using TestIt.Logica;
 
 namespace TestIt.Datos
 {
-    class MedicionDao
+    class MedicionDao : AbstractDao
     {
-
-        public List<Medicion> buscarMediciones()
-        {
-            String consultaSql = string.Concat("SELECT * FROM Mediciones WHERE borrado=0");
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Medicion> mediciones = new List<Medicion>();
-                foreach (DataRow row in resultado.Rows)
-                    mediciones.Add(mappingMedicion(row));
-                return mediciones;
-            }
-
-            return null;
-        }
-
-        public Medicion buscarMedicionPorId(int id)
-        {
-            var resultado = DataManager.GetInstance().ConsultaSQL("SELECT * FROM mediciones WHERE id = " + id);
-            if (resultado.Rows.Count > 0)
-                return mappingMedicion(resultado.Rows[0]);
-            return null;
-        }
+        public MedicionDao() : base("mediciones") { }
 
         public DataTable buscarMedicionesPorTest(int idTest)
         {
@@ -46,43 +22,7 @@ namespace TestIt.Datos
             return resultado;
         }
 
-        public List<Medicion> filtrarMediciones(string nombre)
-        {
-            String consultaSql = string.Concat("SELECT * FROM Mediciones WHERE borrado=0");
-
-            if (nombre != "") consultaSql += " AND nombre LIKE '" + nombre + "%'";
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Medicion> mediciones = new List<Medicion>();
-                foreach (DataRow row in resultado.Rows)
-                    mediciones.Add(mappingMedicion(row));
-                return mediciones;
-            }
-
-            return null;
-        }
-
-        public int getId(string nombre)
-        {
-            var respuesta = DataManager.GetInstance().ConsultaSQLScalar("SELECT id FROM mediciones WHERE nombre = '" + nombre + "'");
-            if (respuesta == null) return -1;
-            return (int)respuesta;
-        }
-
-        public string getNombre(int id)
-        {
-            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM mediciones WHERE id = " + id).ToString();
-        }
-
-        public string getUnidad(int id)
-        {
-            return DataManager.GetInstance().ConsultaSQLScalar("SELECT unidad FROM mediciones WHERE id = " + id).ToString();
-        }
-
-        private Medicion mappingMedicion(DataRow row)
+        protected override object mappingObject(DataRow row)
         {
             Medicion oMedicion = new Medicion(Convert.ToInt32(row["id"]));
 
@@ -94,93 +34,40 @@ namespace TestIt.Datos
             return oMedicion;
         }
 
-        public bool Create(Medicion oMedicion)
+        protected override void sqlCreate(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                //SIN PARAMETROS
+            Medicion oMedicion = (Medicion)o;
 
-                string str_sql = "INSERT INTO Mediciones VALUES ('" +
-                            oMedicion.Nombre + "', '" +
-                            oMedicion.Unidad + "', '" +
-                            oMedicion.Descripcion + "', 0)";
+            string str_sql = "INSERT INTO Mediciones VALUES ('" +
+                              oMedicion.Nombre + "', '" +
+                              oMedicion.Unidad + "', '" +
+                              oMedicion.Descripcion + "', 0)";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal bool Update(Medicion oMedicion)
+        protected override void sqlUpdate(object o)
         {
+            Medicion oMedicion = (Medicion)o;
 
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Mediciones SET " +
-                              "nombre='" + oMedicion.Nombre + "' ," +
-                              "unidad= " + "'" + oMedicion.Unidad + "' ," +
-                              "descripcion= " + "'" + oMedicion.Descripcion + 
-                              "' WHERE id=" + oMedicion.Id + " AND  borrado=0";
+            string str_sql = "UPDATE Mediciones SET " +
+                             "nombre='" + oMedicion.Nombre + "' ," +
+                             "unidad= " + "'" + oMedicion.Unidad + "' ," +
+                             "descripcion= " + "'" + oMedicion.Descripcion +
+                             "' WHERE id=" + oMedicion.Id + " AND  borrado=0";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        public bool Delete(Medicion oMedicion)
+        protected override void sqlDelete(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Mediciones" +
-                                " SET borrado = " + 1 +
-                                " WHERE id = " + oMedicion.Id;
+            Medicion oMedicion = (Medicion)o;
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
+            string str_sql = "UPDATE Mediciones" +
+                             " SET borrado = " + 1 +
+                             " WHERE id = " + oMedicion.Id;
 
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-
-            finally
-            {
-                dm.Close();
-            }
-
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
     }
 }

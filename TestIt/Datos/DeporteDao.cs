@@ -6,125 +6,51 @@ using System.Threading.Tasks;
 using TestIt.Logica;
 using System.Data;
 
-
-
 namespace TestIt.Datos
 {
-    class DeporteDao
+    class DeporteDao : AbstractDao
     {
-        public List<Deporte> buscarDeporte()
+        public DeporteDao() : base("deportes") { }
+
+        protected override object mappingObject(DataRow row)
         {
-            String consultaSql = string.Concat("SELECT * FROM Deportes WHERE borrado=0");
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Deporte> deportes = new List<Deporte>();
-                foreach (DataRow row in resultado.Rows)
-                    deportes.Add(mappingDeporte(row));
-                return deportes;
-            }
-
-            return null;
-        }
-
-        private Deporte mappingDeporte(DataRow row)
-        {
-           Deporte oDeporte = new Deporte(Convert.ToInt32(row["id"]));
+            Deporte oDeporte = new Deporte(Convert.ToInt32(row["id"]));
 
             oDeporte.Nombre = row["nombre"].ToString();
             oDeporte.Borrado = Convert.ToInt32(row["borrado"]);
             return oDeporte;
         }
 
-        public bool Create(Deporte oDeporte)
+        protected override void sqlCreate(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                //SIN PARAMETROS
+            Deporte oDeporte = (Deporte)o;
 
-                string str_sql = "INSERT INTO Deportes VALUES ('" +
-                            oDeporte.Nombre + "', 0)";
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
+            string str_sql = "INSERT INTO Deportes VALUES ('" +
+                              oDeporte.Nombre + "', 0)";
 
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal string buscarNombre(int id)
+        protected override void sqlUpdate(object o)
         {
-            return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM deportes WHERE id = " + id).ToString();
+            Deporte oDeporte = (Deporte)o;
+
+            string str_sql = "UPDATE Deportes SET " +
+                             "nombre='" + oDeporte.Nombre + "'" +
+                             "WHERE id= " + oDeporte.Id + " AND  borrado=0";
+
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal bool Update(Deporte oDeporte)
+        protected override void sqlDelete(object o)
         {
+            Deporte oDeporte = (Deporte)o;
 
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Deportes SET " +
-                              "nombre='" + oDeporte.Nombre + "'" + 
-                              "WHERE id= " + oDeporte.Id + " AND  borrado=0";
-
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
-        }
-
-        public bool Delete(Deporte oDeporte)
-        {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Deportes " +
+            string str_sql = "UPDATE Deportes " +
                              "SET borrado = " + 1 +
-                            " WHERE id = " + oDeporte.Id;
+                             " WHERE id = " + oDeporte.Id;
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-
-            finally
-            {
-                dm.Close();
-            }
-
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
     }
 }

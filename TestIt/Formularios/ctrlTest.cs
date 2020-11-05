@@ -16,6 +16,8 @@ namespace TestIt.Formularios
     {
         private frmPrincipal fPrincipal;
 
+        private TestService sTest = new TestService();
+        private MedicionService sMedicion = new MedicionService();
         private List<Test> lTests;
         private List<Medicion> lMediciones;
         private bool nuevo = false;
@@ -28,9 +30,9 @@ namespace TestIt.Formularios
 
         private void ctrlTest_Load(object sender, EventArgs e)
         {
-            lTests = Test.buscarTests();
+            lTests = sTest.buscarTodos();
             cargarGrilla();
-            lMediciones = Medicion.buscarMediciones();
+            lMediciones = sMedicion.buscarTodos();
             cargarMediciones();
         }
 
@@ -58,7 +60,7 @@ namespace TestIt.Formularios
 
         public void actualizarMediciones()
         {
-            lMediciones = Medicion.buscarMediciones();
+            lMediciones = sMedicion.buscarTodos();
             cargarMediciones();
             if (grdTest.SelectedRows.Count != 0) cargarCampos();
         }
@@ -76,8 +78,6 @@ namespace TestIt.Formularios
             btnAceptar.Enabled = edit;
             btnCancelar.Enabled = edit;
             btnAgregar.Enabled = !edit;
-            btnEditar.Enabled = !edit;
-            btnEliminar.Enabled = !edit;
 
             txtNombre.Enabled = !edit;
 
@@ -88,6 +88,17 @@ namespace TestIt.Formularios
             txtBuscarMediciones.Enabled = edit;
 
             grdTest.Enabled = !edit;
+
+            if (grdTest.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !edit;
+                btnEliminar.Enabled = !edit;
+            }
         }
 
         private void cargarCampos()
@@ -134,7 +145,7 @@ namespace TestIt.Formularios
 
         private void filtrar()
         {
-            lTests = Test.filtrarTests(txtNombre.Text);
+            lTests = sTest.filtrar(txtNombre.Text);
             cargarGrilla();
         }
 
@@ -158,7 +169,7 @@ namespace TestIt.Formularios
                 "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (answer == DialogResult.Yes)
             {
-                if (actual.eliminar())
+                if (sTest.eliminar(actual))
                 {
                     filtrar();
                     MessageBox.Show("Test eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -189,7 +200,7 @@ namespace TestIt.Formularios
                 {
                     test.Borrado = 0;
 
-                    if (test.grabar())
+                    if (sTest.grabar(test))
                     {
                         filtrar();
                         MessageBox.Show("Test grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -200,7 +211,7 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (test.actualizar())
+                    if (sTest.actualizar(test))
                     {
                         filtrar();
                         MessageBox.Show("Test actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -234,12 +245,12 @@ namespace TestIt.Formularios
         {
             if (txtBuscarMediciones.Text != "Buscar mediciones..." && txtBuscarMediciones.Text != "")
             {
-                lMediciones = Medicion.filtrarMediciones(txtBuscarMediciones.Text);
+                lMediciones = sMedicion.filtrar(txtBuscarMediciones.Text);
                 cargarMediciones();
             }
             else
             {
-                lMediciones = Medicion.buscarMediciones();
+                lMediciones = sMedicion.buscarTodos();
                 cargarMediciones();
             }
         }

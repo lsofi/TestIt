@@ -90,5 +90,40 @@ namespace TestIt.Datos
 
         }
 
+        public DataTable rendimientoDeportista(DateTime desde, DateTime hasta, int idDep, int idTest)
+        {
+            DataManager dm = DataManager.GetInstance();
+
+            String consulta =
+                "SELECT m.nombre AS medicion, det.valor, 'Deportista' AS vari" +
+                " FROM ejecuciones e" +
+                " JOIN detalle_ejecuciones det ON det.nro_ejecucion = e.nro_ejecucion" +
+                " JOIN mediciones m ON det.id_campo = m.id" +
+                " WHERE e.id_test = " + idTest +
+                " AND e.id_deportista = " + idDep +
+                " AND e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'" +
+                " UNION " +
+                " SELECT m.nombre AS medicion, det.valor, 'Promedio' AS vari" +
+                " FROM ejecuciones e" +
+                " JOIN detalle_ejecuciones det ON det.nro_ejecucion = e.nro_ejecucion" +
+                " JOIN mediciones m ON det.id_campo = m.id" +
+                " WHERE e.id_test = " + idTest +
+                " AND e.borrado = 0 AND e.fecha BETWEEN '" + desde.ToString("yyyy-MM-dd") + "' AND '" + hasta.ToString("yyyy-MM-dd") + "'";
+
+            DataTable dt = dm.ConsultaSQL(consulta);
+
+            return dt;
+        }
+
+        public DataTable buscarMedicionesPorTest(int idTest)
+        {
+            var resultado = DataManager.GetInstance().ConsultaSQL(
+                "SELECT m.id, m.nombre FROM mediciones m" +
+                " JOIN medicionesXtests t ON m.id = t.id_campo " +
+                " WHERE t.id_test = " + idTest);
+
+            return resultado;
+        }
+
     }
 }

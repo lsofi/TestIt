@@ -14,6 +14,9 @@ namespace TestIt.Formularios
 {
     public partial class ctrlDetalleEjecucion : UserControl
     {
+        private MedicionService sMedicion = new MedicionService();
+        private TestService sTest = new TestService();
+        private EjecucionService sEjecucion = new EjecucionService();
         private frmPrincipal fPrincipal;
         private Ejecucion ejecucion;
         private bool nuevo = false;
@@ -77,7 +80,7 @@ namespace TestIt.Formularios
             if (ejecucion.Mediciones.Count != 0)
                 foreach (int key in ejecucion.Mediciones.Keys)
                 {
-                    grdMediciones.Rows.Add(key, Medicion.buscarNombre(key), ejecucion.Mediciones[key], Medicion.buscarUnidad(key));
+                    grdMediciones.Rows.Add(key, sMedicion.buscarNombre(key), ejecucion.Mediciones[key], sMedicion.buscarUnidad(key));
                 }
             grdMediciones.ClearSelection();
         }
@@ -85,10 +88,10 @@ namespace TestIt.Formularios
         private void cargarGrillaNueva()
         {
             grdMediciones.Rows.Clear();
-            List<int> idMediciones = Test.buscarTestPorId((int)cboTest.SelectedValue).IdMediciones;
+            List<int> idMediciones = sTest.buscarPorId((int)cboTest.SelectedValue).IdMediciones;
             foreach(int id in idMediciones)
             {
-                Medicion medicion = Medicion.buscarMedicionPorId(id);
+                Medicion medicion = sMedicion.buscarPorId(id);
                 grdMediciones.Rows.Add(id, medicion.Nombre, "", medicion.Unidad);
             }
 
@@ -150,13 +153,14 @@ namespace TestIt.Formularios
                     ejecucion.Fecha = dtpFecha.Value;
                     ejecucion.IdTest = (int)cboTest.SelectedValue;
                     ejecucion.IdDeportista = (int)cboDeportista.SelectedValue;
+                    ejecucion.IdUsuario = Globals.UsuarioActual.IdUsuario;
 
                     foreach (DataGridViewRow row in grdMediciones.Rows)
                     {
                         ejecucion.addMedicion((int)row.Cells[0].Value, row.Cells[2].Value.ToString());
                     }
 
-                    if (ejecucion.grabar())
+                    if (sEjecucion.grabar(ejecucion))
                     {
                         MessageBox.Show("Ejecución grabada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -171,7 +175,7 @@ namespace TestIt.Formularios
                     ejecucion.setMedicion((int)row.Cells[0].Value, row.Cells[2].Value.ToString());
                 }
                 
-                if (ejecucion.actualizar())
+                if (sEjecucion.actualizar(ejecucion))
                 {
                     MessageBox.Show("Ejecución actualizada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

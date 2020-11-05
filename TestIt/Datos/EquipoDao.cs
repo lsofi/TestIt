@@ -8,46 +8,11 @@ using System.Data;
 
 namespace TestIt.Datos
 {
-    class EquipoDao
+    class EquipoDao : AbstractDao
     {
-        public List<Equipo> buscarEquipos()
-        {
-            String consultaSql = string.Concat("SELECT * FROM Equipos WHERE borrado=0");
+        public EquipoDao() : base("equipos") { }
 
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Equipo> equipos = new List<Equipo>();
-                foreach (DataRow row in resultado.Rows)
-                    equipos.Add(mappingEquipo(row));
-                return equipos;
-            }
-
-            return null;
-        }
-
-        public List<Equipo> filtrarEquipos(string nombre, string localidad)
-        {
-            String consultaSql = string.Concat("SELECT * FROM Equipos WHERE borrado=0");
-
-            if (nombre != "") consultaSql += " AND nombre LIKE '" + nombre + "%'";
-            if (localidad != "") consultaSql += " AND localidad LIKE '" + localidad + "%'";
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Equipo> equipos = new List<Equipo>();
-                foreach (DataRow row in resultado.Rows)
-                    equipos.Add(mappingEquipo(row));
-                return equipos;
-            }
-
-            return null;
-        }
-
-        private Equipo mappingEquipo(DataRow row)
+        protected override object mappingObject(DataRow row)
         {
             Equipo oEquipo = new Equipo(Convert.ToInt32(row["id"]));
 
@@ -59,93 +24,40 @@ namespace TestIt.Datos
             return oEquipo;
         }
 
-        public bool Create(Equipo oEquipo)
+        protected override void sqlCreate(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                //SIN PARAMETROS
+            Equipo oEquipo = (Equipo)o;
 
-                string str_sql = "INSERT INTO Equipos VALUES ('" +
-                            oEquipo.Nombre + "', '" +
-                            oEquipo.Localidad + "' , '" +
-                            oEquipo.Entrenador + "', 0)";
+            string str_sql = "INSERT INTO Equipos VALUES ('" +
+                              oEquipo.Nombre + "', '" +
+                              oEquipo.Localidad + "' , '" +
+                              oEquipo.Entrenador + "', 0)";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal bool Update(Equipo oEquipo)
+        protected override void sqlUpdate(object o)
         {
+            Equipo oEquipo = (Equipo)o;
 
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Equipos SET " +
-                              "nombre='" + oEquipo.Nombre + "'," +
-                              "localidad= " + "'" + oEquipo.Localidad + "'," +
-                              "entrenador= '" + oEquipo.Entrenador +
-                              "' WHERE id=" + oEquipo.Id + " AND  borrado=0";
+            string str_sql = "UPDATE Equipos SET " +
+                             "nombre='" + oEquipo.Nombre + "'," +
+                             "localidad= " + "'" + oEquipo.Localidad + "'," +
+                             "entrenador= '" + oEquipo.Entrenador +
+                             "' WHERE id=" + oEquipo.Id + " AND  borrado=0";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        public bool Delete(Equipo oEquipo)
+        protected override void sqlDelete(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Equipos " +
-                             "SET borrado = " + 1 +
-                " WHERE id = " + oEquipo.Id;
+            Equipo oEquipo = (Equipo)o;
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
+            string str_sql = "UPDATE Equipos" +
+                             " SET borrado = " + 1 +
+                             " WHERE id = " + oEquipo.Id;
 
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-
-            finally
-            {
-                dm.Close();
-            }
-
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
     }
 }

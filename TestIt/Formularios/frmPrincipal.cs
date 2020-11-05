@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TestIt.Soporte;
 using TestIt.Logica;
-using TestIt.Listados;
+using TestIt.Formularios.Listados;
 
 namespace TestIt.Formularios
 {
@@ -32,15 +32,14 @@ namespace TestIt.Formularios
         {
             InitializeComponent();
 
-
             frmLogin login = new frmLogin();
-            //login.ShowDialog();
+            login.ShowDialog();
             if(login.UsuarioLogueado != null)
                 this.lblBienvenido.Text = "Bienvenido " + login.UsuarioLogueado.NombreUsuario;
             Globals.UsuarioActual = login.UsuarioLogueado;
-            Globals.UsuarioActual = new Usuario();
-            Globals.UsuarioActual.IdUsuario = 1;
-            Globals.UsuarioActual.NombreUsuario = "sofia";
+            //Globals.UsuarioActual = new Usuario();
+            //Globals.UsuarioActual.IdUsuario = 1;
+            //Globals.UsuarioActual.NombreUsuario = "sofia";
         }
 
         private void frmPrincipal_Load(object sender, EventArgs e)

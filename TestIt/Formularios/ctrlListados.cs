@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using TestIt.Listados;
-using TestIt.Estadisticas;
+using TestIt.Formularios.Listados;
+using TestIt.Formularios.Estadisticas;
 
 namespace TestIt.Formularios
 {

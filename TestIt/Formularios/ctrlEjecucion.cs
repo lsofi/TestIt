@@ -16,6 +16,10 @@ namespace TestIt.Formularios
     {
         private frmPrincipal fPrincipal;
 
+        private TestService sTest = new TestService();
+        private DeportistaService sDeportista = new DeportistaService();
+        private EjecucionService sEjecucion = new EjecucionService();
+
         private List<Ejecucion> lEjecuciones;
 
         public ctrlEjecucion(frmPrincipal fp)
@@ -42,14 +46,14 @@ namespace TestIt.Formularios
             if (lEjecuciones != null)
                 foreach (Ejecucion ejecucion in lEjecuciones)
                 {
-                    grdEjecuciones.Rows.Add(ejecucion.Numero, Test.buscarNombre(ejecucion.IdTest), Deportista.buscarApellido(ejecucion.IdDeportista), ejecucion.Fecha.ToString("dd/MM/yyyy"));
+                    grdEjecuciones.Rows.Add(ejecucion.Numero, sTest.buscarNombre(ejecucion.IdTest), sDeportista.buscarApellido(ejecucion.IdDeportista), ejecucion.Fecha.ToString("dd/MM/yyyy"));
                 }
             grdEjecuciones.ClearSelection();
         }
 
         public void cargarDatos()
         {
-            lEjecuciones = Ejecucion.buscarEjecuciones();
+            lEjecuciones = sEjecucion.buscarTodos();
             cargarGrilla();
         }
 
@@ -60,7 +64,7 @@ namespace TestIt.Formularios
 
         private void filtrar()
         {
-            lEjecuciones = Ejecucion.filtrarEjecuciones(
+            lEjecuciones = sEjecucion.filtrar(
                 cboTest.SelectedIndex == -1 ? -1 : (int)cboTest.SelectedValue,
                 cboDeportista.SelectedIndex == -1 ? -1 : (int)cboDeportista.SelectedValue, dtpDesde.Value, dtpHasta.Value);
             cargarGrilla();
@@ -120,7 +124,7 @@ namespace TestIt.Formularios
                 "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (answer == DialogResult.Yes)
             {
-                if (actual.eliminar())
+                if (sEjecucion.eliminar(actual))
                 {
                     limpiar();
                     MessageBox.Show("Ejecución eliminada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

@@ -14,6 +14,7 @@ namespace TestIt.Formularios
 {
     public partial class ctrlDeportistas : UserControl
     {
+        private DeportistaService sDeportista = new DeportistaService();
         private List<Deportista> lDeportistas;
         private bool comboOk = false;
         private bool nuevo = false;
@@ -25,7 +26,7 @@ namespace TestIt.Formularios
 
         private void ctrlDeportistas_Load(object sender, EventArgs e)
         {
-            lDeportistas = Deportista.buscarDeportistas();
+            lDeportistas = sDeportista.buscarTodos();
             cargarGrilla();
             cargarCombos();
         }
@@ -60,9 +61,7 @@ namespace TestIt.Formularios
         {
             btnAceptar.Enabled = state;
             btnCancelar.Enabled = state;
-            btnAgregar.Enabled = state;
-            btnEditar.Enabled = !state;
-            btnEliminar.Enabled = !state;
+            btnAgregar.Enabled = !state;
             btnLimpiar.Enabled = !state;
 
             txtApellido.Enabled = !state;
@@ -82,6 +81,17 @@ namespace TestIt.Formularios
             cboDetCategoria.Enabled = state;
 
             grdDeportistas.Enabled = !state;
+
+            if(grdDeportistas.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !state;
+                btnEliminar.Enabled = !state;
+            }
         }
 
         private void grdDeportistas_SelectionChanged(object sender, EventArgs e)
@@ -154,7 +164,7 @@ namespace TestIt.Formularios
         {
             if (comboOk)
             {
-                lDeportistas = Deportista.filtrarDeportistas(
+                lDeportistas = sDeportista.filtrar(
                     txtApellido.Text, 
                     cboEquipo.SelectedIndex == -1 ? -1 :(int)cboEquipo.SelectedValue,
                     cboDeporte.SelectedIndex == -1 ? -1 : (int)cboDeporte.SelectedValue,
@@ -172,7 +182,7 @@ namespace TestIt.Formularios
             cboEquipo.SelectedIndex = -1;
             comboOk = true;
 
-            lDeportistas = Deportista.buscarDeportistas();
+            lDeportistas = sDeportista.buscarTodos();
             cargarGrilla();
         }
 
@@ -187,8 +197,8 @@ namespace TestIt.Formularios
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             nuevo = true;
+            toggleState(true);
             grdDeportistas.ClearSelection();
-            toggleState(true); 
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
@@ -204,7 +214,7 @@ namespace TestIt.Formularios
             if (answer == DialogResult.Yes)
             {
                 Deportista dep = deportistaActual();
-                if (dep.eliminar())
+                if (sDeportista.eliminar(dep))
                 {
                     filtrar();
                     MessageBox.Show("Deportista eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -234,9 +244,9 @@ namespace TestIt.Formularios
                 {
                     dep.Borrado = 0;
 
-                    if (dep.grabar())
+                    if (sDeportista.grabar(dep))
                     {
-                        lDeportistas = Deportista.buscarDeportistas();
+                        lDeportistas = sDeportista.buscarTodos();
                         filtrar();
                         MessageBox.Show("Deportista grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -246,9 +256,9 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (dep.actualizar())
+                    if (sDeportista.actualizar(dep))
                     {
-                        lDeportistas = Deportista.buscarDeportistas();
+                        lDeportistas = sDeportista.buscarTodos();
                         filtrar();
                         MessageBox.Show("Deportista actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }

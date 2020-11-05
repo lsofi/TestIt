@@ -14,6 +14,7 @@ namespace TestIt.Formularios
 {
     public partial class ctrlCategoria : UserControl
     {
+        CategoriaService sCategoria = new CategoriaService();
         private List<Categoria> lCategoria;
         private bool nuevo = false;
 
@@ -24,7 +25,7 @@ namespace TestIt.Formularios
 
         private void ctrlCategoria_Load(object sender, EventArgs e)
         {
-            lCategoria = Categoria.buscarCategorias();
+            lCategoria = sCategoria.buscarTodos();
             cargarGrilla();
 
         }
@@ -46,14 +47,23 @@ namespace TestIt.Formularios
             btnAceptar.Enabled = edit;
             btnCancelar.Enabled = edit;
             btnAgregar.Enabled = !edit;
-            btnEditar.Enabled = !edit;
-            btnEliminar.Enabled = !edit;
 
             txtNombreDet.Enabled = edit;
             txtEdadMinDet.Enabled = edit;
             txtEdadMaxDet.Enabled = edit;
 
             grdCategoría.Enabled = !edit;
+
+            if (grdCategoría.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !edit;
+                btnEliminar.Enabled = !edit;
+            }
         }
         private void grdCategoría_SelectionChanged_1(object sender, EventArgs e)
         {
@@ -112,10 +122,10 @@ namespace TestIt.Formularios
 
             if (answer == DialogResult.Yes)
             {
-                if (cat.eliminar())
+                if (sCategoria.eliminar(cat))
                 {
                     MessageBox.Show("Categoría eliminada con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    lCategoria = Categoria.buscarCategorias();
+                    lCategoria = sCategoria.buscarTodos();
                     cargarGrilla();
                 }
 
@@ -136,11 +146,11 @@ namespace TestIt.Formularios
                 if (nuevo)
                 {
                     categoria.Borrado = 0;
-                    if (categoria.grabar())
+                    if (sCategoria.grabar(categoria))
                     {
                         
                         MessageBox.Show("Categoría grabada con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lCategoria = Categoria.buscarCategorias();
+                        lCategoria = sCategoria.buscarTodos();
                         cargarGrilla();
                     }
                     else
@@ -149,11 +159,11 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (categoria.actualizar())
+                    if (sCategoria.actualizar(categoria))
                     {
                         
                         MessageBox.Show("Categoría actualizada con éxito", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        lCategoria = Categoria.buscarCategorias();
+                        lCategoria = sCategoria.buscarTodos();
                         cargarGrilla();
                     }
                     else

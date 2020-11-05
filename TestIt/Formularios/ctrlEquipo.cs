@@ -14,6 +14,7 @@ namespace TestIt.Formularios
 {
     public partial class ctrlEquipo : UserControl
     {
+        private EquipoService sEquipo = new EquipoService();
         private List<Equipo> lEquipos;
         private bool nuevo = false;
 
@@ -23,7 +24,7 @@ namespace TestIt.Formularios
         }
         private void ctrlEquipo_Load(object sender, EventArgs e)
         {
-            lEquipos = Equipo.buscarEquipos();
+            lEquipos = sEquipo.buscarTodos();
             cargarGrilla();
         }
 
@@ -43,8 +44,6 @@ namespace TestIt.Formularios
             btnAceptar.Enabled = edit;
             btnCancelar.Enabled = edit;
             btnAgregar.Enabled = !edit;
-            btnEditar.Enabled = !edit;
-            btnEliminar.Enabled = !edit;
             btnLimpiar.Enabled = !edit;
 
             txtNombre.Enabled = !edit;
@@ -55,6 +54,17 @@ namespace TestIt.Formularios
             txtDetEntrenador.Enabled = edit;
 
             grdEquipos.Enabled = !edit;
+
+            if (grdEquipos.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !edit;
+                btnEliminar.Enabled = !edit;
+            }
         }
 
 
@@ -106,7 +116,7 @@ namespace TestIt.Formularios
 
         private void filtrar()
         {
-            lEquipos = Equipo.filtrarEquipos(txtNombre.Text, txtLocalidad.Text);
+            lEquipos = sEquipo.filtrar(txtNombre.Text, txtLocalidad.Text);
             cargarGrilla();    
         }
 
@@ -115,7 +125,7 @@ namespace TestIt.Formularios
             txtNombre.Text = "";
             txtLocalidad.Text = "";
 
-            lEquipos = Equipo.buscarEquipos();
+            lEquipos = sEquipo.buscarTodos();
             cargarGrilla();
         }
 
@@ -139,7 +149,7 @@ namespace TestIt.Formularios
                 "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (answer == DialogResult.Yes)
             {
-                if (actual.eliminar())
+                if (sEquipo.eliminar(actual))
                 {
                     filtrar();
                     MessageBox.Show("Equipo eliminado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -162,7 +172,7 @@ namespace TestIt.Formularios
                 {
                     equipo.Borrado = 0;
 
-                    if (equipo.grabar())
+                    if (sEquipo.grabar(equipo))
                     {
                         filtrar();
                         MessageBox.Show("Equipo grabado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -173,7 +183,7 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (equipo.actualizar())
+                    if (sEquipo.actualizar(equipo))
                     {
                         filtrar();
                         MessageBox.Show("Equipo actualizado", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

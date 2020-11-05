@@ -16,6 +16,7 @@ namespace TestIt.Formularios
     {
         private frmPrincipal fPrincipal;
 
+        private MedicionService sMedicion = new MedicionService();
         private List<Medicion> lMedicion;
         private bool nuevo = false;
 
@@ -27,7 +28,7 @@ namespace TestIt.Formularios
 
         private void ctrlMedicion_Load(object sender, EventArgs e)
         {
-            lMedicion = Medicion.buscarMediciones();
+            lMedicion = sMedicion.buscarTodos();
             cargarGrilla();
         }
 
@@ -56,8 +57,6 @@ namespace TestIt.Formularios
             btnAceptar.Enabled = edit;
             btnCancelar.Enabled = edit;
             btnAgregar.Enabled = !edit;
-            btnEditar.Enabled = !edit;
-            btnEliminar.Enabled = !edit;
 
             txtNombre.Enabled = !edit;
 
@@ -66,6 +65,17 @@ namespace TestIt.Formularios
             txtDescripcion.Enabled = edit;
 
             grdMediciones.Enabled = !edit;
+
+            if (grdMediciones.SelectedRows.Count == 0)
+            {
+                btnEditar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            else
+            {
+                btnEditar.Enabled = !edit;
+                btnEliminar.Enabled = !edit;
+            }
         }
 
         private void cargarCampos()
@@ -103,7 +113,7 @@ namespace TestIt.Formularios
 
         private void filtrar()
         {
-            lMedicion = Medicion.filtrarMediciones(txtNombre.Text);
+            lMedicion = sMedicion.filtrar(txtNombre.Text);
             cargarGrilla();
         }
 
@@ -127,7 +137,7 @@ namespace TestIt.Formularios
                 "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             if (answer == DialogResult.Yes)
             {
-                if (actual.eliminar())
+                if (sMedicion.eliminar(actual))
                 {
                     filtrar();
                     MessageBox.Show("Medicion eliminada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -152,7 +162,7 @@ namespace TestIt.Formularios
                 {
                     medicion.Borrado = 0;
 
-                    if (medicion.grabar())
+                    if (sMedicion.grabar(medicion))
                     {
                         filtrar();
                         MessageBox.Show("Medicion grabada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -163,7 +173,7 @@ namespace TestIt.Formularios
                 }
                 else
                 {
-                    if (medicion.actualizar())
+                    if (sMedicion.actualizar(medicion))
                     {
                         filtrar();
                         MessageBox.Show("Medicion actualizada", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

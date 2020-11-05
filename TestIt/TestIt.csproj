@@ -85,39 +85,40 @@
     <Compile Include="Datos\DataManager.cs" />
     <Compile Include="Datos\DeportistaDao.cs" />
     <Compile Include="Datos\EjecucionDao.cs" />
+    <Compile Include="Datos\AbstractDao.cs" />
     <Compile Include="Datos\EquipoDao.cs" />
     <Compile Include="Datos\EstadisticasDao.cs" />
     <Compile Include="Datos\ListadosDao.cs" />
     <Compile Include="Datos\MedicionDao.cs" />
     <Compile Include="Datos\TestDao.cs" />
-    <Compile Include="Estadisticas\ctrlEstComparacionEquipos.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstComparacionEquipos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstComparacionEquipos.Designer.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstComparacionEquipos.Designer.cs">
       <DependentUpon>ctrlEstComparacionEquipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstEsfuerzoPorTest.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstEsfuerzoPorTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstEsfuerzoPorTest.designer.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstEsfuerzoPorTest.designer.cs">
       <DependentUpon>ctrlEstEsfuerzoPorTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstRendimientoDeportista.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstRendimientoDeportista.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstRendimientoDeportista.Designer.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstRendimientoDeportista.Designer.cs">
       <DependentUpon>ctrlEstRendimientoDeportista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstEvolucionDeportista.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstEvolucionDeportista.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstEvolucionDeportista.Designer.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstEvolucionDeportista.Designer.cs">
       <DependentUpon>ctrlEstEvolucionDeportista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstProporcionTests.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstProporcionTests.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Estadisticas\ctrlEstProporcionTests.Designer.cs">
+    <Compile Include="Formularios\Estadisticas\ctrlEstProporcionTests.Designer.cs">
       <DependentUpon>ctrlEstProporcionTests.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\ctrlEjecucion.cs">
@@ -175,62 +176,70 @@
     <Compile Include="Formularios\ctrlTest.designer.cs">
       <DependentUpon>ctrlTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoCategorias.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoCategorias.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoCategorias.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoCategorias.Designer.cs">
       <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoDeporistas.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoDeporistas.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoDeporistas.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoDeporistas.Designer.cs">
       <DependentUpon>ctrlListadoDeporistas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuTest.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuTest.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuTest.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuTest.Designer.cs">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuDeportista.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuDeportista.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuDeportista.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuDeportista.Designer.cs">
       <DependentUpon>ctrlListadoEjecuDeportista.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuciones.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuciones.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEjecuciones.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEjecuciones.Designer.cs">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEquipos.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEquipos.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoEquipos.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoEquipos.Designer.cs">
       <DependentUpon>ctrlListadoEquipos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoTests.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoTests.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoTests.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoTests.Designer.cs">
       <DependentUpon>ctrlListadoTests.cs</DependentUpon>
     </Compile>
-    <Compile Include="Listados\ctrlListadoUsuarios.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoUsuarios.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Listados\ctrlListadoUsuarios.Designer.cs">
+    <Compile Include="Formularios\Listados\ctrlListadoUsuarios.Designer.cs">
       <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
     </Compile>
-    <Compile Include="Logica\Deporte.cs" />
-    <Compile Include="Logica\Categoria.cs" />
-    <Compile Include="Logica\Deportista.cs" />
-    <Compile Include="Logica\Ejecucion.cs" />
-    <Compile Include="Logica\Equipo.cs" />
-    <Compile Include="Logica\Medicion.cs" />
-    <Compile Include="Logica\Test.cs" />
-    <Compile Include="Logica\Usuario.cs" />
+    <Compile Include="Logica\CategoriaService.cs" />
+    <Compile Include="Entidades\Deporte.cs" />
+    <Compile Include="Entidades\Categoria.cs" />
+    <Compile Include="Logica\DeporteService.cs" />
+    <Compile Include="Entidades\Deportista.cs" />
+    <Compile Include="Logica\DeportistaService.cs" />
+    <Compile Include="Entidades\Ejecucion.cs" />
+    <Compile Include="Logica\EjecucionService.cs" />
+    <Compile Include="Entidades\Equipo.cs" />
+    <Compile Include="Logica\EquipoService.cs" />
+    <Compile Include="Entidades\Medicion.cs" />
+    <Compile Include="Logica\MedicionService.cs" />
+    <Compile Include="Logica\AbstractService.cs" />
+    <Compile Include="Entidades\Test.cs" />
+    <Compile Include="Logica\TestService.cs" />
+    <Compile Include="Entidades\Usuario.cs" />
     <Compile Include="Formularios\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,31 +252,32 @@
     <Compile Include="Formularios\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Logica\UsuarioService.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Soporte\Combo.cs" />
     <Compile Include="Soporte\Globals.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
-    <EmbeddedResource Include="Estadisticas\ctrlEstComparacionEquipos.resx">
+    <EmbeddedResource Include="Formularios\Estadisticas\ctrlEstComparacionEquipos.resx">
       <DependentUpon>ctrlEstComparacionEquipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\ctrlEstEsfuerzoPorTest.resx">
+    <EmbeddedResource Include="Formularios\Estadisticas\ctrlEstEsfuerzoPorTest.resx">
       <DependentUpon>ctrlEstEsfuerzoPorTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\ctrlEstRendimientoDeportista.resx">
+    <EmbeddedResource Include="Formularios\Estadisticas\ctrlEstRendimientoDeportista.resx">
       <DependentUpon>ctrlEstRendimientoDeportista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\ctrlEstEvolucionDeportista.resx">
+    <EmbeddedResource Include="Formularios\Estadisticas\ctrlEstEvolucionDeportista.resx">
       <DependentUpon>ctrlEstEvolucionDeportista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\ctrlEstProporcionTests.resx">
+    <EmbeddedResource Include="Formularios\Estadisticas\ctrlEstProporcionTests.resx">
       <DependentUpon>ctrlEstProporcionTests.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Estadisticas\repComparacionEquipos.rdlc" />
-    <EmbeddedResource Include="Estadisticas\repEsfuerzoPorTest.rdlc" />
-    <EmbeddedResource Include="Estadisticas\repEvolucionDeportista.rdlc" />
-    <EmbeddedResource Include="Estadisticas\repProporcionTests.rdlc" />
-    <EmbeddedResource Include="Estadisticas\repRendimientoDeportista.rdlc" />
+    <EmbeddedResource Include="Reportes\Estadisticas\repComparacionEquipos.rdlc" />
+    <EmbeddedResource Include="Reportes\Estadisticas\repEsfuerzoPorTest.rdlc" />
+    <EmbeddedResource Include="Reportes\Estadisticas\repEvolucionDeportista.rdlc" />
+    <EmbeddedResource Include="Reportes\Estadisticas\repProporcionTests.rdlc" />
+    <EmbeddedResource Include="Reportes\Estadisticas\repRendimientoDeportista.rdlc" />
     <EmbeddedResource Include="Formularios\ctrlEjecucion.resx">
       <DependentUpon>ctrlEjecucion.cs</DependentUpon>
     </EmbeddedResource>
@@ -301,38 +311,38 @@
     <EmbeddedResource Include="Formularios\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoCategorias.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoCategorias.resx">
       <DependentUpon>ctrlListadoCategorias.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoDeporistas.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoDeporistas.resx">
       <DependentUpon>ctrlListadoDeporistas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoEjecuTest.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoEjecuTest.resx">
       <DependentUpon>ctrlListadoEjecuTest.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoEjecuDeportista.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoEjecuDeportista.resx">
       <DependentUpon>ctrlListadoEjecuDeportista.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoEjecuciones.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoEjecuciones.resx">
       <DependentUpon>ctrlListadoEjecuciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoEquipos.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoEquipos.resx">
       <DependentUpon>ctrlListadoEquipos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoTests.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoTests.resx">
       <DependentUpon>ctrlListadoTests.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\ctrlListadoUsuarios.resx">
+    <EmbeddedResource Include="Formularios\Listados\ctrlListadoUsuarios.resx">
       <DependentUpon>ctrlListadoUsuarios.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Listados\repCategoriaListado.rdlc" />
-    <EmbeddedResource Include="Listados\repDeportistasListado.rdlc" />
-    <EmbeddedResource Include="Listados\repEjecucionesListado.rdlc" />
-    <EmbeddedResource Include="Listados\repEjecuTestListado.rdlc" />
-    <EmbeddedResource Include="Listados\repEjecuDeportistaListado.rdlc" />
-    <EmbeddedResource Include="Listados\repEquiposListado.rdlc" />
-    <EmbeddedResource Include="Listados\repTestsListado.rdlc" />
-    <EmbeddedResource Include="Listados\repUsuariosListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repCategoriaListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repDeportistasListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repEjecucionesListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repEjecuTestListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repEjecuDeportistaListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repEquiposListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repTestsListado.rdlc" />
+    <EmbeddedResource Include="Reportes\Listados\repUsuariosListado.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -406,8 +416,6 @@
     <None Include="Resources\198-add-user %28Personalizado%291.png" />
     <None Include="Resources\198-add-user %28Personalizado%29.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Entidades\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

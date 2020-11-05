@@ -5,70 +5,15 @@ using System.Text;
 using System.Threading.Tasks;
 using TestIt.Logica;
 using System.Data;
+using System.Collections;
 
 namespace TestIt.Datos
 {
-    class DeportistaDao
+    class DeportistaDao : AbstractDao
     {
-        public List<Deportista> buscarDeportistas()
-        {
-            String consultaSql = string.Concat("SELECT * FROM Deportistas WHERE borrado=0");
+        public DeportistaDao() : base("deportistas") { }
 
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Deportista> deportistas = new List<Deportista>();
-                foreach(DataRow row in resultado.Rows)
-                    deportistas.Add(mappingDeportista(row));
-                return deportistas;
-            }
-
-            return null;
-        }
-
-        public List<Deportista> filtrarDeportistas(string apellido, int equipo, int deporte, int categoria)
-        {
-            String consultaSql = string.Concat("SELECT * FROM Deportistas WHERE borrado=0");
-
-            if (apellido != "") consultaSql += " AND apellido LIKE '" + apellido + "%'";
-            if (equipo != -1) consultaSql += " AND id_equipo = " + equipo;
-            if (deporte != -1) consultaSql += " AND id_deporte = " + deporte;
-            if (categoria != -1) consultaSql += " AND id_categoria = " + categoria;
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Deportista> deportistas = new List<Deportista>();
-                foreach (DataRow row in resultado.Rows)
-                    deportistas.Add(mappingDeportista(row));
-                return deportistas;
-            }
-
-            return null;
-        }
-
-        public int getId(string nombre)
-        {
-            var respuesta = DataManager.GetInstance().ConsultaSQLScalar("SELECT id FROM deportistas WHERE nombre = '" + nombre + "'");
-            if (respuesta == null) return -1;
-            return (int) respuesta;
-        }
-
-        public Deportista getFromId(int id)
-        {
-            var respuesta = DataManager.GetInstance().ConsultaSQL("SELECT * FROM deportistas WHERE id = " + id);
-            if (respuesta.Rows.Count == 0) return null;
-            return mappingDeportista(respuesta.Rows[0]);
-        }
-
-        public string getApellido(int id)
-        {
-            return DataManager.GetInstance().ConsultaSQLScalar("SELECT apellido FROM deportistas WHERE id = " + id).ToString();
-        }
-
-        private Deportista mappingDeportista(DataRow row)
+        protected override object mappingObject(DataRow row)
         {
             Deportista oDeportista = new Deportista(Convert.ToInt32(row["id"]));
 
@@ -87,108 +32,55 @@ namespace TestIt.Datos
             return oDeportista;
         }
 
-        public bool Create(Deportista oDeportista)
+        protected override void sqlCreate(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                //SIN PARAMETROS
+            Deportista oDeportista = (Deportista)o;
 
-                string str_sql = "INSERT INTO Deportistas (dni, apellido, nombre, altura, peso, sexo, fecha_nacimiento, id_equipo, id_deporte, id_categoria, borrado)" +
-                            " VALUES (" +
-                            oDeportista.Dni + ", '" +
-                            oDeportista.Apellido + "' , '" +
-                            oDeportista.Nombre + "' ," +
-                            oDeportista.Altura + ", " +
-                            oDeportista.Peso + ", " +
-                            oDeportista.Sexo + ", '" +
-                            oDeportista.Nacimiento.ToString("yyyy-MM-dd") + "', " +
-                            oDeportista.IdEquipo + ", " +
-                            oDeportista.IdDeporte + ", " +
-                            oDeportista.IdCategoria + ", 0)";
+            string str_sql = "INSERT INTO Deportistas (dni, apellido, nombre, altura, peso, sexo, fecha_nacimiento, id_equipo, id_deporte, id_categoria, borrado)" +
+                             " VALUES (" +
+                              oDeportista.Dni + ", '" +
+                              oDeportista.Apellido + "' , '" +
+                              oDeportista.Nombre + "' ," +
+                              oDeportista.Altura + ", " +
+                              oDeportista.Peso + ", " +
+                              oDeportista.Sexo + ", '" +
+                              oDeportista.Nacimiento.ToString("yyyy-MM-dd") + "', " +
+                              oDeportista.IdEquipo + ", " +
+                              oDeportista.IdDeporte + ", " +
+                              oDeportista.IdCategoria + ", 0)";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal bool Update(Deportista oDeportista)
+        protected override void sqlUpdate(object o)
         {
+            Deportista oDeportista = (Deportista)o;
 
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Deportistas " +
+            string str_sql = "UPDATE Deportistas " +
                              "SET dni=" + oDeportista.Dni + "," +
-                              "apellido= " + "'" + oDeportista.Apellido + "'" + "," +
-                              "nombre= " + "'" + oDeportista.Nombre + "' ," +
-                              "altura= " + oDeportista.Altura + ", " +
-                              "peso= " + oDeportista.Peso + ", " +
-                              "sexo= " + oDeportista.Sexo + ", " +
-                              "fecha_nacimiento= '" + oDeportista.Nacimiento.ToString("yyyy-MM-dd") + "', " +
-                              "id_equipo= " + oDeportista.IdEquipo + ", " +
-                              "id_deporte= " + oDeportista.IdDeporte + ", " +
-                              "id_categoria=" + oDeportista.IdCategoria +
-                              " WHERE id=" + oDeportista.Id + " AND  borrado=0";
+                             "apellido= " + "'" + oDeportista.Apellido + "'" + "," +
+                             "nombre= " + "'" + oDeportista.Nombre + "' ," +
+                             "altura= " + oDeportista.Altura + ", " +
+                             "peso= " + oDeportista.Peso + ", " +
+                             "sexo= " + oDeportista.Sexo + ", " +
+                             "fecha_nacimiento= '" + oDeportista.Nacimiento.ToString("yyyy-MM-dd") + "', " +
+                             "id_equipo= " + oDeportista.IdEquipo + ", " +
+                             "id_deporte= " + oDeportista.IdDeporte + ", " +
+                             "id_categoria=" + oDeportista.IdCategoria +
+                             " WHERE id=" + oDeportista.Id + " AND  borrado=0";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        public bool Delete(Deportista oDeportista)
+        protected override void sqlDelete(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Deportistas " +
-                             "SET borrado = " + 1 +
-                " WHERE id = " + oDeportista.Id;
+            Deportista oDeportista = (Deportista)o;
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
+            string str_sql = "UPDATE Deportistas" +
+                             " SET borrado = " + 1 +
+                             " WHERE id = " + oDeportista.Id;
 
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-
-            finally
-            {
-                dm.Close();
-            }
-
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
     }
 }

@@ -6,32 +6,15 @@ using System.Threading.Tasks;
 using TestIt.Logica;
 using System.Data;
 
-
-
 namespace TestIt.Datos
 {
-    class CategoriaDao
+    class CategoriaDao : AbstractDao
     {
-        public List<Categoria> buscarCategoria()
+        public CategoriaDao() : base("categorias") { }
+
+        protected override object mappingObject(DataRow row)
         {
-            String consultaSql = string.Concat("SELECT * FROM Categorias WHERE borrado=0");
-
-            var resultado = DataManager.GetInstance().ConsultaSQL(consultaSql);
-
-            if (resultado.Rows.Count > 0)
-            {
-                List<Categoria> categorias = new List<Categoria>();
-                foreach (DataRow row in resultado.Rows)
-                    categorias.Add(mappingCategoria(row));
-                return categorias;
-            }
-
-            return null;
-        }
-
-        private Categoria mappingCategoria(DataRow row)
-        {
-           Categoria oCategoria = new Categoria(Convert.ToInt32(row["id"]));
+            Categoria oCategoria = new Categoria(Convert.ToInt32(row["id"]));
 
             oCategoria.Nombre = row["nombre"].ToString();
             oCategoria.EdadMin = Convert.ToInt32(row["edad_min"]);
@@ -40,98 +23,40 @@ namespace TestIt.Datos
             return oCategoria;
         }
 
-        public string buscarNombre(int id)
+        protected override void sqlCreate(object o)
         {
-                return DataManager.GetInstance().ConsultaSQLScalar("SELECT nombre FROM categorias WHERE id = " + id).ToString();
+            Categoria oCategoria = (Categoria)o;
+
+            string str_sql = "INSERT INTO Categorias VALUES ('" +
+                              oCategoria.Nombre + "', " +
+                              oCategoria.EdadMin + " , " +
+                              oCategoria.EdadMax + ", 0)";
+
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        public bool Create(Categoria oCategoria)
+        protected override void sqlUpdate(object o)
         {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                //SIN PARAMETROS
+            Categoria oCategoria = (Categoria)o;
 
-                string str_sql = "INSERT INTO Categorias VALUES ('" +
-                            oCategoria.Nombre + "', " +
-                            oCategoria.EdadMin + " , " +
-                            oCategoria.EdadMax + ", 0)";
+            string str_sql = "UPDATE Categorias SET " +
+                             "nombre='" + oCategoria.Nombre + "'," +
+                             "edad_min= " + oCategoria.EdadMin + ", " +
+                             "edad_max= " + oCategoria.EdadMax +
+                             "WHERE id= " + oCategoria.Id + " AND  borrado=0";
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
 
-        internal bool Update(Categoria oCategoria)
+        protected override void sqlDelete(object o)
         {
+            Categoria oCategoria = (Categoria)o;
 
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Categorias SET " +
-                              "nombre='" + oCategoria.Nombre + "'," +
-                              "edad_min= " + oCategoria.EdadMin + ", " +
-                              "edad_max= " + oCategoria.EdadMax + 
-                              "WHERE id= " + oCategoria.Id + " AND  borrado=0";
-
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-            finally
-            {
-                dm.Close();
-            }
-            return true;
-        }
-
-        public bool Delete(Categoria oCategoria)
-        {
-            DataManager dm = new DataManager();
-            try
-            {
-                dm.Open();
-                dm.BeginTransaction();
-                string str_sql = "UPDATE Categorias " +
+            string str_sql = "UPDATE Categorias " +
                              "SET borrado = " + 1 +
-                            " WHERE id = " + oCategoria.Id;
+                             " WHERE id = " + oCategoria.Id;
 
-                dm.EjecutarSQL(str_sql);
-                dm.Commit();
-            }
-
-            catch (Exception ex)
-            {
-                dm.Rollback();
-                throw ex;
-            }
-
-            finally
-            {
-                dm.Close();
-            }
-
-            return true;
+            DataManager.GetInstance().EjecutarSQL(str_sql);
         }
     }
 }
